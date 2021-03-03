@@ -1,85 +1,102 @@
 package dev.volskaya.agora
 
 import android.app.Notification
-import android.app.NotificationManager
 import android.app.PendingIntent
 import android.app.Service
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Build
 import android.os.IBinder
-import android.util.Log
-
+import android.os.PowerManager
+import androidx.core.app.NotificationCompat
+import java.lang.ref.WeakReference
 
 class ChannelService : Service() {
+    var engineCoordinator: AgoraCoordinator? = null
+    var startId: Int? = 1
+    var wakeLock: PowerManager.WakeLock? = null
+
     companion object {
-        const val ACTION_INIT_ENGINE = "action_init_engine"
-        const val ACTION_JOIN_CHANNEL = "action_join_channel"
-        const val ACTION_START = "action_start"
-        const val ACTION_STOP = "action_stop"
-        const val ACTION_UPDATE_NOTIFICATION = "action_update_notification"
-
-        const val ONGOING_NOTIFICATION = "agora_plugin_foreground_service_notification"
-
-        var engineCoordinator: AgoraCoordinator? = null
+        const val NOTIFICATION_CHANNEL = "agora_plugin_default_channel"
+        const val WAKE_LOCK_TAG = "Napy::ChannelServiceWakeLock"
+        const val NOTIFICATION_ICON_KEY = "com.google.firebase.messaging.default_notification_icon"
+        const val NOTIFICATION_COLOR_KEY = "com.google.firebase.messaging.default_notification_color"
     }
 
-    override fun onBind(intent: Intent?): IBinder? {
-        TODO("Not yet implemented")
-    }
+    override fun onBind(intent: Intent?): IBinder? { return null }
 
-    private fun createNotification(flags: Int, title: String, subtitle: String?): Notification {
-        val pendingIntent: PendingIntent = Intent(this, AgoraPlugin::class.java).let {
-            PendingIntent.getActivity(this, 0, it, flags)
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int { return START_STICKY }
+
+    override fun onCreate() {
+        super.onCreate()
+        engineCoordinator = AgoraPlugin.engineCoordinator?.also {
+            assert(it.service == null)
+            it.service = WeakReference(this)
         }
 
-        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            Notification.Builder(this, "agora_plugin_default_channel")
-                    .setContentTitle(title)
-                    .setContentText(subtitle ?: "Napy is maintaining your call in the background")
-                    .setSmallIcon(android.R.drawable.edit_text)
-                    .setContentIntent(pendingIntent)
-                    .setTicker("Ticker text")
-                    .build()
-        } else {
-            TODO("VERSION.SDK_INT < O")
-        }
-    }
-
-    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        when (intent?.action) {
-            ACTION_START -> {
-                Log.d(null, "Start service command received")
-
-                val notification = createNotification(flags, "Sleeping with a stranger", null)
-                startForeground(startId, notification)
-                Log.d(null, "Starting foreground ${hashCode()}")
+        try {
+            val powerManager: PowerManager = getSystemService(POWER_SERVICE) as PowerManager
+            wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, WAKE_LOCK_TAG).also {
+                it.acquire(60 * 60 * 1000L) // 60 minutes.
             }
-            ACTION_STOP -> {
-                Log.d(null, "Stop service command received ${hashCode()}")
+        } catch (e: NoSuchMethodError) {}
 
-                stopForeground(true)
-                stopSelfResult(startId)
-            }
-            ACTION_UPDATE_NOTIFICATION -> {
-                val notification = createNotification(flags, "Sleeping with a stranger UPDATED", null)
-                val notificationManager = applicationContext.getSystemService(NOTIFICATION_SERVICE) as NotificationManager
-
-                notificationManager.notify(startId, notification)
-            }
-            ACTION_INIT_ENGINE -> {
-                val appId = intent.getStringExtra("appId")!!
-                val areaCode = intent.getIntExtra("areaCode", 0)
-
-                engineCoordinator = AgoraCoordinator(this, appId, areaCode)
-            }
-        }
-
-        return START_NOT_STICKY
+        val notification = createNotification()
+        startForeground(startId!!, notification)
     }
 
     override fun onDestroy() {
+        wakeLock?.release()
+        engineCoordinator?.let {
+            engineCoordinator = null
+            it.engine.leaveChannel()
+            assert(it.service?.get() == this)
+            it.service = null
+        }
+
         super.onDestroy()
 
-        Log.d(null, "Service destroyed ${hashCode()}")
+    }
+
+    fun stop() {
+        stopForeground(true)
+        stopSelf()
+    }
+
+    private fun createNotification(): Notification {
+        val notificationIntent = applicationContext.packageManager.getLaunchIntentForPackage(applicationContext.packageName)
+        val pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0)
+
+        val applicationInfo = applicationContext.packageManager.getApplicationInfo(packageName, PackageManager.GET_META_DATA)
+        val icon = applicationInfo.metaData.getInt(NOTIFICATION_ICON_KEY)
+        val color = applicationInfo.metaData.getInt(NOTIFICATION_COLOR_KEY)
+
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val builder = Notification.Builder(this, NOTIFICATION_CHANNEL)
+                    .setContentTitle("Sleeping with a stranger")
+                    .setContentText("Napy is maintaining your connection in the background")
+                    .setSmallIcon(icon)
+                    .setColor(applicationContext.getColor(color))
+                    .setChannelId(NOTIFICATION_CHANNEL)
+                    .setUsesChronometer(true)
+                    .setOngoing(true)
+                    .setContentIntent(pendingIntent)
+
+            engineCoordinator?.mediaSession?.let {
+                builder.style = Notification.MediaStyle().setMediaSession(it.sessionToken)
+            }
+
+            builder.build()
+        } else {
+            NotificationCompat.Builder(this, NOTIFICATION_CHANNEL)
+                    .setContentTitle("Sleeping with a stranger")
+                    .setContentText("Napy is maintaining your connection in the background")
+                    .setSmallIcon(icon)
+                    .setChannelId(NOTIFICATION_CHANNEL)
+                    .setUsesChronometer(true)
+                    .setOngoing(true)
+                    .setContentIntent(pendingIntent)
+                    .build()
+        }
     }
 }

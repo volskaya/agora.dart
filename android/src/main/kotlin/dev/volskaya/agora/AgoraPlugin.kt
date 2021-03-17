@@ -29,6 +29,8 @@ class AgoraPlugin : FlutterPlugin, ActivityAware, MethodCallHandler {
     var messenger: BinaryMessenger? = null
     var channel: MethodChannel? = null
     var engineCoordinator: AgoraCoordinator? = null // The `activity` is unreferenced, when this Activity is detached.
+    var notificationTitle: String? = null
+    var notificationSubtitle: String? = null
 
     private val participantStreams: MutableMap<Int, MethodChannel> = mutableMapOf()
 
@@ -92,6 +94,11 @@ class AgoraPlugin : FlutterPlugin, ActivityAware, MethodCallHandler {
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
     when (call.method) {
       "initialize" -> {
+        call.argument<Map<*, *>>("notificationSettings")?.let {
+          notificationTitle = it["title"] as? String
+          notificationSubtitle = it["subtitle"] as? String
+        }
+
         // Reuse the old engine, if possible.
         engineCoordinator = engineCoordinator ?: AgoraCoordinator(
                 activity.applicationContext,
@@ -101,6 +108,11 @@ class AgoraPlugin : FlutterPlugin, ActivityAware, MethodCallHandler {
 
         engineCoordinator?.contextRef = WeakReference(activity.application)
         engineCoordinator?.hydrate()
+      }
+      "updateNotificationSettings" -> {
+        notificationTitle = call.argument<String>("title")
+        notificationSubtitle = call.argument<String>("subtitle")
+        engineCoordinator?.service?.get()?.rebuildNotification()
       }
       "enableAudio",
       "enableVideo",

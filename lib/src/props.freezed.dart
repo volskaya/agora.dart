@@ -278,10 +278,13 @@ class _$InitializeEnginePropsTearOff {
 
 // ignore: unused_element
   _InitializeEngineProps call(
-      {@required String appId, AreaCode areaCode = AreaCode.global}) {
+      {@required String appId,
+      AreaCode areaCode = AreaCode.global,
+      NotificationProps notificationSettings}) {
     return _InitializeEngineProps(
       appId: appId,
       areaCode: areaCode,
+      notificationSettings: notificationSettings,
     );
   }
 
@@ -299,6 +302,7 @@ const $InitializeEngineProps = _$InitializeEnginePropsTearOff();
 mixin _$InitializeEngineProps {
   String get appId;
   AreaCode get areaCode;
+  NotificationProps get notificationSettings;
 
   Map<String, dynamic> toJson();
   $InitializeEnginePropsCopyWith<InitializeEngineProps> get copyWith;
@@ -309,7 +313,12 @@ abstract class $InitializeEnginePropsCopyWith<$Res> {
   factory $InitializeEnginePropsCopyWith(InitializeEngineProps value,
           $Res Function(InitializeEngineProps) then) =
       _$InitializeEnginePropsCopyWithImpl<$Res>;
-  $Res call({String appId, AreaCode areaCode});
+  $Res call(
+      {String appId,
+      AreaCode areaCode,
+      NotificationProps notificationSettings});
+
+  $NotificationPropsCopyWith<$Res> get notificationSettings;
 }
 
 /// @nodoc
@@ -325,11 +334,26 @@ class _$InitializeEnginePropsCopyWithImpl<$Res>
   $Res call({
     Object appId = freezed,
     Object areaCode = freezed,
+    Object notificationSettings = freezed,
   }) {
     return _then(_value.copyWith(
       appId: appId == freezed ? _value.appId : appId as String,
       areaCode: areaCode == freezed ? _value.areaCode : areaCode as AreaCode,
+      notificationSettings: notificationSettings == freezed
+          ? _value.notificationSettings
+          : notificationSettings as NotificationProps,
     ));
+  }
+
+  @override
+  $NotificationPropsCopyWith<$Res> get notificationSettings {
+    if (_value.notificationSettings == null) {
+      return null;
+    }
+    return $NotificationPropsCopyWith<$Res>(_value.notificationSettings,
+        (value) {
+      return _then(_value.copyWith(notificationSettings: value));
+    });
   }
 }
 
@@ -340,7 +364,13 @@ abstract class _$InitializeEnginePropsCopyWith<$Res>
           $Res Function(_InitializeEngineProps) then) =
       __$InitializeEnginePropsCopyWithImpl<$Res>;
   @override
-  $Res call({String appId, AreaCode areaCode});
+  $Res call(
+      {String appId,
+      AreaCode areaCode,
+      NotificationProps notificationSettings});
+
+  @override
+  $NotificationPropsCopyWith<$Res> get notificationSettings;
 }
 
 /// @nodoc
@@ -358,10 +388,14 @@ class __$InitializeEnginePropsCopyWithImpl<$Res>
   $Res call({
     Object appId = freezed,
     Object areaCode = freezed,
+    Object notificationSettings = freezed,
   }) {
     return _then(_InitializeEngineProps(
       appId: appId == freezed ? _value.appId : appId as String,
       areaCode: areaCode == freezed ? _value.areaCode : areaCode as AreaCode,
+      notificationSettings: notificationSettings == freezed
+          ? _value.notificationSettings
+          : notificationSettings as NotificationProps,
     ));
   }
 }
@@ -371,7 +405,9 @@ class __$InitializeEnginePropsCopyWithImpl<$Res>
 /// @nodoc
 class _$_InitializeEngineProps implements _InitializeEngineProps {
   const _$_InitializeEngineProps(
-      {@required this.appId, this.areaCode = AreaCode.global})
+      {@required this.appId,
+      this.areaCode = AreaCode.global,
+      this.notificationSettings})
       : assert(appId != null),
         assert(areaCode != null);
 
@@ -383,10 +419,12 @@ class _$_InitializeEngineProps implements _InitializeEngineProps {
   @JsonKey(defaultValue: AreaCode.global)
   @override
   final AreaCode areaCode;
+  @override
+  final NotificationProps notificationSettings;
 
   @override
   String toString() {
-    return 'InitializeEngineProps(appId: $appId, areaCode: $areaCode)';
+    return 'InitializeEngineProps(appId: $appId, areaCode: $areaCode, notificationSettings: $notificationSettings)';
   }
 
   @override
@@ -397,14 +435,18 @@ class _$_InitializeEngineProps implements _InitializeEngineProps {
                 const DeepCollectionEquality().equals(other.appId, appId)) &&
             (identical(other.areaCode, areaCode) ||
                 const DeepCollectionEquality()
-                    .equals(other.areaCode, areaCode)));
+                    .equals(other.areaCode, areaCode)) &&
+            (identical(other.notificationSettings, notificationSettings) ||
+                const DeepCollectionEquality()
+                    .equals(other.notificationSettings, notificationSettings)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(appId) ^
-      const DeepCollectionEquality().hash(areaCode);
+      const DeepCollectionEquality().hash(areaCode) ^
+      const DeepCollectionEquality().hash(notificationSettings);
 
   @override
   _$InitializeEnginePropsCopyWith<_InitializeEngineProps> get copyWith =>
@@ -419,7 +461,9 @@ class _$_InitializeEngineProps implements _InitializeEngineProps {
 
 abstract class _InitializeEngineProps implements InitializeEngineProps {
   const factory _InitializeEngineProps(
-      {@required String appId, AreaCode areaCode}) = _$_InitializeEngineProps;
+      {@required String appId,
+      AreaCode areaCode,
+      NotificationProps notificationSettings}) = _$_InitializeEngineProps;
 
   factory _InitializeEngineProps.fromJson(Map<String, dynamic> json) =
       _$_InitializeEngineProps.fromJson;
@@ -429,7 +473,167 @@ abstract class _InitializeEngineProps implements InitializeEngineProps {
   @override
   AreaCode get areaCode;
   @override
+  NotificationProps get notificationSettings;
+  @override
   _$InitializeEnginePropsCopyWith<_InitializeEngineProps> get copyWith;
+}
+
+NotificationProps _$NotificationPropsFromJson(Map<String, dynamic> json) {
+  return _NotificationProps.fromJson(json);
+}
+
+/// @nodoc
+class _$NotificationPropsTearOff {
+  const _$NotificationPropsTearOff();
+
+// ignore: unused_element
+  _NotificationProps call({String title, String subtitle}) {
+    return _NotificationProps(
+      title: title,
+      subtitle: subtitle,
+    );
+  }
+
+// ignore: unused_element
+  NotificationProps fromJson(Map<String, Object> json) {
+    return NotificationProps.fromJson(json);
+  }
+}
+
+/// @nodoc
+// ignore: unused_element
+const $NotificationProps = _$NotificationPropsTearOff();
+
+/// @nodoc
+mixin _$NotificationProps {
+  String get title;
+  String get subtitle;
+
+  Map<String, dynamic> toJson();
+  $NotificationPropsCopyWith<NotificationProps> get copyWith;
+}
+
+/// @nodoc
+abstract class $NotificationPropsCopyWith<$Res> {
+  factory $NotificationPropsCopyWith(
+          NotificationProps value, $Res Function(NotificationProps) then) =
+      _$NotificationPropsCopyWithImpl<$Res>;
+  $Res call({String title, String subtitle});
+}
+
+/// @nodoc
+class _$NotificationPropsCopyWithImpl<$Res>
+    implements $NotificationPropsCopyWith<$Res> {
+  _$NotificationPropsCopyWithImpl(this._value, this._then);
+
+  final NotificationProps _value;
+  // ignore: unused_field
+  final $Res Function(NotificationProps) _then;
+
+  @override
+  $Res call({
+    Object title = freezed,
+    Object subtitle = freezed,
+  }) {
+    return _then(_value.copyWith(
+      title: title == freezed ? _value.title : title as String,
+      subtitle: subtitle == freezed ? _value.subtitle : subtitle as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$NotificationPropsCopyWith<$Res>
+    implements $NotificationPropsCopyWith<$Res> {
+  factory _$NotificationPropsCopyWith(
+          _NotificationProps value, $Res Function(_NotificationProps) then) =
+      __$NotificationPropsCopyWithImpl<$Res>;
+  @override
+  $Res call({String title, String subtitle});
+}
+
+/// @nodoc
+class __$NotificationPropsCopyWithImpl<$Res>
+    extends _$NotificationPropsCopyWithImpl<$Res>
+    implements _$NotificationPropsCopyWith<$Res> {
+  __$NotificationPropsCopyWithImpl(
+      _NotificationProps _value, $Res Function(_NotificationProps) _then)
+      : super(_value, (v) => _then(v as _NotificationProps));
+
+  @override
+  _NotificationProps get _value => super._value as _NotificationProps;
+
+  @override
+  $Res call({
+    Object title = freezed,
+    Object subtitle = freezed,
+  }) {
+    return _then(_NotificationProps(
+      title: title == freezed ? _value.title : title as String,
+      subtitle: subtitle == freezed ? _value.subtitle : subtitle as String,
+    ));
+  }
+}
+
+@JsonSerializable()
+
+/// @nodoc
+class _$_NotificationProps implements _NotificationProps {
+  const _$_NotificationProps({this.title, this.subtitle});
+
+  factory _$_NotificationProps.fromJson(Map<String, dynamic> json) =>
+      _$_$_NotificationPropsFromJson(json);
+
+  @override
+  final String title;
+  @override
+  final String subtitle;
+
+  @override
+  String toString() {
+    return 'NotificationProps(title: $title, subtitle: $subtitle)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _NotificationProps &&
+            (identical(other.title, title) ||
+                const DeepCollectionEquality().equals(other.title, title)) &&
+            (identical(other.subtitle, subtitle) ||
+                const DeepCollectionEquality()
+                    .equals(other.subtitle, subtitle)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(title) ^
+      const DeepCollectionEquality().hash(subtitle);
+
+  @override
+  _$NotificationPropsCopyWith<_NotificationProps> get copyWith =>
+      __$NotificationPropsCopyWithImpl<_NotificationProps>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_NotificationPropsToJson(this);
+  }
+}
+
+abstract class _NotificationProps implements NotificationProps {
+  const factory _NotificationProps({String title, String subtitle}) =
+      _$_NotificationProps;
+
+  factory _NotificationProps.fromJson(Map<String, dynamic> json) =
+      _$_NotificationProps.fromJson;
+
+  @override
+  String get title;
+  @override
+  String get subtitle;
+  @override
+  _$NotificationPropsCopyWith<_NotificationProps> get copyWith;
 }
 
 JoinChannelProps _$JoinChannelPropsFromJson(Map<String, dynamic> json) {

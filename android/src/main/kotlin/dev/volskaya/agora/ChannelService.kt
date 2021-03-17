@@ -1,8 +1,10 @@
 package dev.volskaya.agora
 
 import android.app.Notification
+import android.app.NotificationManager
 import android.app.PendingIntent
 import android.app.Service
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
@@ -13,7 +15,7 @@ import java.lang.ref.WeakReference
 
 class ChannelService : Service() {
     var engineCoordinator: AgoraCoordinator? = null
-    var startId: Int? = 1
+    var startId: Int? = null
     var wakeLock: PowerManager.WakeLock? = null
 
     companion object {
@@ -41,11 +43,13 @@ class ChannelService : Service() {
             }
         } catch (e: NoSuchMethodError) {}
 
+        startId = 1
         val notification = createNotification()
         startForeground(startId!!, notification)
     }
 
     override fun onDestroy() {
+        startId = null
         wakeLock?.release()
         engineCoordinator?.let {
             engineCoordinator = null
@@ -55,12 +59,19 @@ class ChannelService : Service() {
         }
 
         super.onDestroy()
-
     }
 
     fun stop() {
         stopForeground(true)
         stopSelf()
+    }
+
+    fun rebuildNotification() {
+        startId?.let { notificationId ->
+            val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val notification = createNotification()
+            notificationManager.notify(notificationId, notification)
+        }
     }
 
     private fun createNotification(): Notification {
@@ -73,14 +84,14 @@ class ChannelService : Service() {
 
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val builder = Notification.Builder(this, NOTIFICATION_CHANNEL)
-                    .setContentTitle("Sleeping with a stranger")
-                    .setContentText("Napy is maintaining your connection in the background")
                     .setSmallIcon(icon)
                     .setColor(applicationContext.getColor(color))
                     .setChannelId(NOTIFICATION_CHANNEL)
-                    .setUsesChronometer(true)
                     .setOngoing(true)
                     .setContentIntent(pendingIntent)
+
+            AgoraPlugin.notificationTitle?.let { builder.setContentTitle(it) }
+            AgoraPlugin.notificationSubtitle?.let { builder.setContentText(it) }
 
             engineCoordinator?.mediaSession?.let {
                 builder.style = Notification.MediaStyle().setMediaSession(it.sessionToken)
@@ -88,15 +99,16 @@ class ChannelService : Service() {
 
             builder.build()
         } else {
-            NotificationCompat.Builder(this, NOTIFICATION_CHANNEL)
-                    .setContentTitle("Sleeping with a stranger")
-                    .setContentText("Napy is maintaining your connection in the background")
+            val builder = NotificationCompat.Builder(this, NOTIFICATION_CHANNEL)
                     .setSmallIcon(icon)
                     .setChannelId(NOTIFICATION_CHANNEL)
-                    .setUsesChronometer(true)
                     .setOngoing(true)
                     .setContentIntent(pendingIntent)
-                    .build()
+
+            AgoraPlugin.notificationTitle?.let { builder.setContentTitle(it) }
+            AgoraPlugin.notificationSubtitle?.let { builder.setContentText(it) }
+
+            builder.build()
         }
     }
 }

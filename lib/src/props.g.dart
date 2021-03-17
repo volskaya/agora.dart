@@ -77,6 +77,11 @@ _$_InitializeEngineProps _$_$_InitializeEnginePropsFromJson(Map json) {
     appId: json['appId'] as String,
     areaCode: _$enumDecodeNullable(_$AreaCodeEnumMap, json['areaCode']) ??
         AreaCode.global,
+    notificationSettings: json['notificationSettings'] == null
+        ? null
+        : NotificationProps.fromJson((json['notificationSettings'] as Map)?.map(
+            (k, e) => MapEntry(k as String, e),
+          )),
   );
 }
 
@@ -85,6 +90,7 @@ Map<String, dynamic> _$_$_InitializeEnginePropsToJson(
     <String, dynamic>{
       'appId': instance.appId,
       'areaCode': _$AreaCodeEnumMap[instance.areaCode],
+      'notificationSettings': instance.notificationSettings?.toJson(),
     };
 
 const _$AreaCodeEnumMap = {
@@ -96,6 +102,20 @@ const _$AreaCodeEnumMap = {
   AreaCode.india: 32,
   AreaCode.global: -1,
 };
+
+_$_NotificationProps _$_$_NotificationPropsFromJson(Map json) {
+  return _$_NotificationProps(
+    title: json['title'] as String,
+    subtitle: json['subtitle'] as String,
+  );
+}
+
+Map<String, dynamic> _$_$_NotificationPropsToJson(
+        _$_NotificationProps instance) =>
+    <String, dynamic>{
+      'title': instance.title,
+      'subtitle': instance.subtitle,
+    };
 
 _$_JoinChannelProps _$_$_JoinChannelPropsFromJson(Map json) {
   return _$_JoinChannelProps(

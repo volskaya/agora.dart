@@ -23,9 +23,20 @@ abstract class InitializeEngineProps with _$InitializeEngineProps {
   const factory InitializeEngineProps({
     @required String appId,
     @Default(AreaCode.global) AreaCode areaCode,
+    NotificationProps notificationSettings,
   }) = _InitializeEngineProps;
 
   factory InitializeEngineProps.fromJson(Map<String, dynamic> json) => _$InitializeEnginePropsFromJson(json);
+}
+
+@freezed
+abstract class NotificationProps with _$NotificationProps {
+  const factory NotificationProps({
+    String title,
+    String subtitle,
+  }) = _NotificationProps;
+
+  factory NotificationProps.fromJson(Map<String, dynamic> json) => _$NotificationPropsFromJson(json);
 }
 
 @freezed

@@ -94,10 +94,22 @@ abstract class _Agora with Store {
   /// Initializes the platform engine. The engine could already be initialized in a foreground service.
   ///
   /// This also triggers the first `state` update to be dispatched.
-  Future initialize(String appId, [AreaCode areaCode = AreaCode.global]) => channel.invokeMethod(
+  Future initialize(
+    String appId, {
+    AreaCode areaCode,
+    NotificationProps notificationSettings,
+  }) =>
+      channel.invokeMethod(
         'initialize',
-        InitializeEngineProps(appId: appId, areaCode: areaCode).toJson(),
+        InitializeEngineProps(
+          appId: appId,
+          areaCode: areaCode ?? AreaCode.global,
+          notificationSettings: notificationSettings ?? const NotificationProps(),
+        ).toJson(),
       );
+
+  Future updateNotificationSettingss(NotificationProps settings) =>
+      channel.invokeMethod('updateNotificationSettings', settings.toJson());
 
   Future joinChannel(String token, String channelName, int uid) =>
       channel.invokeMethod('joinChannel', JoinChannelProps(token: token, channelName: channelName, uid: uid).toJson());

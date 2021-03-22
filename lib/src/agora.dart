@@ -40,7 +40,7 @@ abstract class _Agora with Store {
   @observable
   EngineState state = const EngineState();
   @computed
-  int get activeSpeaker => state.activeSpeaker;
+  int? get activeSpeaker => state.activeSpeaker;
   @computed
   ConnectionStateType get connectionState => state.connectionState;
   @computed
@@ -50,9 +50,9 @@ abstract class _Agora with Store {
   @computed
   AudioLocalState get audioState => participant.audioState;
   @computed
-  LocalVideoStats get videoStats => participant.videoStats;
+  LocalVideoStats? get videoStats => participant.videoStats;
   @computed
-  LocalAudioStats get audioStats => participant.audioStats;
+  LocalAudioStats? get audioStats => participant.audioStats;
 
   /// [AgoraParticipant] has to be rebuilt to avoid its [EventChannel] from reconstructing.
   Map<int, AgoraParticipant> _cachedParticipants = const <int, AgoraParticipant>{};
@@ -79,7 +79,8 @@ abstract class _Agora with Store {
 
   Future leaveChannel() => channel.invokeMethod('leaveChannel');
   Future requestIgnoreBatteryOptimizations() => channel.invokeMethod('requestIgnoreBatteryOptimizations');
-  Future<bool> shouldIgnoreBatteryOptimizations() => channel.invokeMethod<bool>('shouldIgnoreBatteryOptimizations');
+  Future<bool> shouldIgnoreBatteryOptimizations() async =>
+      await channel.invokeMethod<bool>('shouldIgnoreBatteryOptimizations') ?? false;
 
   Future enableLocalAudio(bool enabled) => channel.invokeMethod('enableLocalAudio', {'enabled': enabled});
   Future enableLocalVideo(bool enabled) => channel.invokeMethod('enableLocalVideo', {'enabled': enabled});
@@ -96,8 +97,8 @@ abstract class _Agora with Store {
   /// This also triggers the first `state` update to be dispatched.
   Future initialize(
     String appId, {
-    AreaCode areaCode,
-    NotificationProps notificationSettings,
+    AreaCode? areaCode,
+    NotificationProps? notificationSettings,
   }) =>
       channel.invokeMethod(
         'initialize',

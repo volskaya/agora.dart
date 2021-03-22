@@ -19,19 +19,19 @@ abstract class _AgoraParticipant with Store {
   final MethodChannel channel;
 
   @observable
-  Participant state;
+  Participant? state;
   @computed
-  RemoteAudioStats get audioStats => state.audioStats;
+  RemoteAudioStats? get audioStats => state?.audioStats;
   @computed
-  AudioRemoteState get audioState => state.audioState;
+  RemoteVideoStats? get videoStats => state?.videoStats;
   @computed
-  RemoteVideoStats get videoStats => state.videoStats;
+  AudioVolumeInfo? get volumeInfo => state?.volumeInfo;
   @computed
-  VideoRemoteState get videoState => state.videoState;
+  AudioRemoteState get audioState => state?.audioState ?? AudioRemoteState.stopped;
   @computed
-  AudioVolumeInfo get volumeInfo => state.volumeInfo;
+  VideoRemoteState get videoState => state?.videoState ?? VideoRemoteState.stopped;
   @computed
-  bool get hasFrames => state.hasFrames;
+  bool get hasFrames => state?.hasFrames ?? false;
 
   Future _handleMethodCall(MethodCall methodCall) {
     switch (methodCall.method) {

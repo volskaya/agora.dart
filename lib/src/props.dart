@@ -6,45 +6,45 @@ part 'props.g.dart';
 part 'props.freezed.dart';
 
 @freezed
-abstract class EngineState with _$EngineState {
+class EngineState with _$EngineState {
   const factory EngineState({
     @Default(ConnectionStateType.disconnected) ConnectionStateType connectionState,
-    String channel,
-    int activeSpeaker,
-    LocalParticipant participant, // Local participant.
-    @SetFromListConverter() Set<int> onlineParticipants,
+    String? channel,
+    int? activeSpeaker,
+    LocalParticipant? participant, // Local participant.
+    @SetFromListConverter() @Default(<int>{}) Set<int> onlineParticipants,
   }) = _EngineState;
 
   factory EngineState.fromJson(Map<String, dynamic> json) => _$EngineStateFromJson(json);
 }
 
 @freezed
-abstract class InitializeEngineProps with _$InitializeEngineProps {
+class InitializeEngineProps with _$InitializeEngineProps {
   const factory InitializeEngineProps({
-    @required String appId,
+    required String appId,
     @Default(AreaCode.global) AreaCode areaCode,
-    NotificationProps notificationSettings,
+    NotificationProps? notificationSettings,
   }) = _InitializeEngineProps;
 
   factory InitializeEngineProps.fromJson(Map<String, dynamic> json) => _$InitializeEnginePropsFromJson(json);
 }
 
 @freezed
-abstract class NotificationProps with _$NotificationProps {
+class NotificationProps with _$NotificationProps {
   const factory NotificationProps({
-    String title,
-    String subtitle,
+    String? title,
+    String? subtitle,
   }) = _NotificationProps;
 
   factory NotificationProps.fromJson(Map<String, dynamic> json) => _$NotificationPropsFromJson(json);
 }
 
 @freezed
-abstract class JoinChannelProps with _$JoinChannelProps {
+class JoinChannelProps with _$JoinChannelProps {
   const factory JoinChannelProps({
-    @required String token,
-    @required String channelName,
-    @required int uid,
+    required String token,
+    required String channelName,
+    required int uid,
     @Default(ChannelProfile.liveBroadcasting) ChannelProfile profile,
     @Default(ClientRole.broadcaster) ClientRole role,
   }) = _JoinChannelProps;
@@ -53,7 +53,7 @@ abstract class JoinChannelProps with _$JoinChannelProps {
 }
 
 @freezed
-abstract class RtcStats with _$RtcStats {
+class RtcStats with _$RtcStats {
   const factory RtcStats({
     @Default(0) int totalDuration,
     @Default(0) int txBytes,
@@ -84,103 +84,103 @@ abstract class RtcStats with _$RtcStats {
 }
 
 @freezed
-abstract class RemoteAudioStats with _$RemoteAudioStats {
+class RemoteAudioStats with _$RemoteAudioStats {
   const factory RemoteAudioStats({
-    @required int uid,
-    @required int quality,
-    @required int networkTransportDelay,
-    @required int jitterBufferDelay,
-    @required int audioLossRate,
-    @required int numChannels,
-    @required int receivedSampleRate,
-    @required int receivedBitrate,
-    @required int totalFrozenTime,
-    @required int frozenRate,
-    @required int totalActiveTime,
-    @required int publishDuration,
-    @required int qoeQuality,
-    @required int qualityChangedReason,
+    required int uid,
+    required int quality,
+    required int networkTransportDelay,
+    required int jitterBufferDelay,
+    required int audioLossRate,
+    required int numChannels,
+    required int receivedSampleRate,
+    required int receivedBitrate,
+    required int totalFrozenTime,
+    required int frozenRate,
+    required int totalActiveTime,
+    required int publishDuration,
+    required int qoeQuality,
+    required int qualityChangedReason,
   }) = _RemoteAudioStats;
 
   factory RemoteAudioStats.fromJson(Map<String, dynamic> json) => _$RemoteAudioStatsFromJson(json);
 }
 
 @freezed
-abstract class RemoteVideoStats with _$RemoteVideoStats {
+class RemoteVideoStats with _$RemoteVideoStats {
   const factory RemoteVideoStats({
-    @required int uid,
-    @required int width,
-    @required int height,
-    @required int receivedBitrate,
-    @required int decoderOutputFrameRate,
-    @required int rendererOutputFrameRate,
-    @required int packetLossRate,
-    @required int rxStreamType,
-    @required int totalFrozenTime,
-    @required int frozenRate,
-    @required int totalActiveTime,
-    @required int publishDuration,
+    required int uid,
+    required int width,
+    required int height,
+    required int receivedBitrate,
+    required int decoderOutputFrameRate,
+    required int rendererOutputFrameRate,
+    required int packetLossRate,
+    required int rxStreamType,
+    required int totalFrozenTime,
+    required int frozenRate,
+    required int totalActiveTime,
+    required int publishDuration,
   }) = _RemoteVideoStats;
 
   factory RemoteVideoStats.fromJson(Map<String, dynamic> json) => _$RemoteVideoStatsFromJson(json);
 }
 
 @freezed
-abstract class LocalAudioStats with _$LocalAudioStats {
+class LocalAudioStats with _$LocalAudioStats {
   const factory LocalAudioStats({
-    @required int numChannels,
-    @required int sentSampleRate,
-    @required int sentBitrate,
-    @required int txPacketLossRate,
+    required int numChannels,
+    required int sentSampleRate,
+    required int sentBitrate,
+    required int txPacketLossRate,
   }) = _LocalAudioStats;
 
   factory LocalAudioStats.fromJson(Map<String, dynamic> json) => _$LocalAudioStatsFromJson(json);
 }
 
 @freezed
-abstract class LocalVideoStats with _$LocalVideoStats {
+class LocalVideoStats with _$LocalVideoStats {
   const factory LocalVideoStats({
-    @required int sentBitrate,
-    @required int sentFrameRate,
-    @required int encoderOutputFrameRate,
-    @required int rendererOutputFrameRate,
-    @required int targetBitrate,
-    @required int targetFrameRate,
-    @required int qualityAdaptIndication,
-    @required int encodedBitrate,
-    @required int encodedFrameWidth,
-    @required int encodedFrameHeight,
-    @required int encodedFrameCount,
-    @required int codecType,
-    @required int txPacketLossRate,
-    @required int captureFrameRate,
-    @required int captureBrightnessLevel,
+    required int sentBitrate,
+    required int sentFrameRate,
+    required int encoderOutputFrameRate,
+    required int rendererOutputFrameRate,
+    required int targetBitrate,
+    required int targetFrameRate,
+    required int qualityAdaptIndication,
+    required int encodedBitrate,
+    required int encodedFrameWidth,
+    required int encodedFrameHeight,
+    required int encodedFrameCount,
+    required int codecType,
+    required int txPacketLossRate,
+    required int captureFrameRate,
+    required int captureBrightnessLevel,
   }) = _LocalVideoStats;
 
   factory LocalVideoStats.fromJson(Map<String, dynamic> json) => _$LocalVideoStatsFromJson(json);
 }
 
 @freezed
-abstract class AudioVolumeInfo with _$AudioVolumeInfo {
+class AudioVolumeInfo with _$AudioVolumeInfo {
   const factory AudioVolumeInfo({
-    @required int uid,
-    @required int volume,
-    @required int vad,
-    @required String channelId,
+    required int uid,
+    required int volume,
+    required int vad,
+    required String channelId,
   }) = _AudioVolumeInfo;
 
   factory AudioVolumeInfo.fromJson(Map<String, dynamic> json) => _$AudioVolumeInfoFromJson(json);
 }
 
 @freezed
-abstract class Participant with _$Participant {
+class Participant with _$Participant {
   const factory Participant({
-    @required int uid,
+    required int uid,
     @Default(AudioRemoteState.stopped) AudioRemoteState audioState,
     @Default(VideoRemoteState.stopped) VideoRemoteState videoState,
-    RemoteAudioStats audioStats,
-    RemoteVideoStats videoStats,
-    AudioVolumeInfo volumeInfo,
+    RemoteAudioStats? audioStats,
+    RemoteVideoStats? videoStats,
+    AudioVolumeInfo? volumeInfo,
     @Default(false) bool hasFrames,
   }) = _Participant;
 
@@ -188,14 +188,14 @@ abstract class Participant with _$Participant {
 }
 
 @freezed
-abstract class LocalParticipant with _$LocalParticipant {
+class LocalParticipant with _$LocalParticipant {
   const factory LocalParticipant({
-    int uid,
+    int? uid,
     @Default(AudioLocalState.stopped) AudioLocalState audioState,
     @Default(VideoLocalState.stopped) VideoLocalState videoState,
-    LocalAudioStats audioStats,
-    LocalVideoStats videoStats,
-    AudioVolumeInfo volumeInfo,
+    LocalAudioStats? audioStats,
+    LocalVideoStats? videoStats,
+    AudioVolumeInfo? volumeInfo,
     @Default(false) bool hasFrames,
   }) = _LocalParticipant;
 

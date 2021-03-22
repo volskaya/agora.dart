@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'props.dart';
 
@@ -8,6 +8,10 @@ part of 'props.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 EngineState _$EngineStateFromJson(Map<String, dynamic> json) {
   return _EngineState.fromJson(json);
 }
@@ -16,13 +20,12 @@ EngineState _$EngineStateFromJson(Map<String, dynamic> json) {
 class _$EngineStateTearOff {
   const _$EngineStateTearOff();
 
-// ignore: unused_element
   _EngineState call(
       {ConnectionStateType connectionState = ConnectionStateType.disconnected,
-      String channel,
-      int activeSpeaker,
-      LocalParticipant participant,
-      @SetFromListConverter() Set<int> onlineParticipants}) {
+      String? channel,
+      int? activeSpeaker,
+      LocalParticipant? participant,
+      @SetFromListConverter() Set<int> onlineParticipants = const <int>{}}) {
     return _EngineState(
       connectionState: connectionState,
       channel: channel,
@@ -32,27 +35,28 @@ class _$EngineStateTearOff {
     );
   }
 
-// ignore: unused_element
   EngineState fromJson(Map<String, Object> json) {
     return EngineState.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $EngineState = _$EngineStateTearOff();
 
 /// @nodoc
 mixin _$EngineState {
-  ConnectionStateType get connectionState;
-  String get channel;
-  int get activeSpeaker;
-  LocalParticipant get participant; // Local participant.
+  ConnectionStateType get connectionState => throw _privateConstructorUsedError;
+  String? get channel => throw _privateConstructorUsedError;
+  int? get activeSpeaker => throw _privateConstructorUsedError;
+  LocalParticipant? get participant =>
+      throw _privateConstructorUsedError; // Local participant.
   @SetFromListConverter()
-  Set<int> get onlineParticipants;
+  Set<int> get onlineParticipants => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $EngineStateCopyWith<EngineState> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $EngineStateCopyWith<EngineState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -62,12 +66,12 @@ abstract class $EngineStateCopyWith<$Res> {
       _$EngineStateCopyWithImpl<$Res>;
   $Res call(
       {ConnectionStateType connectionState,
-      String channel,
-      int activeSpeaker,
-      LocalParticipant participant,
+      String? channel,
+      int? activeSpeaker,
+      LocalParticipant? participant,
       @SetFromListConverter() Set<int> onlineParticipants});
 
-  $LocalParticipantCopyWith<$Res> get participant;
+  $LocalParticipantCopyWith<$Res>? get participant;
 }
 
 /// @nodoc
@@ -80,35 +84,43 @@ class _$EngineStateCopyWithImpl<$Res> implements $EngineStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object connectionState = freezed,
-    Object channel = freezed,
-    Object activeSpeaker = freezed,
-    Object participant = freezed,
-    Object onlineParticipants = freezed,
+    Object? connectionState = freezed,
+    Object? channel = freezed,
+    Object? activeSpeaker = freezed,
+    Object? participant = freezed,
+    Object? onlineParticipants = freezed,
   }) {
     return _then(_value.copyWith(
       connectionState: connectionState == freezed
           ? _value.connectionState
-          : connectionState as ConnectionStateType,
-      channel: channel == freezed ? _value.channel : channel as String,
+          : connectionState // ignore: cast_nullable_to_non_nullable
+              as ConnectionStateType,
+      channel: channel == freezed
+          ? _value.channel
+          : channel // ignore: cast_nullable_to_non_nullable
+              as String?,
       activeSpeaker: activeSpeaker == freezed
           ? _value.activeSpeaker
-          : activeSpeaker as int,
+          : activeSpeaker // ignore: cast_nullable_to_non_nullable
+              as int?,
       participant: participant == freezed
           ? _value.participant
-          : participant as LocalParticipant,
+          : participant // ignore: cast_nullable_to_non_nullable
+              as LocalParticipant?,
       onlineParticipants: onlineParticipants == freezed
           ? _value.onlineParticipants
-          : onlineParticipants as Set<int>,
+          : onlineParticipants // ignore: cast_nullable_to_non_nullable
+              as Set<int>,
     ));
   }
 
   @override
-  $LocalParticipantCopyWith<$Res> get participant {
+  $LocalParticipantCopyWith<$Res>? get participant {
     if (_value.participant == null) {
       return null;
     }
-    return $LocalParticipantCopyWith<$Res>(_value.participant, (value) {
+
+    return $LocalParticipantCopyWith<$Res>(_value.participant!, (value) {
       return _then(_value.copyWith(participant: value));
     });
   }
@@ -123,13 +135,13 @@ abstract class _$EngineStateCopyWith<$Res>
   @override
   $Res call(
       {ConnectionStateType connectionState,
-      String channel,
-      int activeSpeaker,
-      LocalParticipant participant,
+      String? channel,
+      int? activeSpeaker,
+      LocalParticipant? participant,
       @SetFromListConverter() Set<int> onlineParticipants});
 
   @override
-  $LocalParticipantCopyWith<$Res> get participant;
+  $LocalParticipantCopyWith<$Res>? get participant;
 }
 
 /// @nodoc
@@ -144,26 +156,33 @@ class __$EngineStateCopyWithImpl<$Res> extends _$EngineStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object connectionState = freezed,
-    Object channel = freezed,
-    Object activeSpeaker = freezed,
-    Object participant = freezed,
-    Object onlineParticipants = freezed,
+    Object? connectionState = freezed,
+    Object? channel = freezed,
+    Object? activeSpeaker = freezed,
+    Object? participant = freezed,
+    Object? onlineParticipants = freezed,
   }) {
     return _then(_EngineState(
       connectionState: connectionState == freezed
           ? _value.connectionState
-          : connectionState as ConnectionStateType,
-      channel: channel == freezed ? _value.channel : channel as String,
+          : connectionState // ignore: cast_nullable_to_non_nullable
+              as ConnectionStateType,
+      channel: channel == freezed
+          ? _value.channel
+          : channel // ignore: cast_nullable_to_non_nullable
+              as String?,
       activeSpeaker: activeSpeaker == freezed
           ? _value.activeSpeaker
-          : activeSpeaker as int,
+          : activeSpeaker // ignore: cast_nullable_to_non_nullable
+              as int?,
       participant: participant == freezed
           ? _value.participant
-          : participant as LocalParticipant,
+          : participant // ignore: cast_nullable_to_non_nullable
+              as LocalParticipant?,
       onlineParticipants: onlineParticipants == freezed
           ? _value.onlineParticipants
-          : onlineParticipants as Set<int>,
+          : onlineParticipants // ignore: cast_nullable_to_non_nullable
+              as Set<int>,
     ));
   }
 }
@@ -177,8 +196,7 @@ class _$_EngineState implements _EngineState {
       this.channel,
       this.activeSpeaker,
       this.participant,
-      @SetFromListConverter() this.onlineParticipants})
-      : assert(connectionState != null);
+      @SetFromListConverter() this.onlineParticipants = const <int>{}});
 
   factory _$_EngineState.fromJson(Map<String, dynamic> json) =>
       _$_$_EngineStateFromJson(json);
@@ -187,11 +205,12 @@ class _$_EngineState implements _EngineState {
   @override
   final ConnectionStateType connectionState;
   @override
-  final String channel;
+  final String? channel;
   @override
-  final int activeSpeaker;
+  final int? activeSpeaker;
   @override
-  final LocalParticipant participant;
+  final LocalParticipant? participant;
+  @JsonKey(defaultValue: const <int>{})
   @override // Local participant.
   @SetFromListConverter()
   final Set<int> onlineParticipants;
@@ -231,6 +250,7 @@ class _$_EngineState implements _EngineState {
       const DeepCollectionEquality().hash(participant) ^
       const DeepCollectionEquality().hash(onlineParticipants);
 
+  @JsonKey(ignore: true)
   @override
   _$EngineStateCopyWith<_EngineState> get copyWith =>
       __$EngineStateCopyWithImpl<_EngineState>(this, _$identity);
@@ -244,27 +264,29 @@ class _$_EngineState implements _EngineState {
 abstract class _EngineState implements EngineState {
   const factory _EngineState(
       {ConnectionStateType connectionState,
-      String channel,
-      int activeSpeaker,
-      LocalParticipant participant,
+      String? channel,
+      int? activeSpeaker,
+      LocalParticipant? participant,
       @SetFromListConverter() Set<int> onlineParticipants}) = _$_EngineState;
 
   factory _EngineState.fromJson(Map<String, dynamic> json) =
       _$_EngineState.fromJson;
 
   @override
-  ConnectionStateType get connectionState;
+  ConnectionStateType get connectionState => throw _privateConstructorUsedError;
   @override
-  String get channel;
+  String? get channel => throw _privateConstructorUsedError;
   @override
-  int get activeSpeaker;
+  int? get activeSpeaker => throw _privateConstructorUsedError;
   @override
-  LocalParticipant get participant;
+  LocalParticipant? get participant => throw _privateConstructorUsedError;
   @override // Local participant.
   @SetFromListConverter()
-  Set<int> get onlineParticipants;
+  Set<int> get onlineParticipants => throw _privateConstructorUsedError;
   @override
-  _$EngineStateCopyWith<_EngineState> get copyWith;
+  @JsonKey(ignore: true)
+  _$EngineStateCopyWith<_EngineState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 InitializeEngineProps _$InitializeEnginePropsFromJson(
@@ -276,11 +298,10 @@ InitializeEngineProps _$InitializeEnginePropsFromJson(
 class _$InitializeEnginePropsTearOff {
   const _$InitializeEnginePropsTearOff();
 
-// ignore: unused_element
   _InitializeEngineProps call(
-      {@required String appId,
+      {required String appId,
       AreaCode areaCode = AreaCode.global,
-      NotificationProps notificationSettings}) {
+      NotificationProps? notificationSettings}) {
     return _InitializeEngineProps(
       appId: appId,
       areaCode: areaCode,
@@ -288,24 +309,25 @@ class _$InitializeEnginePropsTearOff {
     );
   }
 
-// ignore: unused_element
   InitializeEngineProps fromJson(Map<String, Object> json) {
     return InitializeEngineProps.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $InitializeEngineProps = _$InitializeEnginePropsTearOff();
 
 /// @nodoc
 mixin _$InitializeEngineProps {
-  String get appId;
-  AreaCode get areaCode;
-  NotificationProps get notificationSettings;
+  String get appId => throw _privateConstructorUsedError;
+  AreaCode get areaCode => throw _privateConstructorUsedError;
+  NotificationProps? get notificationSettings =>
+      throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $InitializeEnginePropsCopyWith<InitializeEngineProps> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InitializeEnginePropsCopyWith<InitializeEngineProps> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -316,9 +338,9 @@ abstract class $InitializeEnginePropsCopyWith<$Res> {
   $Res call(
       {String appId,
       AreaCode areaCode,
-      NotificationProps notificationSettings});
+      NotificationProps? notificationSettings});
 
-  $NotificationPropsCopyWith<$Res> get notificationSettings;
+  $NotificationPropsCopyWith<$Res>? get notificationSettings;
 }
 
 /// @nodoc
@@ -332,25 +354,33 @@ class _$InitializeEnginePropsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object appId = freezed,
-    Object areaCode = freezed,
-    Object notificationSettings = freezed,
+    Object? appId = freezed,
+    Object? areaCode = freezed,
+    Object? notificationSettings = freezed,
   }) {
     return _then(_value.copyWith(
-      appId: appId == freezed ? _value.appId : appId as String,
-      areaCode: areaCode == freezed ? _value.areaCode : areaCode as AreaCode,
+      appId: appId == freezed
+          ? _value.appId
+          : appId // ignore: cast_nullable_to_non_nullable
+              as String,
+      areaCode: areaCode == freezed
+          ? _value.areaCode
+          : areaCode // ignore: cast_nullable_to_non_nullable
+              as AreaCode,
       notificationSettings: notificationSettings == freezed
           ? _value.notificationSettings
-          : notificationSettings as NotificationProps,
+          : notificationSettings // ignore: cast_nullable_to_non_nullable
+              as NotificationProps?,
     ));
   }
 
   @override
-  $NotificationPropsCopyWith<$Res> get notificationSettings {
+  $NotificationPropsCopyWith<$Res>? get notificationSettings {
     if (_value.notificationSettings == null) {
       return null;
     }
-    return $NotificationPropsCopyWith<$Res>(_value.notificationSettings,
+
+    return $NotificationPropsCopyWith<$Res>(_value.notificationSettings!,
         (value) {
       return _then(_value.copyWith(notificationSettings: value));
     });
@@ -367,10 +397,10 @@ abstract class _$InitializeEnginePropsCopyWith<$Res>
   $Res call(
       {String appId,
       AreaCode areaCode,
-      NotificationProps notificationSettings});
+      NotificationProps? notificationSettings});
 
   @override
-  $NotificationPropsCopyWith<$Res> get notificationSettings;
+  $NotificationPropsCopyWith<$Res>? get notificationSettings;
 }
 
 /// @nodoc
@@ -386,16 +416,23 @@ class __$InitializeEnginePropsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object appId = freezed,
-    Object areaCode = freezed,
-    Object notificationSettings = freezed,
+    Object? appId = freezed,
+    Object? areaCode = freezed,
+    Object? notificationSettings = freezed,
   }) {
     return _then(_InitializeEngineProps(
-      appId: appId == freezed ? _value.appId : appId as String,
-      areaCode: areaCode == freezed ? _value.areaCode : areaCode as AreaCode,
+      appId: appId == freezed
+          ? _value.appId
+          : appId // ignore: cast_nullable_to_non_nullable
+              as String,
+      areaCode: areaCode == freezed
+          ? _value.areaCode
+          : areaCode // ignore: cast_nullable_to_non_nullable
+              as AreaCode,
       notificationSettings: notificationSettings == freezed
           ? _value.notificationSettings
-          : notificationSettings as NotificationProps,
+          : notificationSettings // ignore: cast_nullable_to_non_nullable
+              as NotificationProps?,
     ));
   }
 }
@@ -405,11 +442,9 @@ class __$InitializeEnginePropsCopyWithImpl<$Res>
 /// @nodoc
 class _$_InitializeEngineProps implements _InitializeEngineProps {
   const _$_InitializeEngineProps(
-      {@required this.appId,
+      {required this.appId,
       this.areaCode = AreaCode.global,
-      this.notificationSettings})
-      : assert(appId != null),
-        assert(areaCode != null);
+      this.notificationSettings});
 
   factory _$_InitializeEngineProps.fromJson(Map<String, dynamic> json) =>
       _$_$_InitializeEnginePropsFromJson(json);
@@ -420,7 +455,7 @@ class _$_InitializeEngineProps implements _InitializeEngineProps {
   @override
   final AreaCode areaCode;
   @override
-  final NotificationProps notificationSettings;
+  final NotificationProps? notificationSettings;
 
   @override
   String toString() {
@@ -448,6 +483,7 @@ class _$_InitializeEngineProps implements _InitializeEngineProps {
       const DeepCollectionEquality().hash(areaCode) ^
       const DeepCollectionEquality().hash(notificationSettings);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializeEnginePropsCopyWith<_InitializeEngineProps> get copyWith =>
       __$InitializeEnginePropsCopyWithImpl<_InitializeEngineProps>(
@@ -461,21 +497,24 @@ class _$_InitializeEngineProps implements _InitializeEngineProps {
 
 abstract class _InitializeEngineProps implements InitializeEngineProps {
   const factory _InitializeEngineProps(
-      {@required String appId,
+      {required String appId,
       AreaCode areaCode,
-      NotificationProps notificationSettings}) = _$_InitializeEngineProps;
+      NotificationProps? notificationSettings}) = _$_InitializeEngineProps;
 
   factory _InitializeEngineProps.fromJson(Map<String, dynamic> json) =
       _$_InitializeEngineProps.fromJson;
 
   @override
-  String get appId;
+  String get appId => throw _privateConstructorUsedError;
   @override
-  AreaCode get areaCode;
+  AreaCode get areaCode => throw _privateConstructorUsedError;
   @override
-  NotificationProps get notificationSettings;
+  NotificationProps? get notificationSettings =>
+      throw _privateConstructorUsedError;
   @override
-  _$InitializeEnginePropsCopyWith<_InitializeEngineProps> get copyWith;
+  @JsonKey(ignore: true)
+  _$InitializeEnginePropsCopyWith<_InitializeEngineProps> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 NotificationProps _$NotificationPropsFromJson(Map<String, dynamic> json) {
@@ -486,31 +525,30 @@ NotificationProps _$NotificationPropsFromJson(Map<String, dynamic> json) {
 class _$NotificationPropsTearOff {
   const _$NotificationPropsTearOff();
 
-// ignore: unused_element
-  _NotificationProps call({String title, String subtitle}) {
+  _NotificationProps call({String? title, String? subtitle}) {
     return _NotificationProps(
       title: title,
       subtitle: subtitle,
     );
   }
 
-// ignore: unused_element
   NotificationProps fromJson(Map<String, Object> json) {
     return NotificationProps.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $NotificationProps = _$NotificationPropsTearOff();
 
 /// @nodoc
 mixin _$NotificationProps {
-  String get title;
-  String get subtitle;
+  String? get title => throw _privateConstructorUsedError;
+  String? get subtitle => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $NotificationPropsCopyWith<NotificationProps> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $NotificationPropsCopyWith<NotificationProps> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -518,7 +556,7 @@ abstract class $NotificationPropsCopyWith<$Res> {
   factory $NotificationPropsCopyWith(
           NotificationProps value, $Res Function(NotificationProps) then) =
       _$NotificationPropsCopyWithImpl<$Res>;
-  $Res call({String title, String subtitle});
+  $Res call({String? title, String? subtitle});
 }
 
 /// @nodoc
@@ -532,12 +570,18 @@ class _$NotificationPropsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object title = freezed,
-    Object subtitle = freezed,
+    Object? title = freezed,
+    Object? subtitle = freezed,
   }) {
     return _then(_value.copyWith(
-      title: title == freezed ? _value.title : title as String,
-      subtitle: subtitle == freezed ? _value.subtitle : subtitle as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+      subtitle: subtitle == freezed
+          ? _value.subtitle
+          : subtitle // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -549,7 +593,7 @@ abstract class _$NotificationPropsCopyWith<$Res>
           _NotificationProps value, $Res Function(_NotificationProps) then) =
       __$NotificationPropsCopyWithImpl<$Res>;
   @override
-  $Res call({String title, String subtitle});
+  $Res call({String? title, String? subtitle});
 }
 
 /// @nodoc
@@ -565,12 +609,18 @@ class __$NotificationPropsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object title = freezed,
-    Object subtitle = freezed,
+    Object? title = freezed,
+    Object? subtitle = freezed,
   }) {
     return _then(_NotificationProps(
-      title: title == freezed ? _value.title : title as String,
-      subtitle: subtitle == freezed ? _value.subtitle : subtitle as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+      subtitle: subtitle == freezed
+          ? _value.subtitle
+          : subtitle // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -585,9 +635,9 @@ class _$_NotificationProps implements _NotificationProps {
       _$_$_NotificationPropsFromJson(json);
 
   @override
-  final String title;
+  final String? title;
   @override
-  final String subtitle;
+  final String? subtitle;
 
   @override
   String toString() {
@@ -611,6 +661,7 @@ class _$_NotificationProps implements _NotificationProps {
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(subtitle);
 
+  @JsonKey(ignore: true)
   @override
   _$NotificationPropsCopyWith<_NotificationProps> get copyWith =>
       __$NotificationPropsCopyWithImpl<_NotificationProps>(this, _$identity);
@@ -622,18 +673,20 @@ class _$_NotificationProps implements _NotificationProps {
 }
 
 abstract class _NotificationProps implements NotificationProps {
-  const factory _NotificationProps({String title, String subtitle}) =
+  const factory _NotificationProps({String? title, String? subtitle}) =
       _$_NotificationProps;
 
   factory _NotificationProps.fromJson(Map<String, dynamic> json) =
       _$_NotificationProps.fromJson;
 
   @override
-  String get title;
+  String? get title => throw _privateConstructorUsedError;
   @override
-  String get subtitle;
+  String? get subtitle => throw _privateConstructorUsedError;
   @override
-  _$NotificationPropsCopyWith<_NotificationProps> get copyWith;
+  @JsonKey(ignore: true)
+  _$NotificationPropsCopyWith<_NotificationProps> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 JoinChannelProps _$JoinChannelPropsFromJson(Map<String, dynamic> json) {
@@ -644,11 +697,10 @@ JoinChannelProps _$JoinChannelPropsFromJson(Map<String, dynamic> json) {
 class _$JoinChannelPropsTearOff {
   const _$JoinChannelPropsTearOff();
 
-// ignore: unused_element
   _JoinChannelProps call(
-      {@required String token,
-      @required String channelName,
-      @required int uid,
+      {required String token,
+      required String channelName,
+      required int uid,
       ChannelProfile profile = ChannelProfile.liveBroadcasting,
       ClientRole role = ClientRole.broadcaster}) {
     return _JoinChannelProps(
@@ -660,26 +712,26 @@ class _$JoinChannelPropsTearOff {
     );
   }
 
-// ignore: unused_element
   JoinChannelProps fromJson(Map<String, Object> json) {
     return JoinChannelProps.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $JoinChannelProps = _$JoinChannelPropsTearOff();
 
 /// @nodoc
 mixin _$JoinChannelProps {
-  String get token;
-  String get channelName;
-  int get uid;
-  ChannelProfile get profile;
-  ClientRole get role;
+  String get token => throw _privateConstructorUsedError;
+  String get channelName => throw _privateConstructorUsedError;
+  int get uid => throw _privateConstructorUsedError;
+  ChannelProfile get profile => throw _privateConstructorUsedError;
+  ClientRole get role => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $JoinChannelPropsCopyWith<JoinChannelProps> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $JoinChannelPropsCopyWith<JoinChannelProps> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -706,19 +758,33 @@ class _$JoinChannelPropsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object token = freezed,
-    Object channelName = freezed,
-    Object uid = freezed,
-    Object profile = freezed,
-    Object role = freezed,
+    Object? token = freezed,
+    Object? channelName = freezed,
+    Object? uid = freezed,
+    Object? profile = freezed,
+    Object? role = freezed,
   }) {
     return _then(_value.copyWith(
-      token: token == freezed ? _value.token : token as String,
-      channelName:
-          channelName == freezed ? _value.channelName : channelName as String,
-      uid: uid == freezed ? _value.uid : uid as int,
-      profile: profile == freezed ? _value.profile : profile as ChannelProfile,
-      role: role == freezed ? _value.role : role as ClientRole,
+      token: token == freezed
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String,
+      channelName: channelName == freezed
+          ? _value.channelName
+          : channelName // ignore: cast_nullable_to_non_nullable
+              as String,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as int,
+      profile: profile == freezed
+          ? _value.profile
+          : profile // ignore: cast_nullable_to_non_nullable
+              as ChannelProfile,
+      role: role == freezed
+          ? _value.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as ClientRole,
     ));
   }
 }
@@ -751,19 +817,33 @@ class __$JoinChannelPropsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object token = freezed,
-    Object channelName = freezed,
-    Object uid = freezed,
-    Object profile = freezed,
-    Object role = freezed,
+    Object? token = freezed,
+    Object? channelName = freezed,
+    Object? uid = freezed,
+    Object? profile = freezed,
+    Object? role = freezed,
   }) {
     return _then(_JoinChannelProps(
-      token: token == freezed ? _value.token : token as String,
-      channelName:
-          channelName == freezed ? _value.channelName : channelName as String,
-      uid: uid == freezed ? _value.uid : uid as int,
-      profile: profile == freezed ? _value.profile : profile as ChannelProfile,
-      role: role == freezed ? _value.role : role as ClientRole,
+      token: token == freezed
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String,
+      channelName: channelName == freezed
+          ? _value.channelName
+          : channelName // ignore: cast_nullable_to_non_nullable
+              as String,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as int,
+      profile: profile == freezed
+          ? _value.profile
+          : profile // ignore: cast_nullable_to_non_nullable
+              as ChannelProfile,
+      role: role == freezed
+          ? _value.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as ClientRole,
     ));
   }
 }
@@ -773,16 +853,11 @@ class __$JoinChannelPropsCopyWithImpl<$Res>
 /// @nodoc
 class _$_JoinChannelProps implements _JoinChannelProps {
   const _$_JoinChannelProps(
-      {@required this.token,
-      @required this.channelName,
-      @required this.uid,
+      {required this.token,
+      required this.channelName,
+      required this.uid,
       this.profile = ChannelProfile.liveBroadcasting,
-      this.role = ClientRole.broadcaster})
-      : assert(token != null),
-        assert(channelName != null),
-        assert(uid != null),
-        assert(profile != null),
-        assert(role != null);
+      this.role = ClientRole.broadcaster});
 
   factory _$_JoinChannelProps.fromJson(Map<String, dynamic> json) =>
       _$_$_JoinChannelPropsFromJson(json);
@@ -832,6 +907,7 @@ class _$_JoinChannelProps implements _JoinChannelProps {
       const DeepCollectionEquality().hash(profile) ^
       const DeepCollectionEquality().hash(role);
 
+  @JsonKey(ignore: true)
   @override
   _$JoinChannelPropsCopyWith<_JoinChannelProps> get copyWith =>
       __$JoinChannelPropsCopyWithImpl<_JoinChannelProps>(this, _$identity);
@@ -844,9 +920,9 @@ class _$_JoinChannelProps implements _JoinChannelProps {
 
 abstract class _JoinChannelProps implements JoinChannelProps {
   const factory _JoinChannelProps(
-      {@required String token,
-      @required String channelName,
-      @required int uid,
+      {required String token,
+      required String channelName,
+      required int uid,
       ChannelProfile profile,
       ClientRole role}) = _$_JoinChannelProps;
 
@@ -854,17 +930,19 @@ abstract class _JoinChannelProps implements JoinChannelProps {
       _$_JoinChannelProps.fromJson;
 
   @override
-  String get token;
+  String get token => throw _privateConstructorUsedError;
   @override
-  String get channelName;
+  String get channelName => throw _privateConstructorUsedError;
   @override
-  int get uid;
+  int get uid => throw _privateConstructorUsedError;
   @override
-  ChannelProfile get profile;
+  ChannelProfile get profile => throw _privateConstructorUsedError;
   @override
-  ClientRole get role;
+  ClientRole get role => throw _privateConstructorUsedError;
   @override
-  _$JoinChannelPropsCopyWith<_JoinChannelProps> get copyWith;
+  @JsonKey(ignore: true)
+  _$JoinChannelPropsCopyWith<_JoinChannelProps> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 RtcStats _$RtcStatsFromJson(Map<String, dynamic> json) {
@@ -875,7 +953,6 @@ RtcStats _$RtcStatsFromJson(Map<String, dynamic> json) {
 class _$RtcStatsTearOff {
   const _$RtcStatsTearOff();
 
-// ignore: unused_element
   _RtcStats call(
       {int totalDuration = 0,
       int txBytes = 0,
@@ -927,44 +1004,44 @@ class _$RtcStatsTearOff {
     );
   }
 
-// ignore: unused_element
   RtcStats fromJson(Map<String, Object> json) {
     return RtcStats.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $RtcStats = _$RtcStatsTearOff();
 
 /// @nodoc
 mixin _$RtcStats {
-  int get totalDuration;
-  int get txBytes;
-  int get rxBytes;
-  int get txAudioBytes;
-  int get txVideoBytes;
-  int get rxAudioBytes;
-  int get rxVideoBytes;
-  int get txKBitRate;
-  int get rxKBitRate;
-  int get txAudioKBitRate;
-  int get rxAudioKBitRate;
-  int get txVideoKBitRate;
-  int get rxVideoKBitRate;
-  int get users;
-  int get lastmileDelay;
-  int get txPacketLossRate;
-  int get rxPacketLossRate;
-  double get cpuTotalUsage;
-  double get cpuAppUsage;
-  int get gatewayRtt;
-  double get memoryAppUsageRatio;
-  double get memoryTotalUsageRatio;
-  int get memoryAppUsageInKbyte;
+  int get totalDuration => throw _privateConstructorUsedError;
+  int get txBytes => throw _privateConstructorUsedError;
+  int get rxBytes => throw _privateConstructorUsedError;
+  int get txAudioBytes => throw _privateConstructorUsedError;
+  int get txVideoBytes => throw _privateConstructorUsedError;
+  int get rxAudioBytes => throw _privateConstructorUsedError;
+  int get rxVideoBytes => throw _privateConstructorUsedError;
+  int get txKBitRate => throw _privateConstructorUsedError;
+  int get rxKBitRate => throw _privateConstructorUsedError;
+  int get txAudioKBitRate => throw _privateConstructorUsedError;
+  int get rxAudioKBitRate => throw _privateConstructorUsedError;
+  int get txVideoKBitRate => throw _privateConstructorUsedError;
+  int get rxVideoKBitRate => throw _privateConstructorUsedError;
+  int get users => throw _privateConstructorUsedError;
+  int get lastmileDelay => throw _privateConstructorUsedError;
+  int get txPacketLossRate => throw _privateConstructorUsedError;
+  int get rxPacketLossRate => throw _privateConstructorUsedError;
+  double get cpuTotalUsage => throw _privateConstructorUsedError;
+  double get cpuAppUsage => throw _privateConstructorUsedError;
+  int get gatewayRtt => throw _privateConstructorUsedError;
+  double get memoryAppUsageRatio => throw _privateConstructorUsedError;
+  double get memoryTotalUsageRatio => throw _privateConstructorUsedError;
+  int get memoryAppUsageInKbyte => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $RtcStatsCopyWith<RtcStats> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $RtcStatsCopyWith<RtcStats> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1007,83 +1084,123 @@ class _$RtcStatsCopyWithImpl<$Res> implements $RtcStatsCopyWith<$Res> {
 
   @override
   $Res call({
-    Object totalDuration = freezed,
-    Object txBytes = freezed,
-    Object rxBytes = freezed,
-    Object txAudioBytes = freezed,
-    Object txVideoBytes = freezed,
-    Object rxAudioBytes = freezed,
-    Object rxVideoBytes = freezed,
-    Object txKBitRate = freezed,
-    Object rxKBitRate = freezed,
-    Object txAudioKBitRate = freezed,
-    Object rxAudioKBitRate = freezed,
-    Object txVideoKBitRate = freezed,
-    Object rxVideoKBitRate = freezed,
-    Object users = freezed,
-    Object lastmileDelay = freezed,
-    Object txPacketLossRate = freezed,
-    Object rxPacketLossRate = freezed,
-    Object cpuTotalUsage = freezed,
-    Object cpuAppUsage = freezed,
-    Object gatewayRtt = freezed,
-    Object memoryAppUsageRatio = freezed,
-    Object memoryTotalUsageRatio = freezed,
-    Object memoryAppUsageInKbyte = freezed,
+    Object? totalDuration = freezed,
+    Object? txBytes = freezed,
+    Object? rxBytes = freezed,
+    Object? txAudioBytes = freezed,
+    Object? txVideoBytes = freezed,
+    Object? rxAudioBytes = freezed,
+    Object? rxVideoBytes = freezed,
+    Object? txKBitRate = freezed,
+    Object? rxKBitRate = freezed,
+    Object? txAudioKBitRate = freezed,
+    Object? rxAudioKBitRate = freezed,
+    Object? txVideoKBitRate = freezed,
+    Object? rxVideoKBitRate = freezed,
+    Object? users = freezed,
+    Object? lastmileDelay = freezed,
+    Object? txPacketLossRate = freezed,
+    Object? rxPacketLossRate = freezed,
+    Object? cpuTotalUsage = freezed,
+    Object? cpuAppUsage = freezed,
+    Object? gatewayRtt = freezed,
+    Object? memoryAppUsageRatio = freezed,
+    Object? memoryTotalUsageRatio = freezed,
+    Object? memoryAppUsageInKbyte = freezed,
   }) {
     return _then(_value.copyWith(
       totalDuration: totalDuration == freezed
           ? _value.totalDuration
-          : totalDuration as int,
-      txBytes: txBytes == freezed ? _value.txBytes : txBytes as int,
-      rxBytes: rxBytes == freezed ? _value.rxBytes : rxBytes as int,
-      txAudioBytes:
-          txAudioBytes == freezed ? _value.txAudioBytes : txAudioBytes as int,
-      txVideoBytes:
-          txVideoBytes == freezed ? _value.txVideoBytes : txVideoBytes as int,
-      rxAudioBytes:
-          rxAudioBytes == freezed ? _value.rxAudioBytes : rxAudioBytes as int,
-      rxVideoBytes:
-          rxVideoBytes == freezed ? _value.rxVideoBytes : rxVideoBytes as int,
-      txKBitRate: txKBitRate == freezed ? _value.txKBitRate : txKBitRate as int,
-      rxKBitRate: rxKBitRate == freezed ? _value.rxKBitRate : rxKBitRate as int,
+          : totalDuration // ignore: cast_nullable_to_non_nullable
+              as int,
+      txBytes: txBytes == freezed
+          ? _value.txBytes
+          : txBytes // ignore: cast_nullable_to_non_nullable
+              as int,
+      rxBytes: rxBytes == freezed
+          ? _value.rxBytes
+          : rxBytes // ignore: cast_nullable_to_non_nullable
+              as int,
+      txAudioBytes: txAudioBytes == freezed
+          ? _value.txAudioBytes
+          : txAudioBytes // ignore: cast_nullable_to_non_nullable
+              as int,
+      txVideoBytes: txVideoBytes == freezed
+          ? _value.txVideoBytes
+          : txVideoBytes // ignore: cast_nullable_to_non_nullable
+              as int,
+      rxAudioBytes: rxAudioBytes == freezed
+          ? _value.rxAudioBytes
+          : rxAudioBytes // ignore: cast_nullable_to_non_nullable
+              as int,
+      rxVideoBytes: rxVideoBytes == freezed
+          ? _value.rxVideoBytes
+          : rxVideoBytes // ignore: cast_nullable_to_non_nullable
+              as int,
+      txKBitRate: txKBitRate == freezed
+          ? _value.txKBitRate
+          : txKBitRate // ignore: cast_nullable_to_non_nullable
+              as int,
+      rxKBitRate: rxKBitRate == freezed
+          ? _value.rxKBitRate
+          : rxKBitRate // ignore: cast_nullable_to_non_nullable
+              as int,
       txAudioKBitRate: txAudioKBitRate == freezed
           ? _value.txAudioKBitRate
-          : txAudioKBitRate as int,
+          : txAudioKBitRate // ignore: cast_nullable_to_non_nullable
+              as int,
       rxAudioKBitRate: rxAudioKBitRate == freezed
           ? _value.rxAudioKBitRate
-          : rxAudioKBitRate as int,
+          : rxAudioKBitRate // ignore: cast_nullable_to_non_nullable
+              as int,
       txVideoKBitRate: txVideoKBitRate == freezed
           ? _value.txVideoKBitRate
-          : txVideoKBitRate as int,
+          : txVideoKBitRate // ignore: cast_nullable_to_non_nullable
+              as int,
       rxVideoKBitRate: rxVideoKBitRate == freezed
           ? _value.rxVideoKBitRate
-          : rxVideoKBitRate as int,
-      users: users == freezed ? _value.users : users as int,
+          : rxVideoKBitRate // ignore: cast_nullable_to_non_nullable
+              as int,
+      users: users == freezed
+          ? _value.users
+          : users // ignore: cast_nullable_to_non_nullable
+              as int,
       lastmileDelay: lastmileDelay == freezed
           ? _value.lastmileDelay
-          : lastmileDelay as int,
+          : lastmileDelay // ignore: cast_nullable_to_non_nullable
+              as int,
       txPacketLossRate: txPacketLossRate == freezed
           ? _value.txPacketLossRate
-          : txPacketLossRate as int,
+          : txPacketLossRate // ignore: cast_nullable_to_non_nullable
+              as int,
       rxPacketLossRate: rxPacketLossRate == freezed
           ? _value.rxPacketLossRate
-          : rxPacketLossRate as int,
+          : rxPacketLossRate // ignore: cast_nullable_to_non_nullable
+              as int,
       cpuTotalUsage: cpuTotalUsage == freezed
           ? _value.cpuTotalUsage
-          : cpuTotalUsage as double,
-      cpuAppUsage:
-          cpuAppUsage == freezed ? _value.cpuAppUsage : cpuAppUsage as double,
-      gatewayRtt: gatewayRtt == freezed ? _value.gatewayRtt : gatewayRtt as int,
+          : cpuTotalUsage // ignore: cast_nullable_to_non_nullable
+              as double,
+      cpuAppUsage: cpuAppUsage == freezed
+          ? _value.cpuAppUsage
+          : cpuAppUsage // ignore: cast_nullable_to_non_nullable
+              as double,
+      gatewayRtt: gatewayRtt == freezed
+          ? _value.gatewayRtt
+          : gatewayRtt // ignore: cast_nullable_to_non_nullable
+              as int,
       memoryAppUsageRatio: memoryAppUsageRatio == freezed
           ? _value.memoryAppUsageRatio
-          : memoryAppUsageRatio as double,
+          : memoryAppUsageRatio // ignore: cast_nullable_to_non_nullable
+              as double,
       memoryTotalUsageRatio: memoryTotalUsageRatio == freezed
           ? _value.memoryTotalUsageRatio
-          : memoryTotalUsageRatio as double,
+          : memoryTotalUsageRatio // ignore: cast_nullable_to_non_nullable
+              as double,
       memoryAppUsageInKbyte: memoryAppUsageInKbyte == freezed
           ? _value.memoryAppUsageInKbyte
-          : memoryAppUsageInKbyte as int,
+          : memoryAppUsageInKbyte // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -1130,83 +1247,123 @@ class __$RtcStatsCopyWithImpl<$Res> extends _$RtcStatsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object totalDuration = freezed,
-    Object txBytes = freezed,
-    Object rxBytes = freezed,
-    Object txAudioBytes = freezed,
-    Object txVideoBytes = freezed,
-    Object rxAudioBytes = freezed,
-    Object rxVideoBytes = freezed,
-    Object txKBitRate = freezed,
-    Object rxKBitRate = freezed,
-    Object txAudioKBitRate = freezed,
-    Object rxAudioKBitRate = freezed,
-    Object txVideoKBitRate = freezed,
-    Object rxVideoKBitRate = freezed,
-    Object users = freezed,
-    Object lastmileDelay = freezed,
-    Object txPacketLossRate = freezed,
-    Object rxPacketLossRate = freezed,
-    Object cpuTotalUsage = freezed,
-    Object cpuAppUsage = freezed,
-    Object gatewayRtt = freezed,
-    Object memoryAppUsageRatio = freezed,
-    Object memoryTotalUsageRatio = freezed,
-    Object memoryAppUsageInKbyte = freezed,
+    Object? totalDuration = freezed,
+    Object? txBytes = freezed,
+    Object? rxBytes = freezed,
+    Object? txAudioBytes = freezed,
+    Object? txVideoBytes = freezed,
+    Object? rxAudioBytes = freezed,
+    Object? rxVideoBytes = freezed,
+    Object? txKBitRate = freezed,
+    Object? rxKBitRate = freezed,
+    Object? txAudioKBitRate = freezed,
+    Object? rxAudioKBitRate = freezed,
+    Object? txVideoKBitRate = freezed,
+    Object? rxVideoKBitRate = freezed,
+    Object? users = freezed,
+    Object? lastmileDelay = freezed,
+    Object? txPacketLossRate = freezed,
+    Object? rxPacketLossRate = freezed,
+    Object? cpuTotalUsage = freezed,
+    Object? cpuAppUsage = freezed,
+    Object? gatewayRtt = freezed,
+    Object? memoryAppUsageRatio = freezed,
+    Object? memoryTotalUsageRatio = freezed,
+    Object? memoryAppUsageInKbyte = freezed,
   }) {
     return _then(_RtcStats(
       totalDuration: totalDuration == freezed
           ? _value.totalDuration
-          : totalDuration as int,
-      txBytes: txBytes == freezed ? _value.txBytes : txBytes as int,
-      rxBytes: rxBytes == freezed ? _value.rxBytes : rxBytes as int,
-      txAudioBytes:
-          txAudioBytes == freezed ? _value.txAudioBytes : txAudioBytes as int,
-      txVideoBytes:
-          txVideoBytes == freezed ? _value.txVideoBytes : txVideoBytes as int,
-      rxAudioBytes:
-          rxAudioBytes == freezed ? _value.rxAudioBytes : rxAudioBytes as int,
-      rxVideoBytes:
-          rxVideoBytes == freezed ? _value.rxVideoBytes : rxVideoBytes as int,
-      txKBitRate: txKBitRate == freezed ? _value.txKBitRate : txKBitRate as int,
-      rxKBitRate: rxKBitRate == freezed ? _value.rxKBitRate : rxKBitRate as int,
+          : totalDuration // ignore: cast_nullable_to_non_nullable
+              as int,
+      txBytes: txBytes == freezed
+          ? _value.txBytes
+          : txBytes // ignore: cast_nullable_to_non_nullable
+              as int,
+      rxBytes: rxBytes == freezed
+          ? _value.rxBytes
+          : rxBytes // ignore: cast_nullable_to_non_nullable
+              as int,
+      txAudioBytes: txAudioBytes == freezed
+          ? _value.txAudioBytes
+          : txAudioBytes // ignore: cast_nullable_to_non_nullable
+              as int,
+      txVideoBytes: txVideoBytes == freezed
+          ? _value.txVideoBytes
+          : txVideoBytes // ignore: cast_nullable_to_non_nullable
+              as int,
+      rxAudioBytes: rxAudioBytes == freezed
+          ? _value.rxAudioBytes
+          : rxAudioBytes // ignore: cast_nullable_to_non_nullable
+              as int,
+      rxVideoBytes: rxVideoBytes == freezed
+          ? _value.rxVideoBytes
+          : rxVideoBytes // ignore: cast_nullable_to_non_nullable
+              as int,
+      txKBitRate: txKBitRate == freezed
+          ? _value.txKBitRate
+          : txKBitRate // ignore: cast_nullable_to_non_nullable
+              as int,
+      rxKBitRate: rxKBitRate == freezed
+          ? _value.rxKBitRate
+          : rxKBitRate // ignore: cast_nullable_to_non_nullable
+              as int,
       txAudioKBitRate: txAudioKBitRate == freezed
           ? _value.txAudioKBitRate
-          : txAudioKBitRate as int,
+          : txAudioKBitRate // ignore: cast_nullable_to_non_nullable
+              as int,
       rxAudioKBitRate: rxAudioKBitRate == freezed
           ? _value.rxAudioKBitRate
-          : rxAudioKBitRate as int,
+          : rxAudioKBitRate // ignore: cast_nullable_to_non_nullable
+              as int,
       txVideoKBitRate: txVideoKBitRate == freezed
           ? _value.txVideoKBitRate
-          : txVideoKBitRate as int,
+          : txVideoKBitRate // ignore: cast_nullable_to_non_nullable
+              as int,
       rxVideoKBitRate: rxVideoKBitRate == freezed
           ? _value.rxVideoKBitRate
-          : rxVideoKBitRate as int,
-      users: users == freezed ? _value.users : users as int,
+          : rxVideoKBitRate // ignore: cast_nullable_to_non_nullable
+              as int,
+      users: users == freezed
+          ? _value.users
+          : users // ignore: cast_nullable_to_non_nullable
+              as int,
       lastmileDelay: lastmileDelay == freezed
           ? _value.lastmileDelay
-          : lastmileDelay as int,
+          : lastmileDelay // ignore: cast_nullable_to_non_nullable
+              as int,
       txPacketLossRate: txPacketLossRate == freezed
           ? _value.txPacketLossRate
-          : txPacketLossRate as int,
+          : txPacketLossRate // ignore: cast_nullable_to_non_nullable
+              as int,
       rxPacketLossRate: rxPacketLossRate == freezed
           ? _value.rxPacketLossRate
-          : rxPacketLossRate as int,
+          : rxPacketLossRate // ignore: cast_nullable_to_non_nullable
+              as int,
       cpuTotalUsage: cpuTotalUsage == freezed
           ? _value.cpuTotalUsage
-          : cpuTotalUsage as double,
-      cpuAppUsage:
-          cpuAppUsage == freezed ? _value.cpuAppUsage : cpuAppUsage as double,
-      gatewayRtt: gatewayRtt == freezed ? _value.gatewayRtt : gatewayRtt as int,
+          : cpuTotalUsage // ignore: cast_nullable_to_non_nullable
+              as double,
+      cpuAppUsage: cpuAppUsage == freezed
+          ? _value.cpuAppUsage
+          : cpuAppUsage // ignore: cast_nullable_to_non_nullable
+              as double,
+      gatewayRtt: gatewayRtt == freezed
+          ? _value.gatewayRtt
+          : gatewayRtt // ignore: cast_nullable_to_non_nullable
+              as int,
       memoryAppUsageRatio: memoryAppUsageRatio == freezed
           ? _value.memoryAppUsageRatio
-          : memoryAppUsageRatio as double,
+          : memoryAppUsageRatio // ignore: cast_nullable_to_non_nullable
+              as double,
       memoryTotalUsageRatio: memoryTotalUsageRatio == freezed
           ? _value.memoryTotalUsageRatio
-          : memoryTotalUsageRatio as double,
+          : memoryTotalUsageRatio // ignore: cast_nullable_to_non_nullable
+              as double,
       memoryAppUsageInKbyte: memoryAppUsageInKbyte == freezed
           ? _value.memoryAppUsageInKbyte
-          : memoryAppUsageInKbyte as int,
+          : memoryAppUsageInKbyte // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -1238,30 +1395,7 @@ class _$_RtcStats implements _RtcStats {
       this.gatewayRtt = 0,
       this.memoryAppUsageRatio = 0.0,
       this.memoryTotalUsageRatio = 0.0,
-      this.memoryAppUsageInKbyte = 0})
-      : assert(totalDuration != null),
-        assert(txBytes != null),
-        assert(rxBytes != null),
-        assert(txAudioBytes != null),
-        assert(txVideoBytes != null),
-        assert(rxAudioBytes != null),
-        assert(rxVideoBytes != null),
-        assert(txKBitRate != null),
-        assert(rxKBitRate != null),
-        assert(txAudioKBitRate != null),
-        assert(rxAudioKBitRate != null),
-        assert(txVideoKBitRate != null),
-        assert(rxVideoKBitRate != null),
-        assert(users != null),
-        assert(lastmileDelay != null),
-        assert(txPacketLossRate != null),
-        assert(rxPacketLossRate != null),
-        assert(cpuTotalUsage != null),
-        assert(cpuAppUsage != null),
-        assert(gatewayRtt != null),
-        assert(memoryAppUsageRatio != null),
-        assert(memoryTotalUsageRatio != null),
-        assert(memoryAppUsageInKbyte != null);
+      this.memoryAppUsageInKbyte = 0});
 
   factory _$_RtcStats.fromJson(Map<String, dynamic> json) =>
       _$_$_RtcStatsFromJson(json);
@@ -1440,6 +1574,7 @@ class _$_RtcStats implements _RtcStats {
       const DeepCollectionEquality().hash(memoryTotalUsageRatio) ^
       const DeepCollectionEquality().hash(memoryAppUsageInKbyte);
 
+  @JsonKey(ignore: true)
   @override
   _$RtcStatsCopyWith<_RtcStats> get copyWith =>
       __$RtcStatsCopyWithImpl<_RtcStats>(this, _$identity);
@@ -1479,53 +1614,55 @@ abstract class _RtcStats implements RtcStats {
   factory _RtcStats.fromJson(Map<String, dynamic> json) = _$_RtcStats.fromJson;
 
   @override
-  int get totalDuration;
+  int get totalDuration => throw _privateConstructorUsedError;
   @override
-  int get txBytes;
+  int get txBytes => throw _privateConstructorUsedError;
   @override
-  int get rxBytes;
+  int get rxBytes => throw _privateConstructorUsedError;
   @override
-  int get txAudioBytes;
+  int get txAudioBytes => throw _privateConstructorUsedError;
   @override
-  int get txVideoBytes;
+  int get txVideoBytes => throw _privateConstructorUsedError;
   @override
-  int get rxAudioBytes;
+  int get rxAudioBytes => throw _privateConstructorUsedError;
   @override
-  int get rxVideoBytes;
+  int get rxVideoBytes => throw _privateConstructorUsedError;
   @override
-  int get txKBitRate;
+  int get txKBitRate => throw _privateConstructorUsedError;
   @override
-  int get rxKBitRate;
+  int get rxKBitRate => throw _privateConstructorUsedError;
   @override
-  int get txAudioKBitRate;
+  int get txAudioKBitRate => throw _privateConstructorUsedError;
   @override
-  int get rxAudioKBitRate;
+  int get rxAudioKBitRate => throw _privateConstructorUsedError;
   @override
-  int get txVideoKBitRate;
+  int get txVideoKBitRate => throw _privateConstructorUsedError;
   @override
-  int get rxVideoKBitRate;
+  int get rxVideoKBitRate => throw _privateConstructorUsedError;
   @override
-  int get users;
+  int get users => throw _privateConstructorUsedError;
   @override
-  int get lastmileDelay;
+  int get lastmileDelay => throw _privateConstructorUsedError;
   @override
-  int get txPacketLossRate;
+  int get txPacketLossRate => throw _privateConstructorUsedError;
   @override
-  int get rxPacketLossRate;
+  int get rxPacketLossRate => throw _privateConstructorUsedError;
   @override
-  double get cpuTotalUsage;
+  double get cpuTotalUsage => throw _privateConstructorUsedError;
   @override
-  double get cpuAppUsage;
+  double get cpuAppUsage => throw _privateConstructorUsedError;
   @override
-  int get gatewayRtt;
+  int get gatewayRtt => throw _privateConstructorUsedError;
   @override
-  double get memoryAppUsageRatio;
+  double get memoryAppUsageRatio => throw _privateConstructorUsedError;
   @override
-  double get memoryTotalUsageRatio;
+  double get memoryTotalUsageRatio => throw _privateConstructorUsedError;
   @override
-  int get memoryAppUsageInKbyte;
+  int get memoryAppUsageInKbyte => throw _privateConstructorUsedError;
   @override
-  _$RtcStatsCopyWith<_RtcStats> get copyWith;
+  @JsonKey(ignore: true)
+  _$RtcStatsCopyWith<_RtcStats> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 RemoteAudioStats _$RemoteAudioStatsFromJson(Map<String, dynamic> json) {
@@ -1536,22 +1673,21 @@ RemoteAudioStats _$RemoteAudioStatsFromJson(Map<String, dynamic> json) {
 class _$RemoteAudioStatsTearOff {
   const _$RemoteAudioStatsTearOff();
 
-// ignore: unused_element
   _RemoteAudioStats call(
-      {@required int uid,
-      @required int quality,
-      @required int networkTransportDelay,
-      @required int jitterBufferDelay,
-      @required int audioLossRate,
-      @required int numChannels,
-      @required int receivedSampleRate,
-      @required int receivedBitrate,
-      @required int totalFrozenTime,
-      @required int frozenRate,
-      @required int totalActiveTime,
-      @required int publishDuration,
-      @required int qoeQuality,
-      @required int qualityChangedReason}) {
+      {required int uid,
+      required int quality,
+      required int networkTransportDelay,
+      required int jitterBufferDelay,
+      required int audioLossRate,
+      required int numChannels,
+      required int receivedSampleRate,
+      required int receivedBitrate,
+      required int totalFrozenTime,
+      required int frozenRate,
+      required int totalActiveTime,
+      required int publishDuration,
+      required int qoeQuality,
+      required int qualityChangedReason}) {
     return _RemoteAudioStats(
       uid: uid,
       quality: quality,
@@ -1570,35 +1706,35 @@ class _$RemoteAudioStatsTearOff {
     );
   }
 
-// ignore: unused_element
   RemoteAudioStats fromJson(Map<String, Object> json) {
     return RemoteAudioStats.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $RemoteAudioStats = _$RemoteAudioStatsTearOff();
 
 /// @nodoc
 mixin _$RemoteAudioStats {
-  int get uid;
-  int get quality;
-  int get networkTransportDelay;
-  int get jitterBufferDelay;
-  int get audioLossRate;
-  int get numChannels;
-  int get receivedSampleRate;
-  int get receivedBitrate;
-  int get totalFrozenTime;
-  int get frozenRate;
-  int get totalActiveTime;
-  int get publishDuration;
-  int get qoeQuality;
-  int get qualityChangedReason;
+  int get uid => throw _privateConstructorUsedError;
+  int get quality => throw _privateConstructorUsedError;
+  int get networkTransportDelay => throw _privateConstructorUsedError;
+  int get jitterBufferDelay => throw _privateConstructorUsedError;
+  int get audioLossRate => throw _privateConstructorUsedError;
+  int get numChannels => throw _privateConstructorUsedError;
+  int get receivedSampleRate => throw _privateConstructorUsedError;
+  int get receivedBitrate => throw _privateConstructorUsedError;
+  int get totalFrozenTime => throw _privateConstructorUsedError;
+  int get frozenRate => throw _privateConstructorUsedError;
+  int get totalActiveTime => throw _privateConstructorUsedError;
+  int get publishDuration => throw _privateConstructorUsedError;
+  int get qoeQuality => throw _privateConstructorUsedError;
+  int get qualityChangedReason => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $RemoteAudioStatsCopyWith<RemoteAudioStats> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $RemoteAudioStatsCopyWith<RemoteAudioStats> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1634,55 +1770,78 @@ class _$RemoteAudioStatsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object uid = freezed,
-    Object quality = freezed,
-    Object networkTransportDelay = freezed,
-    Object jitterBufferDelay = freezed,
-    Object audioLossRate = freezed,
-    Object numChannels = freezed,
-    Object receivedSampleRate = freezed,
-    Object receivedBitrate = freezed,
-    Object totalFrozenTime = freezed,
-    Object frozenRate = freezed,
-    Object totalActiveTime = freezed,
-    Object publishDuration = freezed,
-    Object qoeQuality = freezed,
-    Object qualityChangedReason = freezed,
+    Object? uid = freezed,
+    Object? quality = freezed,
+    Object? networkTransportDelay = freezed,
+    Object? jitterBufferDelay = freezed,
+    Object? audioLossRate = freezed,
+    Object? numChannels = freezed,
+    Object? receivedSampleRate = freezed,
+    Object? receivedBitrate = freezed,
+    Object? totalFrozenTime = freezed,
+    Object? frozenRate = freezed,
+    Object? totalActiveTime = freezed,
+    Object? publishDuration = freezed,
+    Object? qoeQuality = freezed,
+    Object? qualityChangedReason = freezed,
   }) {
     return _then(_value.copyWith(
-      uid: uid == freezed ? _value.uid : uid as int,
-      quality: quality == freezed ? _value.quality : quality as int,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as int,
+      quality: quality == freezed
+          ? _value.quality
+          : quality // ignore: cast_nullable_to_non_nullable
+              as int,
       networkTransportDelay: networkTransportDelay == freezed
           ? _value.networkTransportDelay
-          : networkTransportDelay as int,
+          : networkTransportDelay // ignore: cast_nullable_to_non_nullable
+              as int,
       jitterBufferDelay: jitterBufferDelay == freezed
           ? _value.jitterBufferDelay
-          : jitterBufferDelay as int,
+          : jitterBufferDelay // ignore: cast_nullable_to_non_nullable
+              as int,
       audioLossRate: audioLossRate == freezed
           ? _value.audioLossRate
-          : audioLossRate as int,
-      numChannels:
-          numChannels == freezed ? _value.numChannels : numChannels as int,
+          : audioLossRate // ignore: cast_nullable_to_non_nullable
+              as int,
+      numChannels: numChannels == freezed
+          ? _value.numChannels
+          : numChannels // ignore: cast_nullable_to_non_nullable
+              as int,
       receivedSampleRate: receivedSampleRate == freezed
           ? _value.receivedSampleRate
-          : receivedSampleRate as int,
+          : receivedSampleRate // ignore: cast_nullable_to_non_nullable
+              as int,
       receivedBitrate: receivedBitrate == freezed
           ? _value.receivedBitrate
-          : receivedBitrate as int,
+          : receivedBitrate // ignore: cast_nullable_to_non_nullable
+              as int,
       totalFrozenTime: totalFrozenTime == freezed
           ? _value.totalFrozenTime
-          : totalFrozenTime as int,
-      frozenRate: frozenRate == freezed ? _value.frozenRate : frozenRate as int,
+          : totalFrozenTime // ignore: cast_nullable_to_non_nullable
+              as int,
+      frozenRate: frozenRate == freezed
+          ? _value.frozenRate
+          : frozenRate // ignore: cast_nullable_to_non_nullable
+              as int,
       totalActiveTime: totalActiveTime == freezed
           ? _value.totalActiveTime
-          : totalActiveTime as int,
+          : totalActiveTime // ignore: cast_nullable_to_non_nullable
+              as int,
       publishDuration: publishDuration == freezed
           ? _value.publishDuration
-          : publishDuration as int,
-      qoeQuality: qoeQuality == freezed ? _value.qoeQuality : qoeQuality as int,
+          : publishDuration // ignore: cast_nullable_to_non_nullable
+              as int,
+      qoeQuality: qoeQuality == freezed
+          ? _value.qoeQuality
+          : qoeQuality // ignore: cast_nullable_to_non_nullable
+              as int,
       qualityChangedReason: qualityChangedReason == freezed
           ? _value.qualityChangedReason
-          : qualityChangedReason as int,
+          : qualityChangedReason // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -1724,55 +1883,78 @@ class __$RemoteAudioStatsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object uid = freezed,
-    Object quality = freezed,
-    Object networkTransportDelay = freezed,
-    Object jitterBufferDelay = freezed,
-    Object audioLossRate = freezed,
-    Object numChannels = freezed,
-    Object receivedSampleRate = freezed,
-    Object receivedBitrate = freezed,
-    Object totalFrozenTime = freezed,
-    Object frozenRate = freezed,
-    Object totalActiveTime = freezed,
-    Object publishDuration = freezed,
-    Object qoeQuality = freezed,
-    Object qualityChangedReason = freezed,
+    Object? uid = freezed,
+    Object? quality = freezed,
+    Object? networkTransportDelay = freezed,
+    Object? jitterBufferDelay = freezed,
+    Object? audioLossRate = freezed,
+    Object? numChannels = freezed,
+    Object? receivedSampleRate = freezed,
+    Object? receivedBitrate = freezed,
+    Object? totalFrozenTime = freezed,
+    Object? frozenRate = freezed,
+    Object? totalActiveTime = freezed,
+    Object? publishDuration = freezed,
+    Object? qoeQuality = freezed,
+    Object? qualityChangedReason = freezed,
   }) {
     return _then(_RemoteAudioStats(
-      uid: uid == freezed ? _value.uid : uid as int,
-      quality: quality == freezed ? _value.quality : quality as int,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as int,
+      quality: quality == freezed
+          ? _value.quality
+          : quality // ignore: cast_nullable_to_non_nullable
+              as int,
       networkTransportDelay: networkTransportDelay == freezed
           ? _value.networkTransportDelay
-          : networkTransportDelay as int,
+          : networkTransportDelay // ignore: cast_nullable_to_non_nullable
+              as int,
       jitterBufferDelay: jitterBufferDelay == freezed
           ? _value.jitterBufferDelay
-          : jitterBufferDelay as int,
+          : jitterBufferDelay // ignore: cast_nullable_to_non_nullable
+              as int,
       audioLossRate: audioLossRate == freezed
           ? _value.audioLossRate
-          : audioLossRate as int,
-      numChannels:
-          numChannels == freezed ? _value.numChannels : numChannels as int,
+          : audioLossRate // ignore: cast_nullable_to_non_nullable
+              as int,
+      numChannels: numChannels == freezed
+          ? _value.numChannels
+          : numChannels // ignore: cast_nullable_to_non_nullable
+              as int,
       receivedSampleRate: receivedSampleRate == freezed
           ? _value.receivedSampleRate
-          : receivedSampleRate as int,
+          : receivedSampleRate // ignore: cast_nullable_to_non_nullable
+              as int,
       receivedBitrate: receivedBitrate == freezed
           ? _value.receivedBitrate
-          : receivedBitrate as int,
+          : receivedBitrate // ignore: cast_nullable_to_non_nullable
+              as int,
       totalFrozenTime: totalFrozenTime == freezed
           ? _value.totalFrozenTime
-          : totalFrozenTime as int,
-      frozenRate: frozenRate == freezed ? _value.frozenRate : frozenRate as int,
+          : totalFrozenTime // ignore: cast_nullable_to_non_nullable
+              as int,
+      frozenRate: frozenRate == freezed
+          ? _value.frozenRate
+          : frozenRate // ignore: cast_nullable_to_non_nullable
+              as int,
       totalActiveTime: totalActiveTime == freezed
           ? _value.totalActiveTime
-          : totalActiveTime as int,
+          : totalActiveTime // ignore: cast_nullable_to_non_nullable
+              as int,
       publishDuration: publishDuration == freezed
           ? _value.publishDuration
-          : publishDuration as int,
-      qoeQuality: qoeQuality == freezed ? _value.qoeQuality : qoeQuality as int,
+          : publishDuration // ignore: cast_nullable_to_non_nullable
+              as int,
+      qoeQuality: qoeQuality == freezed
+          ? _value.qoeQuality
+          : qoeQuality // ignore: cast_nullable_to_non_nullable
+              as int,
       qualityChangedReason: qualityChangedReason == freezed
           ? _value.qualityChangedReason
-          : qualityChangedReason as int,
+          : qualityChangedReason // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -1782,34 +1964,20 @@ class __$RemoteAudioStatsCopyWithImpl<$Res>
 /// @nodoc
 class _$_RemoteAudioStats implements _RemoteAudioStats {
   const _$_RemoteAudioStats(
-      {@required this.uid,
-      @required this.quality,
-      @required this.networkTransportDelay,
-      @required this.jitterBufferDelay,
-      @required this.audioLossRate,
-      @required this.numChannels,
-      @required this.receivedSampleRate,
-      @required this.receivedBitrate,
-      @required this.totalFrozenTime,
-      @required this.frozenRate,
-      @required this.totalActiveTime,
-      @required this.publishDuration,
-      @required this.qoeQuality,
-      @required this.qualityChangedReason})
-      : assert(uid != null),
-        assert(quality != null),
-        assert(networkTransportDelay != null),
-        assert(jitterBufferDelay != null),
-        assert(audioLossRate != null),
-        assert(numChannels != null),
-        assert(receivedSampleRate != null),
-        assert(receivedBitrate != null),
-        assert(totalFrozenTime != null),
-        assert(frozenRate != null),
-        assert(totalActiveTime != null),
-        assert(publishDuration != null),
-        assert(qoeQuality != null),
-        assert(qualityChangedReason != null);
+      {required this.uid,
+      required this.quality,
+      required this.networkTransportDelay,
+      required this.jitterBufferDelay,
+      required this.audioLossRate,
+      required this.numChannels,
+      required this.receivedSampleRate,
+      required this.receivedBitrate,
+      required this.totalFrozenTime,
+      required this.frozenRate,
+      required this.totalActiveTime,
+      required this.publishDuration,
+      required this.qoeQuality,
+      required this.qualityChangedReason});
 
   factory _$_RemoteAudioStats.fromJson(Map<String, dynamic> json) =>
       _$_$_RemoteAudioStatsFromJson(json);
@@ -1913,6 +2081,7 @@ class _$_RemoteAudioStats implements _RemoteAudioStats {
       const DeepCollectionEquality().hash(qoeQuality) ^
       const DeepCollectionEquality().hash(qualityChangedReason);
 
+  @JsonKey(ignore: true)
   @override
   _$RemoteAudioStatsCopyWith<_RemoteAudioStats> get copyWith =>
       __$RemoteAudioStatsCopyWithImpl<_RemoteAudioStats>(this, _$identity);
@@ -1925,54 +2094,56 @@ class _$_RemoteAudioStats implements _RemoteAudioStats {
 
 abstract class _RemoteAudioStats implements RemoteAudioStats {
   const factory _RemoteAudioStats(
-      {@required int uid,
-      @required int quality,
-      @required int networkTransportDelay,
-      @required int jitterBufferDelay,
-      @required int audioLossRate,
-      @required int numChannels,
-      @required int receivedSampleRate,
-      @required int receivedBitrate,
-      @required int totalFrozenTime,
-      @required int frozenRate,
-      @required int totalActiveTime,
-      @required int publishDuration,
-      @required int qoeQuality,
-      @required int qualityChangedReason}) = _$_RemoteAudioStats;
+      {required int uid,
+      required int quality,
+      required int networkTransportDelay,
+      required int jitterBufferDelay,
+      required int audioLossRate,
+      required int numChannels,
+      required int receivedSampleRate,
+      required int receivedBitrate,
+      required int totalFrozenTime,
+      required int frozenRate,
+      required int totalActiveTime,
+      required int publishDuration,
+      required int qoeQuality,
+      required int qualityChangedReason}) = _$_RemoteAudioStats;
 
   factory _RemoteAudioStats.fromJson(Map<String, dynamic> json) =
       _$_RemoteAudioStats.fromJson;
 
   @override
-  int get uid;
+  int get uid => throw _privateConstructorUsedError;
   @override
-  int get quality;
+  int get quality => throw _privateConstructorUsedError;
   @override
-  int get networkTransportDelay;
+  int get networkTransportDelay => throw _privateConstructorUsedError;
   @override
-  int get jitterBufferDelay;
+  int get jitterBufferDelay => throw _privateConstructorUsedError;
   @override
-  int get audioLossRate;
+  int get audioLossRate => throw _privateConstructorUsedError;
   @override
-  int get numChannels;
+  int get numChannels => throw _privateConstructorUsedError;
   @override
-  int get receivedSampleRate;
+  int get receivedSampleRate => throw _privateConstructorUsedError;
   @override
-  int get receivedBitrate;
+  int get receivedBitrate => throw _privateConstructorUsedError;
   @override
-  int get totalFrozenTime;
+  int get totalFrozenTime => throw _privateConstructorUsedError;
   @override
-  int get frozenRate;
+  int get frozenRate => throw _privateConstructorUsedError;
   @override
-  int get totalActiveTime;
+  int get totalActiveTime => throw _privateConstructorUsedError;
   @override
-  int get publishDuration;
+  int get publishDuration => throw _privateConstructorUsedError;
   @override
-  int get qoeQuality;
+  int get qoeQuality => throw _privateConstructorUsedError;
   @override
-  int get qualityChangedReason;
+  int get qualityChangedReason => throw _privateConstructorUsedError;
   @override
-  _$RemoteAudioStatsCopyWith<_RemoteAudioStats> get copyWith;
+  @JsonKey(ignore: true)
+  _$RemoteAudioStatsCopyWith<_RemoteAudioStats> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 RemoteVideoStats _$RemoteVideoStatsFromJson(Map<String, dynamic> json) {
@@ -1983,20 +2154,19 @@ RemoteVideoStats _$RemoteVideoStatsFromJson(Map<String, dynamic> json) {
 class _$RemoteVideoStatsTearOff {
   const _$RemoteVideoStatsTearOff();
 
-// ignore: unused_element
   _RemoteVideoStats call(
-      {@required int uid,
-      @required int width,
-      @required int height,
-      @required int receivedBitrate,
-      @required int decoderOutputFrameRate,
-      @required int rendererOutputFrameRate,
-      @required int packetLossRate,
-      @required int rxStreamType,
-      @required int totalFrozenTime,
-      @required int frozenRate,
-      @required int totalActiveTime,
-      @required int publishDuration}) {
+      {required int uid,
+      required int width,
+      required int height,
+      required int receivedBitrate,
+      required int decoderOutputFrameRate,
+      required int rendererOutputFrameRate,
+      required int packetLossRate,
+      required int rxStreamType,
+      required int totalFrozenTime,
+      required int frozenRate,
+      required int totalActiveTime,
+      required int publishDuration}) {
     return _RemoteVideoStats(
       uid: uid,
       width: width,
@@ -2013,33 +2183,33 @@ class _$RemoteVideoStatsTearOff {
     );
   }
 
-// ignore: unused_element
   RemoteVideoStats fromJson(Map<String, Object> json) {
     return RemoteVideoStats.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $RemoteVideoStats = _$RemoteVideoStatsTearOff();
 
 /// @nodoc
 mixin _$RemoteVideoStats {
-  int get uid;
-  int get width;
-  int get height;
-  int get receivedBitrate;
-  int get decoderOutputFrameRate;
-  int get rendererOutputFrameRate;
-  int get packetLossRate;
-  int get rxStreamType;
-  int get totalFrozenTime;
-  int get frozenRate;
-  int get totalActiveTime;
-  int get publishDuration;
+  int get uid => throw _privateConstructorUsedError;
+  int get width => throw _privateConstructorUsedError;
+  int get height => throw _privateConstructorUsedError;
+  int get receivedBitrate => throw _privateConstructorUsedError;
+  int get decoderOutputFrameRate => throw _privateConstructorUsedError;
+  int get rendererOutputFrameRate => throw _privateConstructorUsedError;
+  int get packetLossRate => throw _privateConstructorUsedError;
+  int get rxStreamType => throw _privateConstructorUsedError;
+  int get totalFrozenTime => throw _privateConstructorUsedError;
+  int get frozenRate => throw _privateConstructorUsedError;
+  int get totalActiveTime => throw _privateConstructorUsedError;
+  int get publishDuration => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $RemoteVideoStatsCopyWith<RemoteVideoStats> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $RemoteVideoStatsCopyWith<RemoteVideoStats> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2073,47 +2243,68 @@ class _$RemoteVideoStatsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object uid = freezed,
-    Object width = freezed,
-    Object height = freezed,
-    Object receivedBitrate = freezed,
-    Object decoderOutputFrameRate = freezed,
-    Object rendererOutputFrameRate = freezed,
-    Object packetLossRate = freezed,
-    Object rxStreamType = freezed,
-    Object totalFrozenTime = freezed,
-    Object frozenRate = freezed,
-    Object totalActiveTime = freezed,
-    Object publishDuration = freezed,
+    Object? uid = freezed,
+    Object? width = freezed,
+    Object? height = freezed,
+    Object? receivedBitrate = freezed,
+    Object? decoderOutputFrameRate = freezed,
+    Object? rendererOutputFrameRate = freezed,
+    Object? packetLossRate = freezed,
+    Object? rxStreamType = freezed,
+    Object? totalFrozenTime = freezed,
+    Object? frozenRate = freezed,
+    Object? totalActiveTime = freezed,
+    Object? publishDuration = freezed,
   }) {
     return _then(_value.copyWith(
-      uid: uid == freezed ? _value.uid : uid as int,
-      width: width == freezed ? _value.width : width as int,
-      height: height == freezed ? _value.height : height as int,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as int,
+      width: width == freezed
+          ? _value.width
+          : width // ignore: cast_nullable_to_non_nullable
+              as int,
+      height: height == freezed
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int,
       receivedBitrate: receivedBitrate == freezed
           ? _value.receivedBitrate
-          : receivedBitrate as int,
+          : receivedBitrate // ignore: cast_nullable_to_non_nullable
+              as int,
       decoderOutputFrameRate: decoderOutputFrameRate == freezed
           ? _value.decoderOutputFrameRate
-          : decoderOutputFrameRate as int,
+          : decoderOutputFrameRate // ignore: cast_nullable_to_non_nullable
+              as int,
       rendererOutputFrameRate: rendererOutputFrameRate == freezed
           ? _value.rendererOutputFrameRate
-          : rendererOutputFrameRate as int,
+          : rendererOutputFrameRate // ignore: cast_nullable_to_non_nullable
+              as int,
       packetLossRate: packetLossRate == freezed
           ? _value.packetLossRate
-          : packetLossRate as int,
-      rxStreamType:
-          rxStreamType == freezed ? _value.rxStreamType : rxStreamType as int,
+          : packetLossRate // ignore: cast_nullable_to_non_nullable
+              as int,
+      rxStreamType: rxStreamType == freezed
+          ? _value.rxStreamType
+          : rxStreamType // ignore: cast_nullable_to_non_nullable
+              as int,
       totalFrozenTime: totalFrozenTime == freezed
           ? _value.totalFrozenTime
-          : totalFrozenTime as int,
-      frozenRate: frozenRate == freezed ? _value.frozenRate : frozenRate as int,
+          : totalFrozenTime // ignore: cast_nullable_to_non_nullable
+              as int,
+      frozenRate: frozenRate == freezed
+          ? _value.frozenRate
+          : frozenRate // ignore: cast_nullable_to_non_nullable
+              as int,
       totalActiveTime: totalActiveTime == freezed
           ? _value.totalActiveTime
-          : totalActiveTime as int,
+          : totalActiveTime // ignore: cast_nullable_to_non_nullable
+              as int,
       publishDuration: publishDuration == freezed
           ? _value.publishDuration
-          : publishDuration as int,
+          : publishDuration // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -2153,47 +2344,68 @@ class __$RemoteVideoStatsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object uid = freezed,
-    Object width = freezed,
-    Object height = freezed,
-    Object receivedBitrate = freezed,
-    Object decoderOutputFrameRate = freezed,
-    Object rendererOutputFrameRate = freezed,
-    Object packetLossRate = freezed,
-    Object rxStreamType = freezed,
-    Object totalFrozenTime = freezed,
-    Object frozenRate = freezed,
-    Object totalActiveTime = freezed,
-    Object publishDuration = freezed,
+    Object? uid = freezed,
+    Object? width = freezed,
+    Object? height = freezed,
+    Object? receivedBitrate = freezed,
+    Object? decoderOutputFrameRate = freezed,
+    Object? rendererOutputFrameRate = freezed,
+    Object? packetLossRate = freezed,
+    Object? rxStreamType = freezed,
+    Object? totalFrozenTime = freezed,
+    Object? frozenRate = freezed,
+    Object? totalActiveTime = freezed,
+    Object? publishDuration = freezed,
   }) {
     return _then(_RemoteVideoStats(
-      uid: uid == freezed ? _value.uid : uid as int,
-      width: width == freezed ? _value.width : width as int,
-      height: height == freezed ? _value.height : height as int,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as int,
+      width: width == freezed
+          ? _value.width
+          : width // ignore: cast_nullable_to_non_nullable
+              as int,
+      height: height == freezed
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int,
       receivedBitrate: receivedBitrate == freezed
           ? _value.receivedBitrate
-          : receivedBitrate as int,
+          : receivedBitrate // ignore: cast_nullable_to_non_nullable
+              as int,
       decoderOutputFrameRate: decoderOutputFrameRate == freezed
           ? _value.decoderOutputFrameRate
-          : decoderOutputFrameRate as int,
+          : decoderOutputFrameRate // ignore: cast_nullable_to_non_nullable
+              as int,
       rendererOutputFrameRate: rendererOutputFrameRate == freezed
           ? _value.rendererOutputFrameRate
-          : rendererOutputFrameRate as int,
+          : rendererOutputFrameRate // ignore: cast_nullable_to_non_nullable
+              as int,
       packetLossRate: packetLossRate == freezed
           ? _value.packetLossRate
-          : packetLossRate as int,
-      rxStreamType:
-          rxStreamType == freezed ? _value.rxStreamType : rxStreamType as int,
+          : packetLossRate // ignore: cast_nullable_to_non_nullable
+              as int,
+      rxStreamType: rxStreamType == freezed
+          ? _value.rxStreamType
+          : rxStreamType // ignore: cast_nullable_to_non_nullable
+              as int,
       totalFrozenTime: totalFrozenTime == freezed
           ? _value.totalFrozenTime
-          : totalFrozenTime as int,
-      frozenRate: frozenRate == freezed ? _value.frozenRate : frozenRate as int,
+          : totalFrozenTime // ignore: cast_nullable_to_non_nullable
+              as int,
+      frozenRate: frozenRate == freezed
+          ? _value.frozenRate
+          : frozenRate // ignore: cast_nullable_to_non_nullable
+              as int,
       totalActiveTime: totalActiveTime == freezed
           ? _value.totalActiveTime
-          : totalActiveTime as int,
+          : totalActiveTime // ignore: cast_nullable_to_non_nullable
+              as int,
       publishDuration: publishDuration == freezed
           ? _value.publishDuration
-          : publishDuration as int,
+          : publishDuration // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -2203,30 +2415,18 @@ class __$RemoteVideoStatsCopyWithImpl<$Res>
 /// @nodoc
 class _$_RemoteVideoStats implements _RemoteVideoStats {
   const _$_RemoteVideoStats(
-      {@required this.uid,
-      @required this.width,
-      @required this.height,
-      @required this.receivedBitrate,
-      @required this.decoderOutputFrameRate,
-      @required this.rendererOutputFrameRate,
-      @required this.packetLossRate,
-      @required this.rxStreamType,
-      @required this.totalFrozenTime,
-      @required this.frozenRate,
-      @required this.totalActiveTime,
-      @required this.publishDuration})
-      : assert(uid != null),
-        assert(width != null),
-        assert(height != null),
-        assert(receivedBitrate != null),
-        assert(decoderOutputFrameRate != null),
-        assert(rendererOutputFrameRate != null),
-        assert(packetLossRate != null),
-        assert(rxStreamType != null),
-        assert(totalFrozenTime != null),
-        assert(frozenRate != null),
-        assert(totalActiveTime != null),
-        assert(publishDuration != null);
+      {required this.uid,
+      required this.width,
+      required this.height,
+      required this.receivedBitrate,
+      required this.decoderOutputFrameRate,
+      required this.rendererOutputFrameRate,
+      required this.packetLossRate,
+      required this.rxStreamType,
+      required this.totalFrozenTime,
+      required this.frozenRate,
+      required this.totalActiveTime,
+      required this.publishDuration});
 
   factory _$_RemoteVideoStats.fromJson(Map<String, dynamic> json) =>
       _$_$_RemoteVideoStatsFromJson(json);
@@ -2317,6 +2517,7 @@ class _$_RemoteVideoStats implements _RemoteVideoStats {
       const DeepCollectionEquality().hash(totalActiveTime) ^
       const DeepCollectionEquality().hash(publishDuration);
 
+  @JsonKey(ignore: true)
   @override
   _$RemoteVideoStatsCopyWith<_RemoteVideoStats> get copyWith =>
       __$RemoteVideoStatsCopyWithImpl<_RemoteVideoStats>(this, _$identity);
@@ -2329,48 +2530,50 @@ class _$_RemoteVideoStats implements _RemoteVideoStats {
 
 abstract class _RemoteVideoStats implements RemoteVideoStats {
   const factory _RemoteVideoStats(
-      {@required int uid,
-      @required int width,
-      @required int height,
-      @required int receivedBitrate,
-      @required int decoderOutputFrameRate,
-      @required int rendererOutputFrameRate,
-      @required int packetLossRate,
-      @required int rxStreamType,
-      @required int totalFrozenTime,
-      @required int frozenRate,
-      @required int totalActiveTime,
-      @required int publishDuration}) = _$_RemoteVideoStats;
+      {required int uid,
+      required int width,
+      required int height,
+      required int receivedBitrate,
+      required int decoderOutputFrameRate,
+      required int rendererOutputFrameRate,
+      required int packetLossRate,
+      required int rxStreamType,
+      required int totalFrozenTime,
+      required int frozenRate,
+      required int totalActiveTime,
+      required int publishDuration}) = _$_RemoteVideoStats;
 
   factory _RemoteVideoStats.fromJson(Map<String, dynamic> json) =
       _$_RemoteVideoStats.fromJson;
 
   @override
-  int get uid;
+  int get uid => throw _privateConstructorUsedError;
   @override
-  int get width;
+  int get width => throw _privateConstructorUsedError;
   @override
-  int get height;
+  int get height => throw _privateConstructorUsedError;
   @override
-  int get receivedBitrate;
+  int get receivedBitrate => throw _privateConstructorUsedError;
   @override
-  int get decoderOutputFrameRate;
+  int get decoderOutputFrameRate => throw _privateConstructorUsedError;
   @override
-  int get rendererOutputFrameRate;
+  int get rendererOutputFrameRate => throw _privateConstructorUsedError;
   @override
-  int get packetLossRate;
+  int get packetLossRate => throw _privateConstructorUsedError;
   @override
-  int get rxStreamType;
+  int get rxStreamType => throw _privateConstructorUsedError;
   @override
-  int get totalFrozenTime;
+  int get totalFrozenTime => throw _privateConstructorUsedError;
   @override
-  int get frozenRate;
+  int get frozenRate => throw _privateConstructorUsedError;
   @override
-  int get totalActiveTime;
+  int get totalActiveTime => throw _privateConstructorUsedError;
   @override
-  int get publishDuration;
+  int get publishDuration => throw _privateConstructorUsedError;
   @override
-  _$RemoteVideoStatsCopyWith<_RemoteVideoStats> get copyWith;
+  @JsonKey(ignore: true)
+  _$RemoteVideoStatsCopyWith<_RemoteVideoStats> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 LocalAudioStats _$LocalAudioStatsFromJson(Map<String, dynamic> json) {
@@ -2381,12 +2584,11 @@ LocalAudioStats _$LocalAudioStatsFromJson(Map<String, dynamic> json) {
 class _$LocalAudioStatsTearOff {
   const _$LocalAudioStatsTearOff();
 
-// ignore: unused_element
   _LocalAudioStats call(
-      {@required int numChannels,
-      @required int sentSampleRate,
-      @required int sentBitrate,
-      @required int txPacketLossRate}) {
+      {required int numChannels,
+      required int sentSampleRate,
+      required int sentBitrate,
+      required int txPacketLossRate}) {
     return _LocalAudioStats(
       numChannels: numChannels,
       sentSampleRate: sentSampleRate,
@@ -2395,25 +2597,25 @@ class _$LocalAudioStatsTearOff {
     );
   }
 
-// ignore: unused_element
   LocalAudioStats fromJson(Map<String, Object> json) {
     return LocalAudioStats.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $LocalAudioStats = _$LocalAudioStatsTearOff();
 
 /// @nodoc
 mixin _$LocalAudioStats {
-  int get numChannels;
-  int get sentSampleRate;
-  int get sentBitrate;
-  int get txPacketLossRate;
+  int get numChannels => throw _privateConstructorUsedError;
+  int get sentSampleRate => throw _privateConstructorUsedError;
+  int get sentBitrate => throw _privateConstructorUsedError;
+  int get txPacketLossRate => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $LocalAudioStatsCopyWith<LocalAudioStats> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LocalAudioStatsCopyWith<LocalAudioStats> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2439,22 +2641,28 @@ class _$LocalAudioStatsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object numChannels = freezed,
-    Object sentSampleRate = freezed,
-    Object sentBitrate = freezed,
-    Object txPacketLossRate = freezed,
+    Object? numChannels = freezed,
+    Object? sentSampleRate = freezed,
+    Object? sentBitrate = freezed,
+    Object? txPacketLossRate = freezed,
   }) {
     return _then(_value.copyWith(
-      numChannels:
-          numChannels == freezed ? _value.numChannels : numChannels as int,
+      numChannels: numChannels == freezed
+          ? _value.numChannels
+          : numChannels // ignore: cast_nullable_to_non_nullable
+              as int,
       sentSampleRate: sentSampleRate == freezed
           ? _value.sentSampleRate
-          : sentSampleRate as int,
-      sentBitrate:
-          sentBitrate == freezed ? _value.sentBitrate : sentBitrate as int,
+          : sentSampleRate // ignore: cast_nullable_to_non_nullable
+              as int,
+      sentBitrate: sentBitrate == freezed
+          ? _value.sentBitrate
+          : sentBitrate // ignore: cast_nullable_to_non_nullable
+              as int,
       txPacketLossRate: txPacketLossRate == freezed
           ? _value.txPacketLossRate
-          : txPacketLossRate as int,
+          : txPacketLossRate // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -2486,22 +2694,28 @@ class __$LocalAudioStatsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object numChannels = freezed,
-    Object sentSampleRate = freezed,
-    Object sentBitrate = freezed,
-    Object txPacketLossRate = freezed,
+    Object? numChannels = freezed,
+    Object? sentSampleRate = freezed,
+    Object? sentBitrate = freezed,
+    Object? txPacketLossRate = freezed,
   }) {
     return _then(_LocalAudioStats(
-      numChannels:
-          numChannels == freezed ? _value.numChannels : numChannels as int,
+      numChannels: numChannels == freezed
+          ? _value.numChannels
+          : numChannels // ignore: cast_nullable_to_non_nullable
+              as int,
       sentSampleRate: sentSampleRate == freezed
           ? _value.sentSampleRate
-          : sentSampleRate as int,
-      sentBitrate:
-          sentBitrate == freezed ? _value.sentBitrate : sentBitrate as int,
+          : sentSampleRate // ignore: cast_nullable_to_non_nullable
+              as int,
+      sentBitrate: sentBitrate == freezed
+          ? _value.sentBitrate
+          : sentBitrate // ignore: cast_nullable_to_non_nullable
+              as int,
       txPacketLossRate: txPacketLossRate == freezed
           ? _value.txPacketLossRate
-          : txPacketLossRate as int,
+          : txPacketLossRate // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -2511,14 +2725,10 @@ class __$LocalAudioStatsCopyWithImpl<$Res>
 /// @nodoc
 class _$_LocalAudioStats implements _LocalAudioStats {
   const _$_LocalAudioStats(
-      {@required this.numChannels,
-      @required this.sentSampleRate,
-      @required this.sentBitrate,
-      @required this.txPacketLossRate})
-      : assert(numChannels != null),
-        assert(sentSampleRate != null),
-        assert(sentBitrate != null),
-        assert(txPacketLossRate != null);
+      {required this.numChannels,
+      required this.sentSampleRate,
+      required this.sentBitrate,
+      required this.txPacketLossRate});
 
   factory _$_LocalAudioStats.fromJson(Map<String, dynamic> json) =>
       _$_$_LocalAudioStatsFromJson(json);
@@ -2563,6 +2773,7 @@ class _$_LocalAudioStats implements _LocalAudioStats {
       const DeepCollectionEquality().hash(sentBitrate) ^
       const DeepCollectionEquality().hash(txPacketLossRate);
 
+  @JsonKey(ignore: true)
   @override
   _$LocalAudioStatsCopyWith<_LocalAudioStats> get copyWith =>
       __$LocalAudioStatsCopyWithImpl<_LocalAudioStats>(this, _$identity);
@@ -2575,24 +2786,26 @@ class _$_LocalAudioStats implements _LocalAudioStats {
 
 abstract class _LocalAudioStats implements LocalAudioStats {
   const factory _LocalAudioStats(
-      {@required int numChannels,
-      @required int sentSampleRate,
-      @required int sentBitrate,
-      @required int txPacketLossRate}) = _$_LocalAudioStats;
+      {required int numChannels,
+      required int sentSampleRate,
+      required int sentBitrate,
+      required int txPacketLossRate}) = _$_LocalAudioStats;
 
   factory _LocalAudioStats.fromJson(Map<String, dynamic> json) =
       _$_LocalAudioStats.fromJson;
 
   @override
-  int get numChannels;
+  int get numChannels => throw _privateConstructorUsedError;
   @override
-  int get sentSampleRate;
+  int get sentSampleRate => throw _privateConstructorUsedError;
   @override
-  int get sentBitrate;
+  int get sentBitrate => throw _privateConstructorUsedError;
   @override
-  int get txPacketLossRate;
+  int get txPacketLossRate => throw _privateConstructorUsedError;
   @override
-  _$LocalAudioStatsCopyWith<_LocalAudioStats> get copyWith;
+  @JsonKey(ignore: true)
+  _$LocalAudioStatsCopyWith<_LocalAudioStats> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 LocalVideoStats _$LocalVideoStatsFromJson(Map<String, dynamic> json) {
@@ -2603,23 +2816,22 @@ LocalVideoStats _$LocalVideoStatsFromJson(Map<String, dynamic> json) {
 class _$LocalVideoStatsTearOff {
   const _$LocalVideoStatsTearOff();
 
-// ignore: unused_element
   _LocalVideoStats call(
-      {@required int sentBitrate,
-      @required int sentFrameRate,
-      @required int encoderOutputFrameRate,
-      @required int rendererOutputFrameRate,
-      @required int targetBitrate,
-      @required int targetFrameRate,
-      @required int qualityAdaptIndication,
-      @required int encodedBitrate,
-      @required int encodedFrameWidth,
-      @required int encodedFrameHeight,
-      @required int encodedFrameCount,
-      @required int codecType,
-      @required int txPacketLossRate,
-      @required int captureFrameRate,
-      @required int captureBrightnessLevel}) {
+      {required int sentBitrate,
+      required int sentFrameRate,
+      required int encoderOutputFrameRate,
+      required int rendererOutputFrameRate,
+      required int targetBitrate,
+      required int targetFrameRate,
+      required int qualityAdaptIndication,
+      required int encodedBitrate,
+      required int encodedFrameWidth,
+      required int encodedFrameHeight,
+      required int encodedFrameCount,
+      required int codecType,
+      required int txPacketLossRate,
+      required int captureFrameRate,
+      required int captureBrightnessLevel}) {
     return _LocalVideoStats(
       sentBitrate: sentBitrate,
       sentFrameRate: sentFrameRate,
@@ -2639,36 +2851,36 @@ class _$LocalVideoStatsTearOff {
     );
   }
 
-// ignore: unused_element
   LocalVideoStats fromJson(Map<String, Object> json) {
     return LocalVideoStats.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $LocalVideoStats = _$LocalVideoStatsTearOff();
 
 /// @nodoc
 mixin _$LocalVideoStats {
-  int get sentBitrate;
-  int get sentFrameRate;
-  int get encoderOutputFrameRate;
-  int get rendererOutputFrameRate;
-  int get targetBitrate;
-  int get targetFrameRate;
-  int get qualityAdaptIndication;
-  int get encodedBitrate;
-  int get encodedFrameWidth;
-  int get encodedFrameHeight;
-  int get encodedFrameCount;
-  int get codecType;
-  int get txPacketLossRate;
-  int get captureFrameRate;
-  int get captureBrightnessLevel;
+  int get sentBitrate => throw _privateConstructorUsedError;
+  int get sentFrameRate => throw _privateConstructorUsedError;
+  int get encoderOutputFrameRate => throw _privateConstructorUsedError;
+  int get rendererOutputFrameRate => throw _privateConstructorUsedError;
+  int get targetBitrate => throw _privateConstructorUsedError;
+  int get targetFrameRate => throw _privateConstructorUsedError;
+  int get qualityAdaptIndication => throw _privateConstructorUsedError;
+  int get encodedBitrate => throw _privateConstructorUsedError;
+  int get encodedFrameWidth => throw _privateConstructorUsedError;
+  int get encodedFrameHeight => throw _privateConstructorUsedError;
+  int get encodedFrameCount => throw _privateConstructorUsedError;
+  int get codecType => throw _privateConstructorUsedError;
+  int get txPacketLossRate => throw _privateConstructorUsedError;
+  int get captureFrameRate => throw _privateConstructorUsedError;
+  int get captureBrightnessLevel => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $LocalVideoStatsCopyWith<LocalVideoStats> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LocalVideoStatsCopyWith<LocalVideoStats> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2705,65 +2917,83 @@ class _$LocalVideoStatsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object sentBitrate = freezed,
-    Object sentFrameRate = freezed,
-    Object encoderOutputFrameRate = freezed,
-    Object rendererOutputFrameRate = freezed,
-    Object targetBitrate = freezed,
-    Object targetFrameRate = freezed,
-    Object qualityAdaptIndication = freezed,
-    Object encodedBitrate = freezed,
-    Object encodedFrameWidth = freezed,
-    Object encodedFrameHeight = freezed,
-    Object encodedFrameCount = freezed,
-    Object codecType = freezed,
-    Object txPacketLossRate = freezed,
-    Object captureFrameRate = freezed,
-    Object captureBrightnessLevel = freezed,
+    Object? sentBitrate = freezed,
+    Object? sentFrameRate = freezed,
+    Object? encoderOutputFrameRate = freezed,
+    Object? rendererOutputFrameRate = freezed,
+    Object? targetBitrate = freezed,
+    Object? targetFrameRate = freezed,
+    Object? qualityAdaptIndication = freezed,
+    Object? encodedBitrate = freezed,
+    Object? encodedFrameWidth = freezed,
+    Object? encodedFrameHeight = freezed,
+    Object? encodedFrameCount = freezed,
+    Object? codecType = freezed,
+    Object? txPacketLossRate = freezed,
+    Object? captureFrameRate = freezed,
+    Object? captureBrightnessLevel = freezed,
   }) {
     return _then(_value.copyWith(
-      sentBitrate:
-          sentBitrate == freezed ? _value.sentBitrate : sentBitrate as int,
+      sentBitrate: sentBitrate == freezed
+          ? _value.sentBitrate
+          : sentBitrate // ignore: cast_nullable_to_non_nullable
+              as int,
       sentFrameRate: sentFrameRate == freezed
           ? _value.sentFrameRate
-          : sentFrameRate as int,
+          : sentFrameRate // ignore: cast_nullable_to_non_nullable
+              as int,
       encoderOutputFrameRate: encoderOutputFrameRate == freezed
           ? _value.encoderOutputFrameRate
-          : encoderOutputFrameRate as int,
+          : encoderOutputFrameRate // ignore: cast_nullable_to_non_nullable
+              as int,
       rendererOutputFrameRate: rendererOutputFrameRate == freezed
           ? _value.rendererOutputFrameRate
-          : rendererOutputFrameRate as int,
+          : rendererOutputFrameRate // ignore: cast_nullable_to_non_nullable
+              as int,
       targetBitrate: targetBitrate == freezed
           ? _value.targetBitrate
-          : targetBitrate as int,
+          : targetBitrate // ignore: cast_nullable_to_non_nullable
+              as int,
       targetFrameRate: targetFrameRate == freezed
           ? _value.targetFrameRate
-          : targetFrameRate as int,
+          : targetFrameRate // ignore: cast_nullable_to_non_nullable
+              as int,
       qualityAdaptIndication: qualityAdaptIndication == freezed
           ? _value.qualityAdaptIndication
-          : qualityAdaptIndication as int,
+          : qualityAdaptIndication // ignore: cast_nullable_to_non_nullable
+              as int,
       encodedBitrate: encodedBitrate == freezed
           ? _value.encodedBitrate
-          : encodedBitrate as int,
+          : encodedBitrate // ignore: cast_nullable_to_non_nullable
+              as int,
       encodedFrameWidth: encodedFrameWidth == freezed
           ? _value.encodedFrameWidth
-          : encodedFrameWidth as int,
+          : encodedFrameWidth // ignore: cast_nullable_to_non_nullable
+              as int,
       encodedFrameHeight: encodedFrameHeight == freezed
           ? _value.encodedFrameHeight
-          : encodedFrameHeight as int,
+          : encodedFrameHeight // ignore: cast_nullable_to_non_nullable
+              as int,
       encodedFrameCount: encodedFrameCount == freezed
           ? _value.encodedFrameCount
-          : encodedFrameCount as int,
-      codecType: codecType == freezed ? _value.codecType : codecType as int,
+          : encodedFrameCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      codecType: codecType == freezed
+          ? _value.codecType
+          : codecType // ignore: cast_nullable_to_non_nullable
+              as int,
       txPacketLossRate: txPacketLossRate == freezed
           ? _value.txPacketLossRate
-          : txPacketLossRate as int,
+          : txPacketLossRate // ignore: cast_nullable_to_non_nullable
+              as int,
       captureFrameRate: captureFrameRate == freezed
           ? _value.captureFrameRate
-          : captureFrameRate as int,
+          : captureFrameRate // ignore: cast_nullable_to_non_nullable
+              as int,
       captureBrightnessLevel: captureBrightnessLevel == freezed
           ? _value.captureBrightnessLevel
-          : captureBrightnessLevel as int,
+          : captureBrightnessLevel // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -2806,65 +3036,83 @@ class __$LocalVideoStatsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object sentBitrate = freezed,
-    Object sentFrameRate = freezed,
-    Object encoderOutputFrameRate = freezed,
-    Object rendererOutputFrameRate = freezed,
-    Object targetBitrate = freezed,
-    Object targetFrameRate = freezed,
-    Object qualityAdaptIndication = freezed,
-    Object encodedBitrate = freezed,
-    Object encodedFrameWidth = freezed,
-    Object encodedFrameHeight = freezed,
-    Object encodedFrameCount = freezed,
-    Object codecType = freezed,
-    Object txPacketLossRate = freezed,
-    Object captureFrameRate = freezed,
-    Object captureBrightnessLevel = freezed,
+    Object? sentBitrate = freezed,
+    Object? sentFrameRate = freezed,
+    Object? encoderOutputFrameRate = freezed,
+    Object? rendererOutputFrameRate = freezed,
+    Object? targetBitrate = freezed,
+    Object? targetFrameRate = freezed,
+    Object? qualityAdaptIndication = freezed,
+    Object? encodedBitrate = freezed,
+    Object? encodedFrameWidth = freezed,
+    Object? encodedFrameHeight = freezed,
+    Object? encodedFrameCount = freezed,
+    Object? codecType = freezed,
+    Object? txPacketLossRate = freezed,
+    Object? captureFrameRate = freezed,
+    Object? captureBrightnessLevel = freezed,
   }) {
     return _then(_LocalVideoStats(
-      sentBitrate:
-          sentBitrate == freezed ? _value.sentBitrate : sentBitrate as int,
+      sentBitrate: sentBitrate == freezed
+          ? _value.sentBitrate
+          : sentBitrate // ignore: cast_nullable_to_non_nullable
+              as int,
       sentFrameRate: sentFrameRate == freezed
           ? _value.sentFrameRate
-          : sentFrameRate as int,
+          : sentFrameRate // ignore: cast_nullable_to_non_nullable
+              as int,
       encoderOutputFrameRate: encoderOutputFrameRate == freezed
           ? _value.encoderOutputFrameRate
-          : encoderOutputFrameRate as int,
+          : encoderOutputFrameRate // ignore: cast_nullable_to_non_nullable
+              as int,
       rendererOutputFrameRate: rendererOutputFrameRate == freezed
           ? _value.rendererOutputFrameRate
-          : rendererOutputFrameRate as int,
+          : rendererOutputFrameRate // ignore: cast_nullable_to_non_nullable
+              as int,
       targetBitrate: targetBitrate == freezed
           ? _value.targetBitrate
-          : targetBitrate as int,
+          : targetBitrate // ignore: cast_nullable_to_non_nullable
+              as int,
       targetFrameRate: targetFrameRate == freezed
           ? _value.targetFrameRate
-          : targetFrameRate as int,
+          : targetFrameRate // ignore: cast_nullable_to_non_nullable
+              as int,
       qualityAdaptIndication: qualityAdaptIndication == freezed
           ? _value.qualityAdaptIndication
-          : qualityAdaptIndication as int,
+          : qualityAdaptIndication // ignore: cast_nullable_to_non_nullable
+              as int,
       encodedBitrate: encodedBitrate == freezed
           ? _value.encodedBitrate
-          : encodedBitrate as int,
+          : encodedBitrate // ignore: cast_nullable_to_non_nullable
+              as int,
       encodedFrameWidth: encodedFrameWidth == freezed
           ? _value.encodedFrameWidth
-          : encodedFrameWidth as int,
+          : encodedFrameWidth // ignore: cast_nullable_to_non_nullable
+              as int,
       encodedFrameHeight: encodedFrameHeight == freezed
           ? _value.encodedFrameHeight
-          : encodedFrameHeight as int,
+          : encodedFrameHeight // ignore: cast_nullable_to_non_nullable
+              as int,
       encodedFrameCount: encodedFrameCount == freezed
           ? _value.encodedFrameCount
-          : encodedFrameCount as int,
-      codecType: codecType == freezed ? _value.codecType : codecType as int,
+          : encodedFrameCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      codecType: codecType == freezed
+          ? _value.codecType
+          : codecType // ignore: cast_nullable_to_non_nullable
+              as int,
       txPacketLossRate: txPacketLossRate == freezed
           ? _value.txPacketLossRate
-          : txPacketLossRate as int,
+          : txPacketLossRate // ignore: cast_nullable_to_non_nullable
+              as int,
       captureFrameRate: captureFrameRate == freezed
           ? _value.captureFrameRate
-          : captureFrameRate as int,
+          : captureFrameRate // ignore: cast_nullable_to_non_nullable
+              as int,
       captureBrightnessLevel: captureBrightnessLevel == freezed
           ? _value.captureBrightnessLevel
-          : captureBrightnessLevel as int,
+          : captureBrightnessLevel // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -2874,36 +3122,21 @@ class __$LocalVideoStatsCopyWithImpl<$Res>
 /// @nodoc
 class _$_LocalVideoStats implements _LocalVideoStats {
   const _$_LocalVideoStats(
-      {@required this.sentBitrate,
-      @required this.sentFrameRate,
-      @required this.encoderOutputFrameRate,
-      @required this.rendererOutputFrameRate,
-      @required this.targetBitrate,
-      @required this.targetFrameRate,
-      @required this.qualityAdaptIndication,
-      @required this.encodedBitrate,
-      @required this.encodedFrameWidth,
-      @required this.encodedFrameHeight,
-      @required this.encodedFrameCount,
-      @required this.codecType,
-      @required this.txPacketLossRate,
-      @required this.captureFrameRate,
-      @required this.captureBrightnessLevel})
-      : assert(sentBitrate != null),
-        assert(sentFrameRate != null),
-        assert(encoderOutputFrameRate != null),
-        assert(rendererOutputFrameRate != null),
-        assert(targetBitrate != null),
-        assert(targetFrameRate != null),
-        assert(qualityAdaptIndication != null),
-        assert(encodedBitrate != null),
-        assert(encodedFrameWidth != null),
-        assert(encodedFrameHeight != null),
-        assert(encodedFrameCount != null),
-        assert(codecType != null),
-        assert(txPacketLossRate != null),
-        assert(captureFrameRate != null),
-        assert(captureBrightnessLevel != null);
+      {required this.sentBitrate,
+      required this.sentFrameRate,
+      required this.encoderOutputFrameRate,
+      required this.rendererOutputFrameRate,
+      required this.targetBitrate,
+      required this.targetFrameRate,
+      required this.qualityAdaptIndication,
+      required this.encodedBitrate,
+      required this.encodedFrameWidth,
+      required this.encodedFrameHeight,
+      required this.encodedFrameCount,
+      required this.codecType,
+      required this.txPacketLossRate,
+      required this.captureFrameRate,
+      required this.captureBrightnessLevel});
 
   factory _$_LocalVideoStats.fromJson(Map<String, dynamic> json) =>
       _$_$_LocalVideoStatsFromJson(json);
@@ -3015,6 +3248,7 @@ class _$_LocalVideoStats implements _LocalVideoStats {
       const DeepCollectionEquality().hash(captureFrameRate) ^
       const DeepCollectionEquality().hash(captureBrightnessLevel);
 
+  @JsonKey(ignore: true)
   @override
   _$LocalVideoStatsCopyWith<_LocalVideoStats> get copyWith =>
       __$LocalVideoStatsCopyWithImpl<_LocalVideoStats>(this, _$identity);
@@ -3027,57 +3261,59 @@ class _$_LocalVideoStats implements _LocalVideoStats {
 
 abstract class _LocalVideoStats implements LocalVideoStats {
   const factory _LocalVideoStats(
-      {@required int sentBitrate,
-      @required int sentFrameRate,
-      @required int encoderOutputFrameRate,
-      @required int rendererOutputFrameRate,
-      @required int targetBitrate,
-      @required int targetFrameRate,
-      @required int qualityAdaptIndication,
-      @required int encodedBitrate,
-      @required int encodedFrameWidth,
-      @required int encodedFrameHeight,
-      @required int encodedFrameCount,
-      @required int codecType,
-      @required int txPacketLossRate,
-      @required int captureFrameRate,
-      @required int captureBrightnessLevel}) = _$_LocalVideoStats;
+      {required int sentBitrate,
+      required int sentFrameRate,
+      required int encoderOutputFrameRate,
+      required int rendererOutputFrameRate,
+      required int targetBitrate,
+      required int targetFrameRate,
+      required int qualityAdaptIndication,
+      required int encodedBitrate,
+      required int encodedFrameWidth,
+      required int encodedFrameHeight,
+      required int encodedFrameCount,
+      required int codecType,
+      required int txPacketLossRate,
+      required int captureFrameRate,
+      required int captureBrightnessLevel}) = _$_LocalVideoStats;
 
   factory _LocalVideoStats.fromJson(Map<String, dynamic> json) =
       _$_LocalVideoStats.fromJson;
 
   @override
-  int get sentBitrate;
+  int get sentBitrate => throw _privateConstructorUsedError;
   @override
-  int get sentFrameRate;
+  int get sentFrameRate => throw _privateConstructorUsedError;
   @override
-  int get encoderOutputFrameRate;
+  int get encoderOutputFrameRate => throw _privateConstructorUsedError;
   @override
-  int get rendererOutputFrameRate;
+  int get rendererOutputFrameRate => throw _privateConstructorUsedError;
   @override
-  int get targetBitrate;
+  int get targetBitrate => throw _privateConstructorUsedError;
   @override
-  int get targetFrameRate;
+  int get targetFrameRate => throw _privateConstructorUsedError;
   @override
-  int get qualityAdaptIndication;
+  int get qualityAdaptIndication => throw _privateConstructorUsedError;
   @override
-  int get encodedBitrate;
+  int get encodedBitrate => throw _privateConstructorUsedError;
   @override
-  int get encodedFrameWidth;
+  int get encodedFrameWidth => throw _privateConstructorUsedError;
   @override
-  int get encodedFrameHeight;
+  int get encodedFrameHeight => throw _privateConstructorUsedError;
   @override
-  int get encodedFrameCount;
+  int get encodedFrameCount => throw _privateConstructorUsedError;
   @override
-  int get codecType;
+  int get codecType => throw _privateConstructorUsedError;
   @override
-  int get txPacketLossRate;
+  int get txPacketLossRate => throw _privateConstructorUsedError;
   @override
-  int get captureFrameRate;
+  int get captureFrameRate => throw _privateConstructorUsedError;
   @override
-  int get captureBrightnessLevel;
+  int get captureBrightnessLevel => throw _privateConstructorUsedError;
   @override
-  _$LocalVideoStatsCopyWith<_LocalVideoStats> get copyWith;
+  @JsonKey(ignore: true)
+  _$LocalVideoStatsCopyWith<_LocalVideoStats> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 AudioVolumeInfo _$AudioVolumeInfoFromJson(Map<String, dynamic> json) {
@@ -3088,12 +3324,11 @@ AudioVolumeInfo _$AudioVolumeInfoFromJson(Map<String, dynamic> json) {
 class _$AudioVolumeInfoTearOff {
   const _$AudioVolumeInfoTearOff();
 
-// ignore: unused_element
   _AudioVolumeInfo call(
-      {@required int uid,
-      @required int volume,
-      @required int vad,
-      @required String channelId}) {
+      {required int uid,
+      required int volume,
+      required int vad,
+      required String channelId}) {
     return _AudioVolumeInfo(
       uid: uid,
       volume: volume,
@@ -3102,25 +3337,25 @@ class _$AudioVolumeInfoTearOff {
     );
   }
 
-// ignore: unused_element
   AudioVolumeInfo fromJson(Map<String, Object> json) {
     return AudioVolumeInfo.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $AudioVolumeInfo = _$AudioVolumeInfoTearOff();
 
 /// @nodoc
 mixin _$AudioVolumeInfo {
-  int get uid;
-  int get volume;
-  int get vad;
-  String get channelId;
+  int get uid => throw _privateConstructorUsedError;
+  int get volume => throw _privateConstructorUsedError;
+  int get vad => throw _privateConstructorUsedError;
+  String get channelId => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $AudioVolumeInfoCopyWith<AudioVolumeInfo> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AudioVolumeInfoCopyWith<AudioVolumeInfo> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -3142,16 +3377,28 @@ class _$AudioVolumeInfoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object uid = freezed,
-    Object volume = freezed,
-    Object vad = freezed,
-    Object channelId = freezed,
+    Object? uid = freezed,
+    Object? volume = freezed,
+    Object? vad = freezed,
+    Object? channelId = freezed,
   }) {
     return _then(_value.copyWith(
-      uid: uid == freezed ? _value.uid : uid as int,
-      volume: volume == freezed ? _value.volume : volume as int,
-      vad: vad == freezed ? _value.vad : vad as int,
-      channelId: channelId == freezed ? _value.channelId : channelId as String,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as int,
+      volume: volume == freezed
+          ? _value.volume
+          : volume // ignore: cast_nullable_to_non_nullable
+              as int,
+      vad: vad == freezed
+          ? _value.vad
+          : vad // ignore: cast_nullable_to_non_nullable
+              as int,
+      channelId: channelId == freezed
+          ? _value.channelId
+          : channelId // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -3179,16 +3426,28 @@ class __$AudioVolumeInfoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object uid = freezed,
-    Object volume = freezed,
-    Object vad = freezed,
-    Object channelId = freezed,
+    Object? uid = freezed,
+    Object? volume = freezed,
+    Object? vad = freezed,
+    Object? channelId = freezed,
   }) {
     return _then(_AudioVolumeInfo(
-      uid: uid == freezed ? _value.uid : uid as int,
-      volume: volume == freezed ? _value.volume : volume as int,
-      vad: vad == freezed ? _value.vad : vad as int,
-      channelId: channelId == freezed ? _value.channelId : channelId as String,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as int,
+      volume: volume == freezed
+          ? _value.volume
+          : volume // ignore: cast_nullable_to_non_nullable
+              as int,
+      vad: vad == freezed
+          ? _value.vad
+          : vad // ignore: cast_nullable_to_non_nullable
+              as int,
+      channelId: channelId == freezed
+          ? _value.channelId
+          : channelId // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -3198,14 +3457,10 @@ class __$AudioVolumeInfoCopyWithImpl<$Res>
 /// @nodoc
 class _$_AudioVolumeInfo implements _AudioVolumeInfo {
   const _$_AudioVolumeInfo(
-      {@required this.uid,
-      @required this.volume,
-      @required this.vad,
-      @required this.channelId})
-      : assert(uid != null),
-        assert(volume != null),
-        assert(vad != null),
-        assert(channelId != null);
+      {required this.uid,
+      required this.volume,
+      required this.vad,
+      required this.channelId});
 
   factory _$_AudioVolumeInfo.fromJson(Map<String, dynamic> json) =>
       _$_$_AudioVolumeInfoFromJson(json);
@@ -3247,6 +3502,7 @@ class _$_AudioVolumeInfo implements _AudioVolumeInfo {
       const DeepCollectionEquality().hash(vad) ^
       const DeepCollectionEquality().hash(channelId);
 
+  @JsonKey(ignore: true)
   @override
   _$AudioVolumeInfoCopyWith<_AudioVolumeInfo> get copyWith =>
       __$AudioVolumeInfoCopyWithImpl<_AudioVolumeInfo>(this, _$identity);
@@ -3259,24 +3515,26 @@ class _$_AudioVolumeInfo implements _AudioVolumeInfo {
 
 abstract class _AudioVolumeInfo implements AudioVolumeInfo {
   const factory _AudioVolumeInfo(
-      {@required int uid,
-      @required int volume,
-      @required int vad,
-      @required String channelId}) = _$_AudioVolumeInfo;
+      {required int uid,
+      required int volume,
+      required int vad,
+      required String channelId}) = _$_AudioVolumeInfo;
 
   factory _AudioVolumeInfo.fromJson(Map<String, dynamic> json) =
       _$_AudioVolumeInfo.fromJson;
 
   @override
-  int get uid;
+  int get uid => throw _privateConstructorUsedError;
   @override
-  int get volume;
+  int get volume => throw _privateConstructorUsedError;
   @override
-  int get vad;
+  int get vad => throw _privateConstructorUsedError;
   @override
-  String get channelId;
+  String get channelId => throw _privateConstructorUsedError;
   @override
-  _$AudioVolumeInfoCopyWith<_AudioVolumeInfo> get copyWith;
+  @JsonKey(ignore: true)
+  _$AudioVolumeInfoCopyWith<_AudioVolumeInfo> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 Participant _$ParticipantFromJson(Map<String, dynamic> json) {
@@ -3287,14 +3545,13 @@ Participant _$ParticipantFromJson(Map<String, dynamic> json) {
 class _$ParticipantTearOff {
   const _$ParticipantTearOff();
 
-// ignore: unused_element
   _Participant call(
-      {@required int uid,
+      {required int uid,
       AudioRemoteState audioState = AudioRemoteState.stopped,
       VideoRemoteState videoState = VideoRemoteState.stopped,
-      RemoteAudioStats audioStats,
-      RemoteVideoStats videoStats,
-      AudioVolumeInfo volumeInfo,
+      RemoteAudioStats? audioStats,
+      RemoteVideoStats? videoStats,
+      AudioVolumeInfo? volumeInfo,
       bool hasFrames = false}) {
     return _Participant(
       uid: uid,
@@ -3307,28 +3564,28 @@ class _$ParticipantTearOff {
     );
   }
 
-// ignore: unused_element
   Participant fromJson(Map<String, Object> json) {
     return Participant.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Participant = _$ParticipantTearOff();
 
 /// @nodoc
 mixin _$Participant {
-  int get uid;
-  AudioRemoteState get audioState;
-  VideoRemoteState get videoState;
-  RemoteAudioStats get audioStats;
-  RemoteVideoStats get videoStats;
-  AudioVolumeInfo get volumeInfo;
-  bool get hasFrames;
+  int get uid => throw _privateConstructorUsedError;
+  AudioRemoteState get audioState => throw _privateConstructorUsedError;
+  VideoRemoteState get videoState => throw _privateConstructorUsedError;
+  RemoteAudioStats? get audioStats => throw _privateConstructorUsedError;
+  RemoteVideoStats? get videoStats => throw _privateConstructorUsedError;
+  AudioVolumeInfo? get volumeInfo => throw _privateConstructorUsedError;
+  bool get hasFrames => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $ParticipantCopyWith<Participant> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ParticipantCopyWith<Participant> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -3340,14 +3597,14 @@ abstract class $ParticipantCopyWith<$Res> {
       {int uid,
       AudioRemoteState audioState,
       VideoRemoteState videoState,
-      RemoteAudioStats audioStats,
-      RemoteVideoStats videoStats,
-      AudioVolumeInfo volumeInfo,
+      RemoteAudioStats? audioStats,
+      RemoteVideoStats? videoStats,
+      AudioVolumeInfo? volumeInfo,
       bool hasFrames});
 
-  $RemoteAudioStatsCopyWith<$Res> get audioStats;
-  $RemoteVideoStatsCopyWith<$Res> get videoStats;
-  $AudioVolumeInfoCopyWith<$Res> get volumeInfo;
+  $RemoteAudioStatsCopyWith<$Res>? get audioStats;
+  $RemoteVideoStatsCopyWith<$Res>? get videoStats;
+  $AudioVolumeInfoCopyWith<$Res>? get volumeInfo;
 }
 
 /// @nodoc
@@ -3360,61 +3617,75 @@ class _$ParticipantCopyWithImpl<$Res> implements $ParticipantCopyWith<$Res> {
 
   @override
   $Res call({
-    Object uid = freezed,
-    Object audioState = freezed,
-    Object videoState = freezed,
-    Object audioStats = freezed,
-    Object videoStats = freezed,
-    Object volumeInfo = freezed,
-    Object hasFrames = freezed,
+    Object? uid = freezed,
+    Object? audioState = freezed,
+    Object? videoState = freezed,
+    Object? audioStats = freezed,
+    Object? videoStats = freezed,
+    Object? volumeInfo = freezed,
+    Object? hasFrames = freezed,
   }) {
     return _then(_value.copyWith(
-      uid: uid == freezed ? _value.uid : uid as int,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as int,
       audioState: audioState == freezed
           ? _value.audioState
-          : audioState as AudioRemoteState,
+          : audioState // ignore: cast_nullable_to_non_nullable
+              as AudioRemoteState,
       videoState: videoState == freezed
           ? _value.videoState
-          : videoState as VideoRemoteState,
+          : videoState // ignore: cast_nullable_to_non_nullable
+              as VideoRemoteState,
       audioStats: audioStats == freezed
           ? _value.audioStats
-          : audioStats as RemoteAudioStats,
+          : audioStats // ignore: cast_nullable_to_non_nullable
+              as RemoteAudioStats?,
       videoStats: videoStats == freezed
           ? _value.videoStats
-          : videoStats as RemoteVideoStats,
+          : videoStats // ignore: cast_nullable_to_non_nullable
+              as RemoteVideoStats?,
       volumeInfo: volumeInfo == freezed
           ? _value.volumeInfo
-          : volumeInfo as AudioVolumeInfo,
-      hasFrames: hasFrames == freezed ? _value.hasFrames : hasFrames as bool,
+          : volumeInfo // ignore: cast_nullable_to_non_nullable
+              as AudioVolumeInfo?,
+      hasFrames: hasFrames == freezed
+          ? _value.hasFrames
+          : hasFrames // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
   @override
-  $RemoteAudioStatsCopyWith<$Res> get audioStats {
+  $RemoteAudioStatsCopyWith<$Res>? get audioStats {
     if (_value.audioStats == null) {
       return null;
     }
-    return $RemoteAudioStatsCopyWith<$Res>(_value.audioStats, (value) {
+
+    return $RemoteAudioStatsCopyWith<$Res>(_value.audioStats!, (value) {
       return _then(_value.copyWith(audioStats: value));
     });
   }
 
   @override
-  $RemoteVideoStatsCopyWith<$Res> get videoStats {
+  $RemoteVideoStatsCopyWith<$Res>? get videoStats {
     if (_value.videoStats == null) {
       return null;
     }
-    return $RemoteVideoStatsCopyWith<$Res>(_value.videoStats, (value) {
+
+    return $RemoteVideoStatsCopyWith<$Res>(_value.videoStats!, (value) {
       return _then(_value.copyWith(videoStats: value));
     });
   }
 
   @override
-  $AudioVolumeInfoCopyWith<$Res> get volumeInfo {
+  $AudioVolumeInfoCopyWith<$Res>? get volumeInfo {
     if (_value.volumeInfo == null) {
       return null;
     }
-    return $AudioVolumeInfoCopyWith<$Res>(_value.volumeInfo, (value) {
+
+    return $AudioVolumeInfoCopyWith<$Res>(_value.volumeInfo!, (value) {
       return _then(_value.copyWith(volumeInfo: value));
     });
   }
@@ -3431,17 +3702,17 @@ abstract class _$ParticipantCopyWith<$Res>
       {int uid,
       AudioRemoteState audioState,
       VideoRemoteState videoState,
-      RemoteAudioStats audioStats,
-      RemoteVideoStats videoStats,
-      AudioVolumeInfo volumeInfo,
+      RemoteAudioStats? audioStats,
+      RemoteVideoStats? videoStats,
+      AudioVolumeInfo? volumeInfo,
       bool hasFrames});
 
   @override
-  $RemoteAudioStatsCopyWith<$Res> get audioStats;
+  $RemoteAudioStatsCopyWith<$Res>? get audioStats;
   @override
-  $RemoteVideoStatsCopyWith<$Res> get videoStats;
+  $RemoteVideoStatsCopyWith<$Res>? get videoStats;
   @override
-  $AudioVolumeInfoCopyWith<$Res> get volumeInfo;
+  $AudioVolumeInfoCopyWith<$Res>? get volumeInfo;
 }
 
 /// @nodoc
@@ -3456,32 +3727,43 @@ class __$ParticipantCopyWithImpl<$Res> extends _$ParticipantCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object uid = freezed,
-    Object audioState = freezed,
-    Object videoState = freezed,
-    Object audioStats = freezed,
-    Object videoStats = freezed,
-    Object volumeInfo = freezed,
-    Object hasFrames = freezed,
+    Object? uid = freezed,
+    Object? audioState = freezed,
+    Object? videoState = freezed,
+    Object? audioStats = freezed,
+    Object? videoStats = freezed,
+    Object? volumeInfo = freezed,
+    Object? hasFrames = freezed,
   }) {
     return _then(_Participant(
-      uid: uid == freezed ? _value.uid : uid as int,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as int,
       audioState: audioState == freezed
           ? _value.audioState
-          : audioState as AudioRemoteState,
+          : audioState // ignore: cast_nullable_to_non_nullable
+              as AudioRemoteState,
       videoState: videoState == freezed
           ? _value.videoState
-          : videoState as VideoRemoteState,
+          : videoState // ignore: cast_nullable_to_non_nullable
+              as VideoRemoteState,
       audioStats: audioStats == freezed
           ? _value.audioStats
-          : audioStats as RemoteAudioStats,
+          : audioStats // ignore: cast_nullable_to_non_nullable
+              as RemoteAudioStats?,
       videoStats: videoStats == freezed
           ? _value.videoStats
-          : videoStats as RemoteVideoStats,
+          : videoStats // ignore: cast_nullable_to_non_nullable
+              as RemoteVideoStats?,
       volumeInfo: volumeInfo == freezed
           ? _value.volumeInfo
-          : volumeInfo as AudioVolumeInfo,
-      hasFrames: hasFrames == freezed ? _value.hasFrames : hasFrames as bool,
+          : volumeInfo // ignore: cast_nullable_to_non_nullable
+              as AudioVolumeInfo?,
+      hasFrames: hasFrames == freezed
+          ? _value.hasFrames
+          : hasFrames // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -3491,17 +3773,13 @@ class __$ParticipantCopyWithImpl<$Res> extends _$ParticipantCopyWithImpl<$Res>
 /// @nodoc
 class _$_Participant implements _Participant {
   const _$_Participant(
-      {@required this.uid,
+      {required this.uid,
       this.audioState = AudioRemoteState.stopped,
       this.videoState = VideoRemoteState.stopped,
       this.audioStats,
       this.videoStats,
       this.volumeInfo,
-      this.hasFrames = false})
-      : assert(uid != null),
-        assert(audioState != null),
-        assert(videoState != null),
-        assert(hasFrames != null);
+      this.hasFrames = false});
 
   factory _$_Participant.fromJson(Map<String, dynamic> json) =>
       _$_$_ParticipantFromJson(json);
@@ -3515,11 +3793,11 @@ class _$_Participant implements _Participant {
   @override
   final VideoRemoteState videoState;
   @override
-  final RemoteAudioStats audioStats;
+  final RemoteAudioStats? audioStats;
   @override
-  final RemoteVideoStats videoStats;
+  final RemoteVideoStats? videoStats;
   @override
-  final AudioVolumeInfo volumeInfo;
+  final AudioVolumeInfo? volumeInfo;
   @JsonKey(defaultValue: false)
   @override
   final bool hasFrames;
@@ -3566,6 +3844,7 @@ class _$_Participant implements _Participant {
       const DeepCollectionEquality().hash(volumeInfo) ^
       const DeepCollectionEquality().hash(hasFrames);
 
+  @JsonKey(ignore: true)
   @override
   _$ParticipantCopyWith<_Participant> get copyWith =>
       __$ParticipantCopyWithImpl<_Participant>(this, _$identity);
@@ -3578,33 +3857,35 @@ class _$_Participant implements _Participant {
 
 abstract class _Participant implements Participant {
   const factory _Participant(
-      {@required int uid,
+      {required int uid,
       AudioRemoteState audioState,
       VideoRemoteState videoState,
-      RemoteAudioStats audioStats,
-      RemoteVideoStats videoStats,
-      AudioVolumeInfo volumeInfo,
+      RemoteAudioStats? audioStats,
+      RemoteVideoStats? videoStats,
+      AudioVolumeInfo? volumeInfo,
       bool hasFrames}) = _$_Participant;
 
   factory _Participant.fromJson(Map<String, dynamic> json) =
       _$_Participant.fromJson;
 
   @override
-  int get uid;
+  int get uid => throw _privateConstructorUsedError;
   @override
-  AudioRemoteState get audioState;
+  AudioRemoteState get audioState => throw _privateConstructorUsedError;
   @override
-  VideoRemoteState get videoState;
+  VideoRemoteState get videoState => throw _privateConstructorUsedError;
   @override
-  RemoteAudioStats get audioStats;
+  RemoteAudioStats? get audioStats => throw _privateConstructorUsedError;
   @override
-  RemoteVideoStats get videoStats;
+  RemoteVideoStats? get videoStats => throw _privateConstructorUsedError;
   @override
-  AudioVolumeInfo get volumeInfo;
+  AudioVolumeInfo? get volumeInfo => throw _privateConstructorUsedError;
   @override
-  bool get hasFrames;
+  bool get hasFrames => throw _privateConstructorUsedError;
   @override
-  _$ParticipantCopyWith<_Participant> get copyWith;
+  @JsonKey(ignore: true)
+  _$ParticipantCopyWith<_Participant> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 LocalParticipant _$LocalParticipantFromJson(Map<String, dynamic> json) {
@@ -3615,14 +3896,13 @@ LocalParticipant _$LocalParticipantFromJson(Map<String, dynamic> json) {
 class _$LocalParticipantTearOff {
   const _$LocalParticipantTearOff();
 
-// ignore: unused_element
   _LocalParticipant call(
-      {int uid,
+      {int? uid,
       AudioLocalState audioState = AudioLocalState.stopped,
       VideoLocalState videoState = VideoLocalState.stopped,
-      LocalAudioStats audioStats,
-      LocalVideoStats videoStats,
-      AudioVolumeInfo volumeInfo,
+      LocalAudioStats? audioStats,
+      LocalVideoStats? videoStats,
+      AudioVolumeInfo? volumeInfo,
       bool hasFrames = false}) {
     return _LocalParticipant(
       uid: uid,
@@ -3635,28 +3915,28 @@ class _$LocalParticipantTearOff {
     );
   }
 
-// ignore: unused_element
   LocalParticipant fromJson(Map<String, Object> json) {
     return LocalParticipant.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $LocalParticipant = _$LocalParticipantTearOff();
 
 /// @nodoc
 mixin _$LocalParticipant {
-  int get uid;
-  AudioLocalState get audioState;
-  VideoLocalState get videoState;
-  LocalAudioStats get audioStats;
-  LocalVideoStats get videoStats;
-  AudioVolumeInfo get volumeInfo;
-  bool get hasFrames;
+  int? get uid => throw _privateConstructorUsedError;
+  AudioLocalState get audioState => throw _privateConstructorUsedError;
+  VideoLocalState get videoState => throw _privateConstructorUsedError;
+  LocalAudioStats? get audioStats => throw _privateConstructorUsedError;
+  LocalVideoStats? get videoStats => throw _privateConstructorUsedError;
+  AudioVolumeInfo? get volumeInfo => throw _privateConstructorUsedError;
+  bool get hasFrames => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $LocalParticipantCopyWith<LocalParticipant> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LocalParticipantCopyWith<LocalParticipant> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -3665,17 +3945,17 @@ abstract class $LocalParticipantCopyWith<$Res> {
           LocalParticipant value, $Res Function(LocalParticipant) then) =
       _$LocalParticipantCopyWithImpl<$Res>;
   $Res call(
-      {int uid,
+      {int? uid,
       AudioLocalState audioState,
       VideoLocalState videoState,
-      LocalAudioStats audioStats,
-      LocalVideoStats videoStats,
-      AudioVolumeInfo volumeInfo,
+      LocalAudioStats? audioStats,
+      LocalVideoStats? videoStats,
+      AudioVolumeInfo? volumeInfo,
       bool hasFrames});
 
-  $LocalAudioStatsCopyWith<$Res> get audioStats;
-  $LocalVideoStatsCopyWith<$Res> get videoStats;
-  $AudioVolumeInfoCopyWith<$Res> get volumeInfo;
+  $LocalAudioStatsCopyWith<$Res>? get audioStats;
+  $LocalVideoStatsCopyWith<$Res>? get videoStats;
+  $AudioVolumeInfoCopyWith<$Res>? get volumeInfo;
 }
 
 /// @nodoc
@@ -3689,61 +3969,75 @@ class _$LocalParticipantCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object uid = freezed,
-    Object audioState = freezed,
-    Object videoState = freezed,
-    Object audioStats = freezed,
-    Object videoStats = freezed,
-    Object volumeInfo = freezed,
-    Object hasFrames = freezed,
+    Object? uid = freezed,
+    Object? audioState = freezed,
+    Object? videoState = freezed,
+    Object? audioStats = freezed,
+    Object? videoStats = freezed,
+    Object? volumeInfo = freezed,
+    Object? hasFrames = freezed,
   }) {
     return _then(_value.copyWith(
-      uid: uid == freezed ? _value.uid : uid as int,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as int?,
       audioState: audioState == freezed
           ? _value.audioState
-          : audioState as AudioLocalState,
+          : audioState // ignore: cast_nullable_to_non_nullable
+              as AudioLocalState,
       videoState: videoState == freezed
           ? _value.videoState
-          : videoState as VideoLocalState,
+          : videoState // ignore: cast_nullable_to_non_nullable
+              as VideoLocalState,
       audioStats: audioStats == freezed
           ? _value.audioStats
-          : audioStats as LocalAudioStats,
+          : audioStats // ignore: cast_nullable_to_non_nullable
+              as LocalAudioStats?,
       videoStats: videoStats == freezed
           ? _value.videoStats
-          : videoStats as LocalVideoStats,
+          : videoStats // ignore: cast_nullable_to_non_nullable
+              as LocalVideoStats?,
       volumeInfo: volumeInfo == freezed
           ? _value.volumeInfo
-          : volumeInfo as AudioVolumeInfo,
-      hasFrames: hasFrames == freezed ? _value.hasFrames : hasFrames as bool,
+          : volumeInfo // ignore: cast_nullable_to_non_nullable
+              as AudioVolumeInfo?,
+      hasFrames: hasFrames == freezed
+          ? _value.hasFrames
+          : hasFrames // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
   @override
-  $LocalAudioStatsCopyWith<$Res> get audioStats {
+  $LocalAudioStatsCopyWith<$Res>? get audioStats {
     if (_value.audioStats == null) {
       return null;
     }
-    return $LocalAudioStatsCopyWith<$Res>(_value.audioStats, (value) {
+
+    return $LocalAudioStatsCopyWith<$Res>(_value.audioStats!, (value) {
       return _then(_value.copyWith(audioStats: value));
     });
   }
 
   @override
-  $LocalVideoStatsCopyWith<$Res> get videoStats {
+  $LocalVideoStatsCopyWith<$Res>? get videoStats {
     if (_value.videoStats == null) {
       return null;
     }
-    return $LocalVideoStatsCopyWith<$Res>(_value.videoStats, (value) {
+
+    return $LocalVideoStatsCopyWith<$Res>(_value.videoStats!, (value) {
       return _then(_value.copyWith(videoStats: value));
     });
   }
 
   @override
-  $AudioVolumeInfoCopyWith<$Res> get volumeInfo {
+  $AudioVolumeInfoCopyWith<$Res>? get volumeInfo {
     if (_value.volumeInfo == null) {
       return null;
     }
-    return $AudioVolumeInfoCopyWith<$Res>(_value.volumeInfo, (value) {
+
+    return $AudioVolumeInfoCopyWith<$Res>(_value.volumeInfo!, (value) {
       return _then(_value.copyWith(volumeInfo: value));
     });
   }
@@ -3757,20 +4051,20 @@ abstract class _$LocalParticipantCopyWith<$Res>
       __$LocalParticipantCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int uid,
+      {int? uid,
       AudioLocalState audioState,
       VideoLocalState videoState,
-      LocalAudioStats audioStats,
-      LocalVideoStats videoStats,
-      AudioVolumeInfo volumeInfo,
+      LocalAudioStats? audioStats,
+      LocalVideoStats? videoStats,
+      AudioVolumeInfo? volumeInfo,
       bool hasFrames});
 
   @override
-  $LocalAudioStatsCopyWith<$Res> get audioStats;
+  $LocalAudioStatsCopyWith<$Res>? get audioStats;
   @override
-  $LocalVideoStatsCopyWith<$Res> get videoStats;
+  $LocalVideoStatsCopyWith<$Res>? get videoStats;
   @override
-  $AudioVolumeInfoCopyWith<$Res> get volumeInfo;
+  $AudioVolumeInfoCopyWith<$Res>? get volumeInfo;
 }
 
 /// @nodoc
@@ -3786,32 +4080,43 @@ class __$LocalParticipantCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object uid = freezed,
-    Object audioState = freezed,
-    Object videoState = freezed,
-    Object audioStats = freezed,
-    Object videoStats = freezed,
-    Object volumeInfo = freezed,
-    Object hasFrames = freezed,
+    Object? uid = freezed,
+    Object? audioState = freezed,
+    Object? videoState = freezed,
+    Object? audioStats = freezed,
+    Object? videoStats = freezed,
+    Object? volumeInfo = freezed,
+    Object? hasFrames = freezed,
   }) {
     return _then(_LocalParticipant(
-      uid: uid == freezed ? _value.uid : uid as int,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as int?,
       audioState: audioState == freezed
           ? _value.audioState
-          : audioState as AudioLocalState,
+          : audioState // ignore: cast_nullable_to_non_nullable
+              as AudioLocalState,
       videoState: videoState == freezed
           ? _value.videoState
-          : videoState as VideoLocalState,
+          : videoState // ignore: cast_nullable_to_non_nullable
+              as VideoLocalState,
       audioStats: audioStats == freezed
           ? _value.audioStats
-          : audioStats as LocalAudioStats,
+          : audioStats // ignore: cast_nullable_to_non_nullable
+              as LocalAudioStats?,
       videoStats: videoStats == freezed
           ? _value.videoStats
-          : videoStats as LocalVideoStats,
+          : videoStats // ignore: cast_nullable_to_non_nullable
+              as LocalVideoStats?,
       volumeInfo: volumeInfo == freezed
           ? _value.volumeInfo
-          : volumeInfo as AudioVolumeInfo,
-      hasFrames: hasFrames == freezed ? _value.hasFrames : hasFrames as bool,
+          : volumeInfo // ignore: cast_nullable_to_non_nullable
+              as AudioVolumeInfo?,
+      hasFrames: hasFrames == freezed
+          ? _value.hasFrames
+          : hasFrames // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -3827,16 +4132,13 @@ class _$_LocalParticipant implements _LocalParticipant {
       this.audioStats,
       this.videoStats,
       this.volumeInfo,
-      this.hasFrames = false})
-      : assert(audioState != null),
-        assert(videoState != null),
-        assert(hasFrames != null);
+      this.hasFrames = false});
 
   factory _$_LocalParticipant.fromJson(Map<String, dynamic> json) =>
       _$_$_LocalParticipantFromJson(json);
 
   @override
-  final int uid;
+  final int? uid;
   @JsonKey(defaultValue: AudioLocalState.stopped)
   @override
   final AudioLocalState audioState;
@@ -3844,11 +4146,11 @@ class _$_LocalParticipant implements _LocalParticipant {
   @override
   final VideoLocalState videoState;
   @override
-  final LocalAudioStats audioStats;
+  final LocalAudioStats? audioStats;
   @override
-  final LocalVideoStats videoStats;
+  final LocalVideoStats? videoStats;
   @override
-  final AudioVolumeInfo volumeInfo;
+  final AudioVolumeInfo? volumeInfo;
   @JsonKey(defaultValue: false)
   @override
   final bool hasFrames;
@@ -3895,6 +4197,7 @@ class _$_LocalParticipant implements _LocalParticipant {
       const DeepCollectionEquality().hash(volumeInfo) ^
       const DeepCollectionEquality().hash(hasFrames);
 
+  @JsonKey(ignore: true)
   @override
   _$LocalParticipantCopyWith<_LocalParticipant> get copyWith =>
       __$LocalParticipantCopyWithImpl<_LocalParticipant>(this, _$identity);
@@ -3907,31 +4210,33 @@ class _$_LocalParticipant implements _LocalParticipant {
 
 abstract class _LocalParticipant implements LocalParticipant {
   const factory _LocalParticipant(
-      {int uid,
+      {int? uid,
       AudioLocalState audioState,
       VideoLocalState videoState,
-      LocalAudioStats audioStats,
-      LocalVideoStats videoStats,
-      AudioVolumeInfo volumeInfo,
+      LocalAudioStats? audioStats,
+      LocalVideoStats? videoStats,
+      AudioVolumeInfo? volumeInfo,
       bool hasFrames}) = _$_LocalParticipant;
 
   factory _LocalParticipant.fromJson(Map<String, dynamic> json) =
       _$_LocalParticipant.fromJson;
 
   @override
-  int get uid;
+  int? get uid => throw _privateConstructorUsedError;
   @override
-  AudioLocalState get audioState;
+  AudioLocalState get audioState => throw _privateConstructorUsedError;
   @override
-  VideoLocalState get videoState;
+  VideoLocalState get videoState => throw _privateConstructorUsedError;
   @override
-  LocalAudioStats get audioStats;
+  LocalAudioStats? get audioStats => throw _privateConstructorUsedError;
   @override
-  LocalVideoStats get videoStats;
+  LocalVideoStats? get videoStats => throw _privateConstructorUsedError;
   @override
-  AudioVolumeInfo get volumeInfo;
+  AudioVolumeInfo? get volumeInfo => throw _privateConstructorUsedError;
   @override
-  bool get hasFrames;
+  bool get hasFrames => throw _privateConstructorUsedError;
   @override
-  _$LocalParticipantCopyWith<_LocalParticipant> get copyWith;
+  @JsonKey(ignore: true)
+  _$LocalParticipantCopyWith<_LocalParticipant> get copyWith =>
+      throw _privateConstructorUsedError;
 }

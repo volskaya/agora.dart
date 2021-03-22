@@ -22,6 +22,7 @@ analyzer:
   exclude:
     - lib/**.g.dart
     - lib/**.freezed.dart
+    - example/**
   strong-mode:
     implicit-casts: false
     implicit-dynamic: true

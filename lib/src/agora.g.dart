@@ -9,56 +9,56 @@ part of 'agora.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$Agora on _Agora, Store {
-  Computed<int> _$activeSpeakerComputed;
+  Computed<int?>? _$activeSpeakerComputed;
 
   @override
-  int get activeSpeaker =>
-      (_$activeSpeakerComputed ??= Computed<int>(() => super.activeSpeaker,
+  int? get activeSpeaker =>
+      (_$activeSpeakerComputed ??= Computed<int?>(() => super.activeSpeaker,
               name: '_Agora.activeSpeaker'))
           .value;
-  Computed<ConnectionStateType> _$connectionStateComputed;
+  Computed<ConnectionStateType>? _$connectionStateComputed;
 
   @override
   ConnectionStateType get connectionState => (_$connectionStateComputed ??=
           Computed<ConnectionStateType>(() => super.connectionState,
               name: '_Agora.connectionState'))
       .value;
-  Computed<LocalParticipant> _$participantComputed;
+  Computed<LocalParticipant>? _$participantComputed;
 
   @override
   LocalParticipant get participant => (_$participantComputed ??=
           Computed<LocalParticipant>(() => super.participant,
               name: '_Agora.participant'))
       .value;
-  Computed<VideoLocalState> _$videoStateComputed;
+  Computed<VideoLocalState>? _$videoStateComputed;
 
   @override
   VideoLocalState get videoState => (_$videoStateComputed ??=
           Computed<VideoLocalState>(() => super.videoState,
               name: '_Agora.videoState'))
       .value;
-  Computed<AudioLocalState> _$audioStateComputed;
+  Computed<AudioLocalState>? _$audioStateComputed;
 
   @override
   AudioLocalState get audioState => (_$audioStateComputed ??=
           Computed<AudioLocalState>(() => super.audioState,
               name: '_Agora.audioState'))
       .value;
-  Computed<LocalVideoStats> _$videoStatsComputed;
+  Computed<LocalVideoStats>? _$videoStatsComputed;
 
   @override
   LocalVideoStats get videoStats => (_$videoStatsComputed ??=
           Computed<LocalVideoStats>(() => super.videoStats,
               name: '_Agora.videoStats'))
       .value;
-  Computed<LocalAudioStats> _$audioStatsComputed;
+  Computed<LocalAudioStats>? _$audioStatsComputed;
 
   @override
   LocalAudioStats get audioStats => (_$audioStatsComputed ??=
           Computed<LocalAudioStats>(() => super.audioStats,
               name: '_Agora.audioStats'))
       .value;
-  Computed<Map<int, AgoraParticipant>> _$participantsComputed;
+  Computed<Map<int, AgoraParticipant>>? _$participantsComputed;
 
   @override
   Map<int, AgoraParticipant> get participants => (_$participantsComputed ??=

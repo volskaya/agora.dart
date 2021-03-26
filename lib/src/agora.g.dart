@@ -44,18 +44,18 @@ mixin _$Agora on _Agora, Store {
           Computed<AudioLocalState>(() => super.audioState,
               name: '_Agora.audioState'))
       .value;
-  Computed<LocalVideoStats>? _$videoStatsComputed;
+  Computed<LocalVideoStats?>? _$videoStatsComputed;
 
   @override
-  LocalVideoStats get videoStats => (_$videoStatsComputed ??=
-          Computed<LocalVideoStats>(() => super.videoStats,
+  LocalVideoStats? get videoStats => (_$videoStatsComputed ??=
+          Computed<LocalVideoStats?>(() => super.videoStats,
               name: '_Agora.videoStats'))
       .value;
-  Computed<LocalAudioStats>? _$audioStatsComputed;
+  Computed<LocalAudioStats?>? _$audioStatsComputed;
 
   @override
-  LocalAudioStats get audioStats => (_$audioStatsComputed ??=
-          Computed<LocalAudioStats>(() => super.audioStats,
+  LocalAudioStats? get audioStats => (_$audioStatsComputed ??=
+          Computed<LocalAudioStats?>(() => super.audioStats,
               name: '_Agora.audioStats'))
       .value;
   Computed<Map<int, AgoraParticipant>>? _$participantsComputed;

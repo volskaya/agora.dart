@@ -35,30 +35,20 @@ abstract class _Agora with Store {
 
   final channel = const MethodChannel('dev.volskaya.agora');
 
-  @observable
-  RtcStats stats = const RtcStats();
-  @observable
-  EngineState state = const EngineState();
-  @computed
-  int get activeSpeaker => state.activeSpeaker;
-  @computed
-  ConnectionStateType get connectionState => state.connectionState;
-  @computed
-  LocalParticipant get participant => state.participant ?? const LocalParticipant();
-  @computed
-  VideoLocalState get videoState => participant.videoState;
-  @computed
-  AudioLocalState get audioState => participant.audioState;
-  @computed
-  LocalVideoStats get videoStats => participant.videoStats;
-  @computed
-  LocalAudioStats get audioStats => participant.audioStats;
+  @o RtcStats stats = const RtcStats();
+  @o EngineState state = const EngineState();
+  @c int? get activeSpeaker => state.activeSpeaker;
+  @c ConnectionStateType get connectionState => state.connectionState;
+  @c LocalParticipant get participant => state.participant ?? const LocalParticipant();
+  @c VideoLocalState get videoState => participant.videoState;
+  @c AudioLocalState get audioState => participant.audioState;
+  @c LocalVideoStats? get videoStats => participant.videoStats;
+  @c LocalAudioStats? get audioStats => participant.audioStats;
 
   /// [AgoraParticipant] has to be rebuilt to avoid its [EventChannel] from reconstructing.
   Map<int, AgoraParticipant> _cachedParticipants = const <int, AgoraParticipant>{};
 
-  @computed
-  Map<int, AgoraParticipant> get participants {
+  @c Map<int, AgoraParticipant> get participants {
     if (!Agora.computeParticipants) {
       throw 'Something accessed [Agora.instance.participants] while [Agora.computeParticipants] was toggled off';
     }
@@ -79,7 +69,8 @@ abstract class _Agora with Store {
 
   Future leaveChannel() => channel.invokeMethod('leaveChannel');
   Future requestIgnoreBatteryOptimizations() => channel.invokeMethod('requestIgnoreBatteryOptimizations');
-  Future<bool> shouldIgnoreBatteryOptimizations() => channel.invokeMethod<bool>('shouldIgnoreBatteryOptimizations');
+  Future<bool> shouldIgnoreBatteryOptimizations() async =>
+      await channel.invokeMethod<bool>('shouldIgnoreBatteryOptimizations') ?? false;
 
   Future enableLocalAudio(bool enabled) => channel.invokeMethod('enableLocalAudio', {'enabled': enabled});
   Future enableLocalVideo(bool enabled) => channel.invokeMethod('enableLocalVideo', {'enabled': enabled});
@@ -96,8 +87,8 @@ abstract class _Agora with Store {
   /// This also triggers the first `state` update to be dispatched.
   Future initialize(
     String appId, {
-    AreaCode areaCode,
-    NotificationProps notificationSettings,
+    AreaCode? areaCode,
+    NotificationProps? notificationSettings,
   }) =>
       channel.invokeMethod(
         'initialize',
@@ -114,8 +105,9 @@ abstract class _Agora with Store {
   Future joinChannel(String token, String channelName, int uid) =>
       channel.invokeMethod('joinChannel', JoinChannelProps(token: token, channelName: channelName, uid: uid).toJson());
 
-  @action
-  Future _handleMethodCall(MethodCall methodCall) {
+  void dispose() => channel.setMethodCallHandler(null);
+
+  @a Future _handleMethodCall(MethodCall methodCall) {
     switch (methodCall.method) {
       case 'hydrateState':
         state = EngineState.fromJson(Map<String, dynamic>.from(methodCall.arguments as Map));
@@ -129,9 +121,5 @@ abstract class _Agora with Store {
     }
 
     return SynchronousFuture(null);
-  }
-
-  void dispose() {
-    channel.setMethodCallHandler(null);
   }
 }

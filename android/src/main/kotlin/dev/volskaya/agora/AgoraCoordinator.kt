@@ -15,18 +15,15 @@ import java.lang.ref.WeakReference
 import java.util.*
 
 class AgoraCoordinator(context: Context, appId: String, areaCode: Int) : IRtcEngineEventHandler() {
-    private val looper: Looper = Looper.getMainLooper()
-
     var service: WeakReference<ChannelService>? = null // Unreferenced when the [ChannelService] is destroyed.
     var contextRef: WeakReference<Context> = WeakReference(context)
-    var mediaSession: MediaSession? = null
     val engine: RtcEngine = RtcEngineConfig().let {
         it.mContext = context
         it.mAppId = appId
         it.mAreaCode = areaCode
         it.mEventHandler = this
 
-        RtcEngine.create(it).also { engine ->
+        RtcEngine.create(it).apply {
             val videoEncoderConfiguration = VideoEncoderConfiguration(
                     VideoEncoderConfiguration.VD_640x480,
                     VideoEncoderConfiguration.FRAME_RATE.FRAME_RATE_FPS_30,
@@ -34,28 +31,23 @@ class AgoraCoordinator(context: Context, appId: String, areaCode: Int) : IRtcEng
                     VideoEncoderConfiguration.ORIENTATION_MODE.ORIENTATION_MODE_FIXED_PORTRAIT
             )
 
-            engine.setVideoEncoderConfiguration(videoEncoderConfiguration)
-            engine.setAudioProfile(Constants.AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO, Constants.AUDIO_SCENARIO_GAME_STREAMING)
-            engine.enableAudio()
-            engine.enableLocalAudio(false)
-            engine.enableLocalVideo(false)
-            engine.setDefaultMuteAllRemoteAudioStreams(true)
-            engine.setDefaultMuteAllRemoteVideoStreams(true)
+            setVideoEncoderConfiguration(videoEncoderConfiguration)
+            setAudioProfile(Constants.AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO, Constants.AUDIO_SCENARIO_GAME_STREAMING)
+            enableAudio()
+            enableLocalAudio(false)
+            enableLocalVideo(false)
+            setDefaultMuteAllRemoteAudioStreams(true)
+            setDefaultMuteAllRemoteVideoStreams(true)
         }
     }
 
+    private val looper: Looper = Looper.getMainLooper()
     private var stats: RtcStats? = null
     private var channel: String? = null
     private var activeSpeaker: Int? = null
     private var participant: LocalParticipant = LocalParticipant()
     private var participants: MutableMap<Int, Participant> = mutableMapOf()
     private var onlineParticipants: MutableSet<Int> = mutableSetOf()
-
-    init {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            mediaSession = MediaSession(context, "agora_media_session")
-        }
-    }
 
     private fun post(callback: () -> Unit) { Handler(looper).post(callback) }
 

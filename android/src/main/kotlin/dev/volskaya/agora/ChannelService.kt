@@ -13,6 +13,7 @@ import android.os.PowerManager
 import androidx.core.app.NotificationCompat
 import java.lang.ref.WeakReference
 
+
 class ChannelService : Service() {
     var engineCoordinator: AgoraCoordinator? = null
     var startId: Int? = null
@@ -86,16 +87,17 @@ class ChannelService : Service() {
             val builder = Notification.Builder(this, NOTIFICATION_CHANNEL)
                     .setSmallIcon(icon)
                     .setColor(applicationContext.getColor(color))
+                    .setColorized(true)
                     .setChannelId(NOTIFICATION_CHANNEL)
                     .setOngoing(true)
                     .setContentIntent(pendingIntent)
 
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                builder.setAllowSystemGeneratedContextualActions(false)
+            }
+
             AgoraPlugin.notificationTitle?.let { builder.setContentTitle(it) }
             AgoraPlugin.notificationSubtitle?.let { builder.setContentText(it) }
-
-            engineCoordinator?.mediaSession?.let {
-                builder.style = Notification.MediaStyle().setMediaSession(it.sessionToken)
-            }
 
             builder.build()
         } else {

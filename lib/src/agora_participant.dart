@@ -18,22 +18,20 @@ abstract class _AgoraParticipant with Store {
   final int agoraId;
   final MethodChannel channel;
 
-  @observable
-  Participant state;
-  @computed
-  RemoteAudioStats get audioStats => state.audioStats;
-  @computed
-  AudioRemoteState get audioState => state.audioState;
-  @computed
-  RemoteVideoStats get videoStats => state.videoStats;
-  @computed
-  VideoRemoteState get videoState => state.videoState;
-  @computed
-  AudioVolumeInfo get volumeInfo => state.volumeInfo;
-  @computed
-  bool get hasFrames => state.hasFrames;
+  @o Participant? state;
+  @c RemoteAudioStats? get audioStats => state?.audioStats;
+  @c RemoteVideoStats? get videoStats => state?.videoStats;
+  @c AudioVolumeInfo? get volumeInfo => state?.volumeInfo;
+  @c AudioRemoteState get audioState => state?.audioState ?? AudioRemoteState.stopped;
+  @c VideoRemoteState get videoState => state?.videoState ?? VideoRemoteState.stopped;
+  @c bool get hasFrames => state?.hasFrames ?? false;
 
-  Future _handleMethodCall(MethodCall methodCall) {
+  /// [AgoraParticipant] is disposed when its no longer in [Agora.instance.participants] map.
+  void dispose() {
+    channel.setMethodCallHandler(null);
+  }
+
+  @a Future _handleMethodCall(MethodCall methodCall) {
     switch (methodCall.method) {
       case 'hydrate':
         state = Participant.fromJson(Map<String, dynamic>.from(methodCall.arguments as Map));
@@ -43,10 +41,5 @@ abstract class _AgoraParticipant with Store {
     }
 
     return SynchronousFuture(null);
-  }
-
-  /// [AgoraParticipant] is disposed when its no longer in [Agora.instance.participants] map.
-  void dispose() {
-    channel.setMethodCallHandler(null);
   }
 }

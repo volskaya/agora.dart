@@ -11,15 +11,16 @@ _$_EngineState _$_$_EngineStateFromJson(Map json) {
     connectionState: _$enumDecodeNullable(
             _$ConnectionStateTypeEnumMap, json['connectionState']) ??
         ConnectionStateType.disconnected,
-    channel: json['channel'] as String,
-    activeSpeaker: json['activeSpeaker'] as int,
+    channel: json['channel'] as String?,
+    activeSpeaker: json['activeSpeaker'] as int?,
     participant: json['participant'] == null
         ? null
-        : LocalParticipant.fromJson((json['participant'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
-    onlineParticipants:
-        (json['onlineParticipants'] as List)?.map((e) => e as int)?.toSet(),
+        : LocalParticipant.fromJson(
+            Map<String, dynamic>.from(json['participant'] as Map)),
+    onlineParticipants: (json['onlineParticipants'] as List<dynamic>?)
+            ?.map((e) => e as int)
+            .toSet() ??
+        {},
   );
 }
 
@@ -29,39 +30,44 @@ Map<String, dynamic> _$_$_EngineStateToJson(_$_EngineState instance) =>
       'channel': instance.channel,
       'activeSpeaker': instance.activeSpeaker,
       'participant': instance.participant?.toJson(),
-      'onlineParticipants': instance.onlineParticipants?.toList(),
+      'onlineParticipants': instance.onlineParticipants.toList(),
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$ConnectionStateTypeEnumMap = {
@@ -79,9 +85,8 @@ _$_InitializeEngineProps _$_$_InitializeEnginePropsFromJson(Map json) {
         AreaCode.global,
     notificationSettings: json['notificationSettings'] == null
         ? null
-        : NotificationProps.fromJson((json['notificationSettings'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
+        : NotificationProps.fromJson(
+            Map<String, dynamic>.from(json['notificationSettings'] as Map)),
   );
 }
 
@@ -105,8 +110,8 @@ const _$AreaCodeEnumMap = {
 
 _$_NotificationProps _$_$_NotificationPropsFromJson(Map json) {
   return _$_NotificationProps(
-    title: json['title'] as String,
-    subtitle: json['subtitle'] as String,
+    title: json['title'] as String?,
+    subtitle: json['subtitle'] as String?,
   );
 }
 
@@ -152,31 +157,31 @@ const _$ClientRoleEnumMap = {
 
 _$_RtcStats _$_$_RtcStatsFromJson(Map json) {
   return _$_RtcStats(
-    totalDuration: json['totalDuration'] as int ?? 0,
-    txBytes: json['txBytes'] as int ?? 0,
-    rxBytes: json['rxBytes'] as int ?? 0,
-    txAudioBytes: json['txAudioBytes'] as int ?? 0,
-    txVideoBytes: json['txVideoBytes'] as int ?? 0,
-    rxAudioBytes: json['rxAudioBytes'] as int ?? 0,
-    rxVideoBytes: json['rxVideoBytes'] as int ?? 0,
-    txKBitRate: json['txKBitRate'] as int ?? 0,
-    rxKBitRate: json['rxKBitRate'] as int ?? 0,
-    txAudioKBitRate: json['txAudioKBitRate'] as int ?? 0,
-    rxAudioKBitRate: json['rxAudioKBitRate'] as int ?? 0,
-    txVideoKBitRate: json['txVideoKBitRate'] as int ?? 0,
-    rxVideoKBitRate: json['rxVideoKBitRate'] as int ?? 0,
-    users: json['users'] as int ?? 0,
-    lastmileDelay: json['lastmileDelay'] as int ?? 0,
-    txPacketLossRate: json['txPacketLossRate'] as int ?? 0,
-    rxPacketLossRate: json['rxPacketLossRate'] as int ?? 0,
-    cpuTotalUsage: (json['cpuTotalUsage'] as num)?.toDouble() ?? 0.0,
-    cpuAppUsage: (json['cpuAppUsage'] as num)?.toDouble() ?? 0.0,
-    gatewayRtt: json['gatewayRtt'] as int ?? 0,
+    totalDuration: json['totalDuration'] as int? ?? 0,
+    txBytes: json['txBytes'] as int? ?? 0,
+    rxBytes: json['rxBytes'] as int? ?? 0,
+    txAudioBytes: json['txAudioBytes'] as int? ?? 0,
+    txVideoBytes: json['txVideoBytes'] as int? ?? 0,
+    rxAudioBytes: json['rxAudioBytes'] as int? ?? 0,
+    rxVideoBytes: json['rxVideoBytes'] as int? ?? 0,
+    txKBitRate: json['txKBitRate'] as int? ?? 0,
+    rxKBitRate: json['rxKBitRate'] as int? ?? 0,
+    txAudioKBitRate: json['txAudioKBitRate'] as int? ?? 0,
+    rxAudioKBitRate: json['rxAudioKBitRate'] as int? ?? 0,
+    txVideoKBitRate: json['txVideoKBitRate'] as int? ?? 0,
+    rxVideoKBitRate: json['rxVideoKBitRate'] as int? ?? 0,
+    users: json['users'] as int? ?? 0,
+    lastmileDelay: json['lastmileDelay'] as int? ?? 0,
+    txPacketLossRate: json['txPacketLossRate'] as int? ?? 0,
+    rxPacketLossRate: json['rxPacketLossRate'] as int? ?? 0,
+    cpuTotalUsage: (json['cpuTotalUsage'] as num?)?.toDouble() ?? 0.0,
+    cpuAppUsage: (json['cpuAppUsage'] as num?)?.toDouble() ?? 0.0,
+    gatewayRtt: json['gatewayRtt'] as int? ?? 0,
     memoryAppUsageRatio:
-        (json['memoryAppUsageRatio'] as num)?.toDouble() ?? 0.0,
+        (json['memoryAppUsageRatio'] as num?)?.toDouble() ?? 0.0,
     memoryTotalUsageRatio:
-        (json['memoryTotalUsageRatio'] as num)?.toDouble() ?? 0.0,
-    memoryAppUsageInKbyte: json['memoryAppUsageInKbyte'] as int ?? 0,
+        (json['memoryTotalUsageRatio'] as num?)?.toDouble() ?? 0.0,
+    memoryAppUsageInKbyte: json['memoryAppUsageInKbyte'] as int? ?? 0,
   );
 }
 
@@ -363,20 +368,17 @@ _$_Participant _$_$_ParticipantFromJson(Map json) {
             VideoRemoteState.stopped,
     audioStats: json['audioStats'] == null
         ? null
-        : RemoteAudioStats.fromJson((json['audioStats'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
+        : RemoteAudioStats.fromJson(
+            Map<String, dynamic>.from(json['audioStats'] as Map)),
     videoStats: json['videoStats'] == null
         ? null
-        : RemoteVideoStats.fromJson((json['videoStats'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
+        : RemoteVideoStats.fromJson(
+            Map<String, dynamic>.from(json['videoStats'] as Map)),
     volumeInfo: json['volumeInfo'] == null
         ? null
-        : AudioVolumeInfo.fromJson((json['volumeInfo'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
-    hasFrames: json['hasFrames'] as bool ?? false,
+        : AudioVolumeInfo.fromJson(
+            Map<String, dynamic>.from(json['volumeInfo'] as Map)),
+    hasFrames: json['hasFrames'] as bool? ?? false,
   );
 }
 
@@ -409,7 +411,7 @@ const _$VideoRemoteStateEnumMap = {
 
 _$_LocalParticipant _$_$_LocalParticipantFromJson(Map json) {
   return _$_LocalParticipant(
-    uid: json['uid'] as int,
+    uid: json['uid'] as int?,
     audioState:
         _$enumDecodeNullable(_$AudioLocalStateEnumMap, json['audioState']) ??
             AudioLocalState.stopped,
@@ -418,20 +420,17 @@ _$_LocalParticipant _$_$_LocalParticipantFromJson(Map json) {
             VideoLocalState.stopped,
     audioStats: json['audioStats'] == null
         ? null
-        : LocalAudioStats.fromJson((json['audioStats'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
+        : LocalAudioStats.fromJson(
+            Map<String, dynamic>.from(json['audioStats'] as Map)),
     videoStats: json['videoStats'] == null
         ? null
-        : LocalVideoStats.fromJson((json['videoStats'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
+        : LocalVideoStats.fromJson(
+            Map<String, dynamic>.from(json['videoStats'] as Map)),
     volumeInfo: json['volumeInfo'] == null
         ? null
-        : AudioVolumeInfo.fromJson((json['volumeInfo'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
-    hasFrames: json['hasFrames'] as bool ?? false,
+        : AudioVolumeInfo.fromJson(
+            Map<String, dynamic>.from(json['volumeInfo'] as Map)),
+    hasFrames: json['hasFrames'] as bool? ?? false,
   );
 }
 

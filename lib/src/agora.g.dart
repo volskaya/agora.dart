@@ -66,7 +66,7 @@ mixin _$Agora on _Agora, Store {
               name: '_Agora.participants'))
       .value;
 
-  final _$statsAtom = Atom(name: '_Agora.stats');
+  late final _$statsAtom = Atom(name: '_Agora.stats', context: context);
 
   @override
   RtcStats get stats {
@@ -83,7 +83,7 @@ mixin _$Agora on _Agora, Store {
     }
   }
 
-  final _$stateAtom = Atom(name: '_Agora.state');
+  late final _$stateAtom = Atom(name: '_Agora.state', context: context);
 
   @override
   EngineState get state {
@@ -100,7 +100,8 @@ mixin _$Agora on _Agora, Store {
     }
   }
 
-  final _$_AgoraActionController = ActionController(name: '_Agora');
+  late final _$_AgoraActionController =
+      ActionController(name: '_Agora', context: context);
 
   @override
   Future<dynamic> _handleMethodCall(MethodCall methodCall) {

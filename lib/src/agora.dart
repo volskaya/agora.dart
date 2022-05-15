@@ -1,9 +1,6 @@
 import 'dart:async';
 
 import 'package:agora/agora.dart';
-import 'package:agora/src/agora_participant.dart';
-import 'package:agora/src/enums.dart';
-import 'package:agora/src/props.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:mobx/mobx.dart';
@@ -99,8 +96,11 @@ abstract class _Agora with Store {
         ).toJson(),
       );
 
-  Future updateNotificationSettingss(NotificationProps settings) =>
-      channel.invokeMethod('updateNotificationSettings', settings.toJson());
+  Future updateNotificationSettingss(NotificationProps settings) async {
+    try {
+      await channel.invokeMethod('updateNotificationSettings', settings.toJson());
+    } catch(_) {}
+  }
 
   Future joinChannel(String token, String channelName, int uid) =>
       channel.invokeMethod('joinChannel', JoinChannelProps(token: token, channelName: channelName, uid: uid).toJson());

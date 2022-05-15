@@ -52,7 +52,8 @@ mixin _$AgoraParticipant on _AgoraParticipant, Store {
               name: '_AgoraParticipant.hasFrames'))
           .value;
 
-  final _$stateAtom = Atom(name: '_AgoraParticipant.state');
+  late final _$stateAtom =
+      Atom(name: '_AgoraParticipant.state', context: context);
 
   @override
   Participant? get state {
@@ -69,8 +70,8 @@ mixin _$AgoraParticipant on _AgoraParticipant, Store {
     }
   }
 
-  final _$_AgoraParticipantActionController =
-      ActionController(name: '_AgoraParticipant');
+  late final _$_AgoraParticipantActionController =
+      ActionController(name: '_AgoraParticipant', context: context);
 
   @override
   Future<dynamic> _handleMethodCall(MethodCall methodCall) {

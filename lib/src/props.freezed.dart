@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'props.dart';
 
@@ -10,38 +12,11 @@ part of 'props.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 EngineState _$EngineStateFromJson(Map<String, dynamic> json) {
   return _EngineState.fromJson(json);
 }
-
-/// @nodoc
-class _$EngineStateTearOff {
-  const _$EngineStateTearOff();
-
-  _EngineState call(
-      {ConnectionStateType connectionState = ConnectionStateType.disconnected,
-      String? channel,
-      int? activeSpeaker,
-      LocalParticipant? participant,
-      @SetFromListConverter() Set<int> onlineParticipants = const <int>{}}) {
-    return _EngineState(
-      connectionState: connectionState,
-      channel: channel,
-      activeSpeaker: activeSpeaker,
-      participant: participant,
-      onlineParticipants: onlineParticipants,
-    );
-  }
-
-  EngineState fromJson(Map<String, Object> json) {
-    return EngineState.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $EngineState = _$EngineStateTearOff();
 
 /// @nodoc
 mixin _$EngineState {
@@ -127,11 +102,11 @@ class _$EngineStateCopyWithImpl<$Res> implements $EngineStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$EngineStateCopyWith<$Res>
+abstract class _$$_EngineStateCopyWith<$Res>
     implements $EngineStateCopyWith<$Res> {
-  factory _$EngineStateCopyWith(
-          _EngineState value, $Res Function(_EngineState) then) =
-      __$EngineStateCopyWithImpl<$Res>;
+  factory _$$_EngineStateCopyWith(
+          _$_EngineState value, $Res Function(_$_EngineState) then) =
+      __$$_EngineStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {ConnectionStateType connectionState,
@@ -145,14 +120,14 @@ abstract class _$EngineStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$EngineStateCopyWithImpl<$Res> extends _$EngineStateCopyWithImpl<$Res>
-    implements _$EngineStateCopyWith<$Res> {
-  __$EngineStateCopyWithImpl(
-      _EngineState _value, $Res Function(_EngineState) _then)
-      : super(_value, (v) => _then(v as _EngineState));
+class __$$_EngineStateCopyWithImpl<$Res> extends _$EngineStateCopyWithImpl<$Res>
+    implements _$$_EngineStateCopyWith<$Res> {
+  __$$_EngineStateCopyWithImpl(
+      _$_EngineState _value, $Res Function(_$_EngineState) _then)
+      : super(_value, (v) => _then(v as _$_EngineState));
 
   @override
-  _EngineState get _value => super._value as _EngineState;
+  _$_EngineState get _value => super._value as _$_EngineState;
 
   @override
   $Res call({
@@ -162,7 +137,7 @@ class __$EngineStateCopyWithImpl<$Res> extends _$EngineStateCopyWithImpl<$Res>
     Object? participant = freezed,
     Object? onlineParticipants = freezed,
   }) {
-    return _then(_EngineState(
+    return _then(_$_EngineState(
       connectionState: connectionState == freezed
           ? _value.connectionState
           : connectionState // ignore: cast_nullable_to_non_nullable
@@ -180,29 +155,30 @@ class __$EngineStateCopyWithImpl<$Res> extends _$EngineStateCopyWithImpl<$Res>
           : participant // ignore: cast_nullable_to_non_nullable
               as LocalParticipant?,
       onlineParticipants: onlineParticipants == freezed
-          ? _value.onlineParticipants
+          ? _value._onlineParticipants
           : onlineParticipants // ignore: cast_nullable_to_non_nullable
               as Set<int>,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_EngineState implements _EngineState {
   const _$_EngineState(
       {this.connectionState = ConnectionStateType.disconnected,
       this.channel,
       this.activeSpeaker,
       this.participant,
-      @SetFromListConverter() this.onlineParticipants = const <int>{}});
+      @SetFromListConverter()
+          final Set<int> onlineParticipants = const <int>{}})
+      : _onlineParticipants = onlineParticipants;
 
   factory _$_EngineState.fromJson(Map<String, dynamic> json) =>
-      _$_$_EngineStateFromJson(json);
+      _$$_EngineStateFromJson(json);
 
-  @JsonKey(defaultValue: ConnectionStateType.disconnected)
   @override
+  @JsonKey()
   final ConnectionStateType connectionState;
   @override
   final String? channel;
@@ -210,10 +186,16 @@ class _$_EngineState implements _EngineState {
   final int? activeSpeaker;
   @override
   final LocalParticipant? participant;
-  @JsonKey(defaultValue: const <int>{})
-  @override // Local participant.
+// Local participant.
+  final Set<int> _onlineParticipants;
+// Local participant.
+  @override
+  @JsonKey()
   @SetFromListConverter()
-  final Set<int> onlineParticipants;
+  Set<int> get onlineParticipants {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableSetView(_onlineParticipants);
+  }
 
   @override
   String toString() {
@@ -223,51 +205,48 @@ class _$_EngineState implements _EngineState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _EngineState &&
-            (identical(other.connectionState, connectionState) ||
-                const DeepCollectionEquality()
-                    .equals(other.connectionState, connectionState)) &&
-            (identical(other.channel, channel) ||
-                const DeepCollectionEquality()
-                    .equals(other.channel, channel)) &&
-            (identical(other.activeSpeaker, activeSpeaker) ||
-                const DeepCollectionEquality()
-                    .equals(other.activeSpeaker, activeSpeaker)) &&
-            (identical(other.participant, participant) ||
-                const DeepCollectionEquality()
-                    .equals(other.participant, participant)) &&
-            (identical(other.onlineParticipants, onlineParticipants) ||
-                const DeepCollectionEquality()
-                    .equals(other.onlineParticipants, onlineParticipants)));
+        (other.runtimeType == runtimeType &&
+            other is _$_EngineState &&
+            const DeepCollectionEquality()
+                .equals(other.connectionState, connectionState) &&
+            const DeepCollectionEquality().equals(other.channel, channel) &&
+            const DeepCollectionEquality()
+                .equals(other.activeSpeaker, activeSpeaker) &&
+            const DeepCollectionEquality()
+                .equals(other.participant, participant) &&
+            const DeepCollectionEquality()
+                .equals(other._onlineParticipants, _onlineParticipants));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(connectionState) ^
-      const DeepCollectionEquality().hash(channel) ^
-      const DeepCollectionEquality().hash(activeSpeaker) ^
-      const DeepCollectionEquality().hash(participant) ^
-      const DeepCollectionEquality().hash(onlineParticipants);
 
   @JsonKey(ignore: true)
   @override
-  _$EngineStateCopyWith<_EngineState> get copyWith =>
-      __$EngineStateCopyWithImpl<_EngineState>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(connectionState),
+      const DeepCollectionEquality().hash(channel),
+      const DeepCollectionEquality().hash(activeSpeaker),
+      const DeepCollectionEquality().hash(participant),
+      const DeepCollectionEquality().hash(_onlineParticipants));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_EngineStateCopyWith<_$_EngineState> get copyWith =>
+      __$$_EngineStateCopyWithImpl<_$_EngineState>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_EngineStateToJson(this);
+    return _$$_EngineStateToJson(this);
   }
 }
 
 abstract class _EngineState implements EngineState {
   const factory _EngineState(
-      {ConnectionStateType connectionState,
-      String? channel,
-      int? activeSpeaker,
-      LocalParticipant? participant,
-      @SetFromListConverter() Set<int> onlineParticipants}) = _$_EngineState;
+          {final ConnectionStateType connectionState,
+          final String? channel,
+          final int? activeSpeaker,
+          final LocalParticipant? participant,
+          @SetFromListConverter() final Set<int> onlineParticipants}) =
+      _$_EngineState;
 
   factory _EngineState.fromJson(Map<String, dynamic> json) =
       _$_EngineState.fromJson;
@@ -285,7 +264,7 @@ abstract class _EngineState implements EngineState {
   Set<int> get onlineParticipants => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$EngineStateCopyWith<_EngineState> get copyWith =>
+  _$$_EngineStateCopyWith<_$_EngineState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -293,29 +272,6 @@ InitializeEngineProps _$InitializeEnginePropsFromJson(
     Map<String, dynamic> json) {
   return _InitializeEngineProps.fromJson(json);
 }
-
-/// @nodoc
-class _$InitializeEnginePropsTearOff {
-  const _$InitializeEnginePropsTearOff();
-
-  _InitializeEngineProps call(
-      {required String appId,
-      AreaCode areaCode = AreaCode.global,
-      NotificationProps? notificationSettings}) {
-    return _InitializeEngineProps(
-      appId: appId,
-      areaCode: areaCode,
-      notificationSettings: notificationSettings,
-    );
-  }
-
-  InitializeEngineProps fromJson(Map<String, Object> json) {
-    return InitializeEngineProps.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $InitializeEngineProps = _$InitializeEnginePropsTearOff();
 
 /// @nodoc
 mixin _$InitializeEngineProps {
@@ -388,11 +344,11 @@ class _$InitializeEnginePropsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$InitializeEnginePropsCopyWith<$Res>
+abstract class _$$_InitializeEnginePropsCopyWith<$Res>
     implements $InitializeEnginePropsCopyWith<$Res> {
-  factory _$InitializeEnginePropsCopyWith(_InitializeEngineProps value,
-          $Res Function(_InitializeEngineProps) then) =
-      __$InitializeEnginePropsCopyWithImpl<$Res>;
+  factory _$$_InitializeEnginePropsCopyWith(_$_InitializeEngineProps value,
+          $Res Function(_$_InitializeEngineProps) then) =
+      __$$_InitializeEnginePropsCopyWithImpl<$Res>;
   @override
   $Res call(
       {String appId,
@@ -404,15 +360,16 @@ abstract class _$InitializeEnginePropsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$InitializeEnginePropsCopyWithImpl<$Res>
+class __$$_InitializeEnginePropsCopyWithImpl<$Res>
     extends _$InitializeEnginePropsCopyWithImpl<$Res>
-    implements _$InitializeEnginePropsCopyWith<$Res> {
-  __$InitializeEnginePropsCopyWithImpl(_InitializeEngineProps _value,
-      $Res Function(_InitializeEngineProps) _then)
-      : super(_value, (v) => _then(v as _InitializeEngineProps));
+    implements _$$_InitializeEnginePropsCopyWith<$Res> {
+  __$$_InitializeEnginePropsCopyWithImpl(_$_InitializeEngineProps _value,
+      $Res Function(_$_InitializeEngineProps) _then)
+      : super(_value, (v) => _then(v as _$_InitializeEngineProps));
 
   @override
-  _InitializeEngineProps get _value => super._value as _InitializeEngineProps;
+  _$_InitializeEngineProps get _value =>
+      super._value as _$_InitializeEngineProps;
 
   @override
   $Res call({
@@ -420,7 +377,7 @@ class __$InitializeEnginePropsCopyWithImpl<$Res>
     Object? areaCode = freezed,
     Object? notificationSettings = freezed,
   }) {
-    return _then(_InitializeEngineProps(
+    return _then(_$_InitializeEngineProps(
       appId: appId == freezed
           ? _value.appId
           : appId // ignore: cast_nullable_to_non_nullable
@@ -437,9 +394,8 @@ class __$InitializeEnginePropsCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_InitializeEngineProps implements _InitializeEngineProps {
   const _$_InitializeEngineProps(
       {required this.appId,
@@ -447,12 +403,12 @@ class _$_InitializeEngineProps implements _InitializeEngineProps {
       this.notificationSettings});
 
   factory _$_InitializeEngineProps.fromJson(Map<String, dynamic> json) =>
-      _$_$_InitializeEnginePropsFromJson(json);
+      _$$_InitializeEnginePropsFromJson(json);
 
   @override
   final String appId;
-  @JsonKey(defaultValue: AreaCode.global)
   @override
+  @JsonKey()
   final AreaCode areaCode;
   @override
   final NotificationProps? notificationSettings;
@@ -465,41 +421,40 @@ class _$_InitializeEngineProps implements _InitializeEngineProps {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _InitializeEngineProps &&
-            (identical(other.appId, appId) ||
-                const DeepCollectionEquality().equals(other.appId, appId)) &&
-            (identical(other.areaCode, areaCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.areaCode, areaCode)) &&
-            (identical(other.notificationSettings, notificationSettings) ||
-                const DeepCollectionEquality()
-                    .equals(other.notificationSettings, notificationSettings)));
+        (other.runtimeType == runtimeType &&
+            other is _$_InitializeEngineProps &&
+            const DeepCollectionEquality().equals(other.appId, appId) &&
+            const DeepCollectionEquality().equals(other.areaCode, areaCode) &&
+            const DeepCollectionEquality()
+                .equals(other.notificationSettings, notificationSettings));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(appId) ^
-      const DeepCollectionEquality().hash(areaCode) ^
-      const DeepCollectionEquality().hash(notificationSettings);
 
   @JsonKey(ignore: true)
   @override
-  _$InitializeEnginePropsCopyWith<_InitializeEngineProps> get copyWith =>
-      __$InitializeEnginePropsCopyWithImpl<_InitializeEngineProps>(
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(appId),
+      const DeepCollectionEquality().hash(areaCode),
+      const DeepCollectionEquality().hash(notificationSettings));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_InitializeEnginePropsCopyWith<_$_InitializeEngineProps> get copyWith =>
+      __$$_InitializeEnginePropsCopyWithImpl<_$_InitializeEngineProps>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_InitializeEnginePropsToJson(this);
+    return _$$_InitializeEnginePropsToJson(this);
   }
 }
 
 abstract class _InitializeEngineProps implements InitializeEngineProps {
   const factory _InitializeEngineProps(
-      {required String appId,
-      AreaCode areaCode,
-      NotificationProps? notificationSettings}) = _$_InitializeEngineProps;
+          {required final String appId,
+          final AreaCode areaCode,
+          final NotificationProps? notificationSettings}) =
+      _$_InitializeEngineProps;
 
   factory _InitializeEngineProps.fromJson(Map<String, dynamic> json) =
       _$_InitializeEngineProps.fromJson;
@@ -513,32 +468,13 @@ abstract class _InitializeEngineProps implements InitializeEngineProps {
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$InitializeEnginePropsCopyWith<_InitializeEngineProps> get copyWith =>
+  _$$_InitializeEnginePropsCopyWith<_$_InitializeEngineProps> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 NotificationProps _$NotificationPropsFromJson(Map<String, dynamic> json) {
   return _NotificationProps.fromJson(json);
 }
-
-/// @nodoc
-class _$NotificationPropsTearOff {
-  const _$NotificationPropsTearOff();
-
-  _NotificationProps call({String? title, String? subtitle}) {
-    return _NotificationProps(
-      title: title,
-      subtitle: subtitle,
-    );
-  }
-
-  NotificationProps fromJson(Map<String, Object> json) {
-    return NotificationProps.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $NotificationProps = _$NotificationPropsTearOff();
 
 /// @nodoc
 mixin _$NotificationProps {
@@ -587,32 +523,32 @@ class _$NotificationPropsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$NotificationPropsCopyWith<$Res>
+abstract class _$$_NotificationPropsCopyWith<$Res>
     implements $NotificationPropsCopyWith<$Res> {
-  factory _$NotificationPropsCopyWith(
-          _NotificationProps value, $Res Function(_NotificationProps) then) =
-      __$NotificationPropsCopyWithImpl<$Res>;
+  factory _$$_NotificationPropsCopyWith(_$_NotificationProps value,
+          $Res Function(_$_NotificationProps) then) =
+      __$$_NotificationPropsCopyWithImpl<$Res>;
   @override
   $Res call({String? title, String? subtitle});
 }
 
 /// @nodoc
-class __$NotificationPropsCopyWithImpl<$Res>
+class __$$_NotificationPropsCopyWithImpl<$Res>
     extends _$NotificationPropsCopyWithImpl<$Res>
-    implements _$NotificationPropsCopyWith<$Res> {
-  __$NotificationPropsCopyWithImpl(
-      _NotificationProps _value, $Res Function(_NotificationProps) _then)
-      : super(_value, (v) => _then(v as _NotificationProps));
+    implements _$$_NotificationPropsCopyWith<$Res> {
+  __$$_NotificationPropsCopyWithImpl(
+      _$_NotificationProps _value, $Res Function(_$_NotificationProps) _then)
+      : super(_value, (v) => _then(v as _$_NotificationProps));
 
   @override
-  _NotificationProps get _value => super._value as _NotificationProps;
+  _$_NotificationProps get _value => super._value as _$_NotificationProps;
 
   @override
   $Res call({
     Object? title = freezed,
     Object? subtitle = freezed,
   }) {
-    return _then(_NotificationProps(
+    return _then(_$_NotificationProps(
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -625,14 +561,13 @@ class __$NotificationPropsCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_NotificationProps implements _NotificationProps {
   const _$_NotificationProps({this.title, this.subtitle});
 
   factory _$_NotificationProps.fromJson(Map<String, dynamic> json) =>
-      _$_$_NotificationPropsFromJson(json);
+      _$$_NotificationPropsFromJson(json);
 
   @override
   final String? title;
@@ -647,34 +582,34 @@ class _$_NotificationProps implements _NotificationProps {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _NotificationProps &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.subtitle, subtitle) ||
-                const DeepCollectionEquality()
-                    .equals(other.subtitle, subtitle)));
+        (other.runtimeType == runtimeType &&
+            other is _$_NotificationProps &&
+            const DeepCollectionEquality().equals(other.title, title) &&
+            const DeepCollectionEquality().equals(other.subtitle, subtitle));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(subtitle);
 
   @JsonKey(ignore: true)
   @override
-  _$NotificationPropsCopyWith<_NotificationProps> get copyWith =>
-      __$NotificationPropsCopyWithImpl<_NotificationProps>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(title),
+      const DeepCollectionEquality().hash(subtitle));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_NotificationPropsCopyWith<_$_NotificationProps> get copyWith =>
+      __$$_NotificationPropsCopyWithImpl<_$_NotificationProps>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_NotificationPropsToJson(this);
+    return _$$_NotificationPropsToJson(this);
   }
 }
 
 abstract class _NotificationProps implements NotificationProps {
-  const factory _NotificationProps({String? title, String? subtitle}) =
-      _$_NotificationProps;
+  const factory _NotificationProps(
+      {final String? title, final String? subtitle}) = _$_NotificationProps;
 
   factory _NotificationProps.fromJson(Map<String, dynamic> json) =
       _$_NotificationProps.fromJson;
@@ -685,40 +620,13 @@ abstract class _NotificationProps implements NotificationProps {
   String? get subtitle => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$NotificationPropsCopyWith<_NotificationProps> get copyWith =>
+  _$$_NotificationPropsCopyWith<_$_NotificationProps> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 JoinChannelProps _$JoinChannelPropsFromJson(Map<String, dynamic> json) {
   return _JoinChannelProps.fromJson(json);
 }
-
-/// @nodoc
-class _$JoinChannelPropsTearOff {
-  const _$JoinChannelPropsTearOff();
-
-  _JoinChannelProps call(
-      {required String token,
-      required String channelName,
-      required int uid,
-      ChannelProfile profile = ChannelProfile.liveBroadcasting,
-      ClientRole role = ClientRole.broadcaster}) {
-    return _JoinChannelProps(
-      token: token,
-      channelName: channelName,
-      uid: uid,
-      profile: profile,
-      role: role,
-    );
-  }
-
-  JoinChannelProps fromJson(Map<String, Object> json) {
-    return JoinChannelProps.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $JoinChannelProps = _$JoinChannelPropsTearOff();
 
 /// @nodoc
 mixin _$JoinChannelProps {
@@ -790,11 +698,11 @@ class _$JoinChannelPropsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$JoinChannelPropsCopyWith<$Res>
+abstract class _$$_JoinChannelPropsCopyWith<$Res>
     implements $JoinChannelPropsCopyWith<$Res> {
-  factory _$JoinChannelPropsCopyWith(
-          _JoinChannelProps value, $Res Function(_JoinChannelProps) then) =
-      __$JoinChannelPropsCopyWithImpl<$Res>;
+  factory _$$_JoinChannelPropsCopyWith(
+          _$_JoinChannelProps value, $Res Function(_$_JoinChannelProps) then) =
+      __$$_JoinChannelPropsCopyWithImpl<$Res>;
   @override
   $Res call(
       {String token,
@@ -805,15 +713,15 @@ abstract class _$JoinChannelPropsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$JoinChannelPropsCopyWithImpl<$Res>
+class __$$_JoinChannelPropsCopyWithImpl<$Res>
     extends _$JoinChannelPropsCopyWithImpl<$Res>
-    implements _$JoinChannelPropsCopyWith<$Res> {
-  __$JoinChannelPropsCopyWithImpl(
-      _JoinChannelProps _value, $Res Function(_JoinChannelProps) _then)
-      : super(_value, (v) => _then(v as _JoinChannelProps));
+    implements _$$_JoinChannelPropsCopyWith<$Res> {
+  __$$_JoinChannelPropsCopyWithImpl(
+      _$_JoinChannelProps _value, $Res Function(_$_JoinChannelProps) _then)
+      : super(_value, (v) => _then(v as _$_JoinChannelProps));
 
   @override
-  _JoinChannelProps get _value => super._value as _JoinChannelProps;
+  _$_JoinChannelProps get _value => super._value as _$_JoinChannelProps;
 
   @override
   $Res call({
@@ -823,7 +731,7 @@ class __$JoinChannelPropsCopyWithImpl<$Res>
     Object? profile = freezed,
     Object? role = freezed,
   }) {
-    return _then(_JoinChannelProps(
+    return _then(_$_JoinChannelProps(
       token: token == freezed
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
@@ -848,9 +756,8 @@ class __$JoinChannelPropsCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_JoinChannelProps implements _JoinChannelProps {
   const _$_JoinChannelProps(
       {required this.token,
@@ -860,7 +767,7 @@ class _$_JoinChannelProps implements _JoinChannelProps {
       this.role = ClientRole.broadcaster});
 
   factory _$_JoinChannelProps.fromJson(Map<String, dynamic> json) =>
-      _$_$_JoinChannelPropsFromJson(json);
+      _$$_JoinChannelPropsFromJson(json);
 
   @override
   final String token;
@@ -868,11 +775,11 @@ class _$_JoinChannelProps implements _JoinChannelProps {
   final String channelName;
   @override
   final int uid;
-  @JsonKey(defaultValue: ChannelProfile.liveBroadcasting)
   @override
+  @JsonKey()
   final ChannelProfile profile;
-  @JsonKey(defaultValue: ClientRole.broadcaster)
   @override
+  @JsonKey()
   final ClientRole role;
 
   @override
@@ -883,48 +790,44 @@ class _$_JoinChannelProps implements _JoinChannelProps {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _JoinChannelProps &&
-            (identical(other.token, token) ||
-                const DeepCollectionEquality().equals(other.token, token)) &&
-            (identical(other.channelName, channelName) ||
-                const DeepCollectionEquality()
-                    .equals(other.channelName, channelName)) &&
-            (identical(other.uid, uid) ||
-                const DeepCollectionEquality().equals(other.uid, uid)) &&
-            (identical(other.profile, profile) ||
-                const DeepCollectionEquality()
-                    .equals(other.profile, profile)) &&
-            (identical(other.role, role) ||
-                const DeepCollectionEquality().equals(other.role, role)));
+        (other.runtimeType == runtimeType &&
+            other is _$_JoinChannelProps &&
+            const DeepCollectionEquality().equals(other.token, token) &&
+            const DeepCollectionEquality()
+                .equals(other.channelName, channelName) &&
+            const DeepCollectionEquality().equals(other.uid, uid) &&
+            const DeepCollectionEquality().equals(other.profile, profile) &&
+            const DeepCollectionEquality().equals(other.role, role));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(token) ^
-      const DeepCollectionEquality().hash(channelName) ^
-      const DeepCollectionEquality().hash(uid) ^
-      const DeepCollectionEquality().hash(profile) ^
-      const DeepCollectionEquality().hash(role);
 
   @JsonKey(ignore: true)
   @override
-  _$JoinChannelPropsCopyWith<_JoinChannelProps> get copyWith =>
-      __$JoinChannelPropsCopyWithImpl<_JoinChannelProps>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(token),
+      const DeepCollectionEquality().hash(channelName),
+      const DeepCollectionEquality().hash(uid),
+      const DeepCollectionEquality().hash(profile),
+      const DeepCollectionEquality().hash(role));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_JoinChannelPropsCopyWith<_$_JoinChannelProps> get copyWith =>
+      __$$_JoinChannelPropsCopyWithImpl<_$_JoinChannelProps>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_JoinChannelPropsToJson(this);
+    return _$$_JoinChannelPropsToJson(this);
   }
 }
 
 abstract class _JoinChannelProps implements JoinChannelProps {
   const factory _JoinChannelProps(
-      {required String token,
-      required String channelName,
-      required int uid,
-      ChannelProfile profile,
-      ClientRole role}) = _$_JoinChannelProps;
+      {required final String token,
+      required final String channelName,
+      required final int uid,
+      final ChannelProfile profile,
+      final ClientRole role}) = _$_JoinChannelProps;
 
   factory _JoinChannelProps.fromJson(Map<String, dynamic> json) =
       _$_JoinChannelProps.fromJson;
@@ -941,76 +844,13 @@ abstract class _JoinChannelProps implements JoinChannelProps {
   ClientRole get role => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$JoinChannelPropsCopyWith<_JoinChannelProps> get copyWith =>
+  _$$_JoinChannelPropsCopyWith<_$_JoinChannelProps> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 RtcStats _$RtcStatsFromJson(Map<String, dynamic> json) {
   return _RtcStats.fromJson(json);
 }
-
-/// @nodoc
-class _$RtcStatsTearOff {
-  const _$RtcStatsTearOff();
-
-  _RtcStats call(
-      {int totalDuration = 0,
-      int txBytes = 0,
-      int rxBytes = 0,
-      int txAudioBytes = 0,
-      int txVideoBytes = 0,
-      int rxAudioBytes = 0,
-      int rxVideoBytes = 0,
-      int txKBitRate = 0,
-      int rxKBitRate = 0,
-      int txAudioKBitRate = 0,
-      int rxAudioKBitRate = 0,
-      int txVideoKBitRate = 0,
-      int rxVideoKBitRate = 0,
-      int users = 0,
-      int lastmileDelay = 0,
-      int txPacketLossRate = 0,
-      int rxPacketLossRate = 0,
-      double cpuTotalUsage = 0.0,
-      double cpuAppUsage = 0.0,
-      int gatewayRtt = 0,
-      double memoryAppUsageRatio = 0.0,
-      double memoryTotalUsageRatio = 0.0,
-      int memoryAppUsageInKbyte = 0}) {
-    return _RtcStats(
-      totalDuration: totalDuration,
-      txBytes: txBytes,
-      rxBytes: rxBytes,
-      txAudioBytes: txAudioBytes,
-      txVideoBytes: txVideoBytes,
-      rxAudioBytes: rxAudioBytes,
-      rxVideoBytes: rxVideoBytes,
-      txKBitRate: txKBitRate,
-      rxKBitRate: rxKBitRate,
-      txAudioKBitRate: txAudioKBitRate,
-      rxAudioKBitRate: rxAudioKBitRate,
-      txVideoKBitRate: txVideoKBitRate,
-      rxVideoKBitRate: rxVideoKBitRate,
-      users: users,
-      lastmileDelay: lastmileDelay,
-      txPacketLossRate: txPacketLossRate,
-      rxPacketLossRate: rxPacketLossRate,
-      cpuTotalUsage: cpuTotalUsage,
-      cpuAppUsage: cpuAppUsage,
-      gatewayRtt: gatewayRtt,
-      memoryAppUsageRatio: memoryAppUsageRatio,
-      memoryTotalUsageRatio: memoryTotalUsageRatio,
-      memoryAppUsageInKbyte: memoryAppUsageInKbyte,
-    );
-  }
-
-  RtcStats fromJson(Map<String, Object> json) {
-    return RtcStats.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $RtcStats = _$RtcStatsTearOff();
 
 /// @nodoc
 mixin _$RtcStats {
@@ -1206,9 +1046,10 @@ class _$RtcStatsCopyWithImpl<$Res> implements $RtcStatsCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$RtcStatsCopyWith<$Res> implements $RtcStatsCopyWith<$Res> {
-  factory _$RtcStatsCopyWith(_RtcStats value, $Res Function(_RtcStats) then) =
-      __$RtcStatsCopyWithImpl<$Res>;
+abstract class _$$_RtcStatsCopyWith<$Res> implements $RtcStatsCopyWith<$Res> {
+  factory _$$_RtcStatsCopyWith(
+          _$_RtcStats value, $Res Function(_$_RtcStats) then) =
+      __$$_RtcStatsCopyWithImpl<$Res>;
   @override
   $Res call(
       {int totalDuration,
@@ -1237,13 +1078,14 @@ abstract class _$RtcStatsCopyWith<$Res> implements $RtcStatsCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$RtcStatsCopyWithImpl<$Res> extends _$RtcStatsCopyWithImpl<$Res>
-    implements _$RtcStatsCopyWith<$Res> {
-  __$RtcStatsCopyWithImpl(_RtcStats _value, $Res Function(_RtcStats) _then)
-      : super(_value, (v) => _then(v as _RtcStats));
+class __$$_RtcStatsCopyWithImpl<$Res> extends _$RtcStatsCopyWithImpl<$Res>
+    implements _$$_RtcStatsCopyWith<$Res> {
+  __$$_RtcStatsCopyWithImpl(
+      _$_RtcStats _value, $Res Function(_$_RtcStats) _then)
+      : super(_value, (v) => _then(v as _$_RtcStats));
 
   @override
-  _RtcStats get _value => super._value as _RtcStats;
+  _$_RtcStats get _value => super._value as _$_RtcStats;
 
   @override
   $Res call({
@@ -1271,7 +1113,7 @@ class __$RtcStatsCopyWithImpl<$Res> extends _$RtcStatsCopyWithImpl<$Res>
     Object? memoryTotalUsageRatio = freezed,
     Object? memoryAppUsageInKbyte = freezed,
   }) {
-    return _then(_RtcStats(
+    return _then(_$_RtcStats(
       totalDuration: totalDuration == freezed
           ? _value.totalDuration
           : totalDuration // ignore: cast_nullable_to_non_nullable
@@ -1368,9 +1210,8 @@ class __$RtcStatsCopyWithImpl<$Res> extends _$RtcStatsCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_RtcStats implements _RtcStats {
   const _$_RtcStats(
       {this.totalDuration = 0,
@@ -1398,76 +1239,76 @@ class _$_RtcStats implements _RtcStats {
       this.memoryAppUsageInKbyte = 0});
 
   factory _$_RtcStats.fromJson(Map<String, dynamic> json) =>
-      _$_$_RtcStatsFromJson(json);
+      _$$_RtcStatsFromJson(json);
 
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int totalDuration;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int txBytes;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int rxBytes;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int txAudioBytes;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int txVideoBytes;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int rxAudioBytes;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int rxVideoBytes;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int txKBitRate;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int rxKBitRate;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int txAudioKBitRate;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int rxAudioKBitRate;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int txVideoKBitRate;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int rxVideoKBitRate;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int users;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int lastmileDelay;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int txPacketLossRate;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int rxPacketLossRate;
-  @JsonKey(defaultValue: 0.0)
   @override
+  @JsonKey()
   final double cpuTotalUsage;
-  @JsonKey(defaultValue: 0.0)
   @override
+  @JsonKey()
   final double cpuAppUsage;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int gatewayRtt;
-  @JsonKey(defaultValue: 0.0)
   @override
+  @JsonKey()
   final double memoryAppUsageRatio;
-  @JsonKey(defaultValue: 0.0)
   @override
+  @JsonKey()
   final double memoryTotalUsageRatio;
-  @JsonKey(defaultValue: 0)
   @override
+  @JsonKey()
   final int memoryAppUsageInKbyte;
 
   @override
@@ -1478,138 +1319,118 @@ class _$_RtcStats implements _RtcStats {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RtcStats &&
-            (identical(other.totalDuration, totalDuration) ||
-                const DeepCollectionEquality()
-                    .equals(other.totalDuration, totalDuration)) &&
-            (identical(other.txBytes, txBytes) ||
-                const DeepCollectionEquality()
-                    .equals(other.txBytes, txBytes)) &&
-            (identical(other.rxBytes, rxBytes) ||
-                const DeepCollectionEquality()
-                    .equals(other.rxBytes, rxBytes)) &&
-            (identical(other.txAudioBytes, txAudioBytes) ||
-                const DeepCollectionEquality()
-                    .equals(other.txAudioBytes, txAudioBytes)) &&
-            (identical(other.txVideoBytes, txVideoBytes) ||
-                const DeepCollectionEquality()
-                    .equals(other.txVideoBytes, txVideoBytes)) &&
-            (identical(other.rxAudioBytes, rxAudioBytes) ||
-                const DeepCollectionEquality()
-                    .equals(other.rxAudioBytes, rxAudioBytes)) &&
-            (identical(other.rxVideoBytes, rxVideoBytes) ||
-                const DeepCollectionEquality()
-                    .equals(other.rxVideoBytes, rxVideoBytes)) &&
-            (identical(other.txKBitRate, txKBitRate) ||
-                const DeepCollectionEquality()
-                    .equals(other.txKBitRate, txKBitRate)) &&
-            (identical(other.rxKBitRate, rxKBitRate) ||
-                const DeepCollectionEquality()
-                    .equals(other.rxKBitRate, rxKBitRate)) &&
-            (identical(other.txAudioKBitRate, txAudioKBitRate) ||
-                const DeepCollectionEquality()
-                    .equals(other.txAudioKBitRate, txAudioKBitRate)) &&
-            (identical(other.rxAudioKBitRate, rxAudioKBitRate) ||
-                const DeepCollectionEquality()
-                    .equals(other.rxAudioKBitRate, rxAudioKBitRate)) &&
-            (identical(other.txVideoKBitRate, txVideoKBitRate) ||
-                const DeepCollectionEquality()
-                    .equals(other.txVideoKBitRate, txVideoKBitRate)) &&
-            (identical(other.rxVideoKBitRate, rxVideoKBitRate) ||
-                const DeepCollectionEquality()
-                    .equals(other.rxVideoKBitRate, rxVideoKBitRate)) &&
-            (identical(other.users, users) ||
-                const DeepCollectionEquality().equals(other.users, users)) &&
-            (identical(other.lastmileDelay, lastmileDelay) ||
-                const DeepCollectionEquality()
-                    .equals(other.lastmileDelay, lastmileDelay)) &&
-            (identical(other.txPacketLossRate, txPacketLossRate) ||
-                const DeepCollectionEquality()
-                    .equals(other.txPacketLossRate, txPacketLossRate)) &&
-            (identical(other.rxPacketLossRate, rxPacketLossRate) ||
-                const DeepCollectionEquality()
-                    .equals(other.rxPacketLossRate, rxPacketLossRate)) &&
-            (identical(other.cpuTotalUsage, cpuTotalUsage) ||
-                const DeepCollectionEquality()
-                    .equals(other.cpuTotalUsage, cpuTotalUsage)) &&
-            (identical(other.cpuAppUsage, cpuAppUsage) ||
-                const DeepCollectionEquality()
-                    .equals(other.cpuAppUsage, cpuAppUsage)) &&
-            (identical(other.gatewayRtt, gatewayRtt) ||
-                const DeepCollectionEquality()
-                    .equals(other.gatewayRtt, gatewayRtt)) &&
-            (identical(other.memoryAppUsageRatio, memoryAppUsageRatio) ||
-                const DeepCollectionEquality()
-                    .equals(other.memoryAppUsageRatio, memoryAppUsageRatio)) &&
-            (identical(other.memoryTotalUsageRatio, memoryTotalUsageRatio) ||
-                const DeepCollectionEquality().equals(
-                    other.memoryTotalUsageRatio, memoryTotalUsageRatio)) &&
-            (identical(other.memoryAppUsageInKbyte, memoryAppUsageInKbyte) || const DeepCollectionEquality().equals(other.memoryAppUsageInKbyte, memoryAppUsageInKbyte)));
+        (other.runtimeType == runtimeType &&
+            other is _$_RtcStats &&
+            const DeepCollectionEquality()
+                .equals(other.totalDuration, totalDuration) &&
+            const DeepCollectionEquality().equals(other.txBytes, txBytes) &&
+            const DeepCollectionEquality().equals(other.rxBytes, rxBytes) &&
+            const DeepCollectionEquality()
+                .equals(other.txAudioBytes, txAudioBytes) &&
+            const DeepCollectionEquality()
+                .equals(other.txVideoBytes, txVideoBytes) &&
+            const DeepCollectionEquality()
+                .equals(other.rxAudioBytes, rxAudioBytes) &&
+            const DeepCollectionEquality()
+                .equals(other.rxVideoBytes, rxVideoBytes) &&
+            const DeepCollectionEquality()
+                .equals(other.txKBitRate, txKBitRate) &&
+            const DeepCollectionEquality()
+                .equals(other.rxKBitRate, rxKBitRate) &&
+            const DeepCollectionEquality()
+                .equals(other.txAudioKBitRate, txAudioKBitRate) &&
+            const DeepCollectionEquality()
+                .equals(other.rxAudioKBitRate, rxAudioKBitRate) &&
+            const DeepCollectionEquality()
+                .equals(other.txVideoKBitRate, txVideoKBitRate) &&
+            const DeepCollectionEquality()
+                .equals(other.rxVideoKBitRate, rxVideoKBitRate) &&
+            const DeepCollectionEquality().equals(other.users, users) &&
+            const DeepCollectionEquality()
+                .equals(other.lastmileDelay, lastmileDelay) &&
+            const DeepCollectionEquality()
+                .equals(other.txPacketLossRate, txPacketLossRate) &&
+            const DeepCollectionEquality()
+                .equals(other.rxPacketLossRate, rxPacketLossRate) &&
+            const DeepCollectionEquality()
+                .equals(other.cpuTotalUsage, cpuTotalUsage) &&
+            const DeepCollectionEquality()
+                .equals(other.cpuAppUsage, cpuAppUsage) &&
+            const DeepCollectionEquality()
+                .equals(other.gatewayRtt, gatewayRtt) &&
+            const DeepCollectionEquality()
+                .equals(other.memoryAppUsageRatio, memoryAppUsageRatio) &&
+            const DeepCollectionEquality()
+                .equals(other.memoryTotalUsageRatio, memoryTotalUsageRatio) &&
+            const DeepCollectionEquality()
+                .equals(other.memoryAppUsageInKbyte, memoryAppUsageInKbyte));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(totalDuration) ^
-      const DeepCollectionEquality().hash(txBytes) ^
-      const DeepCollectionEquality().hash(rxBytes) ^
-      const DeepCollectionEquality().hash(txAudioBytes) ^
-      const DeepCollectionEquality().hash(txVideoBytes) ^
-      const DeepCollectionEquality().hash(rxAudioBytes) ^
-      const DeepCollectionEquality().hash(rxVideoBytes) ^
-      const DeepCollectionEquality().hash(txKBitRate) ^
-      const DeepCollectionEquality().hash(rxKBitRate) ^
-      const DeepCollectionEquality().hash(txAudioKBitRate) ^
-      const DeepCollectionEquality().hash(rxAudioKBitRate) ^
-      const DeepCollectionEquality().hash(txVideoKBitRate) ^
-      const DeepCollectionEquality().hash(rxVideoKBitRate) ^
-      const DeepCollectionEquality().hash(users) ^
-      const DeepCollectionEquality().hash(lastmileDelay) ^
-      const DeepCollectionEquality().hash(txPacketLossRate) ^
-      const DeepCollectionEquality().hash(rxPacketLossRate) ^
-      const DeepCollectionEquality().hash(cpuTotalUsage) ^
-      const DeepCollectionEquality().hash(cpuAppUsage) ^
-      const DeepCollectionEquality().hash(gatewayRtt) ^
-      const DeepCollectionEquality().hash(memoryAppUsageRatio) ^
-      const DeepCollectionEquality().hash(memoryTotalUsageRatio) ^
-      const DeepCollectionEquality().hash(memoryAppUsageInKbyte);
 
   @JsonKey(ignore: true)
   @override
-  _$RtcStatsCopyWith<_RtcStats> get copyWith =>
-      __$RtcStatsCopyWithImpl<_RtcStats>(this, _$identity);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        const DeepCollectionEquality().hash(totalDuration),
+        const DeepCollectionEquality().hash(txBytes),
+        const DeepCollectionEquality().hash(rxBytes),
+        const DeepCollectionEquality().hash(txAudioBytes),
+        const DeepCollectionEquality().hash(txVideoBytes),
+        const DeepCollectionEquality().hash(rxAudioBytes),
+        const DeepCollectionEquality().hash(rxVideoBytes),
+        const DeepCollectionEquality().hash(txKBitRate),
+        const DeepCollectionEquality().hash(rxKBitRate),
+        const DeepCollectionEquality().hash(txAudioKBitRate),
+        const DeepCollectionEquality().hash(rxAudioKBitRate),
+        const DeepCollectionEquality().hash(txVideoKBitRate),
+        const DeepCollectionEquality().hash(rxVideoKBitRate),
+        const DeepCollectionEquality().hash(users),
+        const DeepCollectionEquality().hash(lastmileDelay),
+        const DeepCollectionEquality().hash(txPacketLossRate),
+        const DeepCollectionEquality().hash(rxPacketLossRate),
+        const DeepCollectionEquality().hash(cpuTotalUsage),
+        const DeepCollectionEquality().hash(cpuAppUsage),
+        const DeepCollectionEquality().hash(gatewayRtt),
+        const DeepCollectionEquality().hash(memoryAppUsageRatio),
+        const DeepCollectionEquality().hash(memoryTotalUsageRatio),
+        const DeepCollectionEquality().hash(memoryAppUsageInKbyte)
+      ]);
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_RtcStatsCopyWith<_$_RtcStats> get copyWith =>
+      __$$_RtcStatsCopyWithImpl<_$_RtcStats>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_RtcStatsToJson(this);
+    return _$$_RtcStatsToJson(this);
   }
 }
 
 abstract class _RtcStats implements RtcStats {
   const factory _RtcStats(
-      {int totalDuration,
-      int txBytes,
-      int rxBytes,
-      int txAudioBytes,
-      int txVideoBytes,
-      int rxAudioBytes,
-      int rxVideoBytes,
-      int txKBitRate,
-      int rxKBitRate,
-      int txAudioKBitRate,
-      int rxAudioKBitRate,
-      int txVideoKBitRate,
-      int rxVideoKBitRate,
-      int users,
-      int lastmileDelay,
-      int txPacketLossRate,
-      int rxPacketLossRate,
-      double cpuTotalUsage,
-      double cpuAppUsage,
-      int gatewayRtt,
-      double memoryAppUsageRatio,
-      double memoryTotalUsageRatio,
-      int memoryAppUsageInKbyte}) = _$_RtcStats;
+      {final int totalDuration,
+      final int txBytes,
+      final int rxBytes,
+      final int txAudioBytes,
+      final int txVideoBytes,
+      final int rxAudioBytes,
+      final int rxVideoBytes,
+      final int txKBitRate,
+      final int rxKBitRate,
+      final int txAudioKBitRate,
+      final int rxAudioKBitRate,
+      final int txVideoKBitRate,
+      final int rxVideoKBitRate,
+      final int users,
+      final int lastmileDelay,
+      final int txPacketLossRate,
+      final int rxPacketLossRate,
+      final double cpuTotalUsage,
+      final double cpuAppUsage,
+      final int gatewayRtt,
+      final double memoryAppUsageRatio,
+      final double memoryTotalUsageRatio,
+      final int memoryAppUsageInKbyte}) = _$_RtcStats;
 
   factory _RtcStats.fromJson(Map<String, dynamic> json) = _$_RtcStats.fromJson;
 
@@ -1661,58 +1482,13 @@ abstract class _RtcStats implements RtcStats {
   int get memoryAppUsageInKbyte => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$RtcStatsCopyWith<_RtcStats> get copyWith =>
+  _$$_RtcStatsCopyWith<_$_RtcStats> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 RemoteAudioStats _$RemoteAudioStatsFromJson(Map<String, dynamic> json) {
   return _RemoteAudioStats.fromJson(json);
 }
-
-/// @nodoc
-class _$RemoteAudioStatsTearOff {
-  const _$RemoteAudioStatsTearOff();
-
-  _RemoteAudioStats call(
-      {required int uid,
-      required int quality,
-      required int networkTransportDelay,
-      required int jitterBufferDelay,
-      required int audioLossRate,
-      required int numChannels,
-      required int receivedSampleRate,
-      required int receivedBitrate,
-      required int totalFrozenTime,
-      required int frozenRate,
-      required int totalActiveTime,
-      required int publishDuration,
-      required int qoeQuality,
-      required int qualityChangedReason}) {
-    return _RemoteAudioStats(
-      uid: uid,
-      quality: quality,
-      networkTransportDelay: networkTransportDelay,
-      jitterBufferDelay: jitterBufferDelay,
-      audioLossRate: audioLossRate,
-      numChannels: numChannels,
-      receivedSampleRate: receivedSampleRate,
-      receivedBitrate: receivedBitrate,
-      totalFrozenTime: totalFrozenTime,
-      frozenRate: frozenRate,
-      totalActiveTime: totalActiveTime,
-      publishDuration: publishDuration,
-      qoeQuality: qoeQuality,
-      qualityChangedReason: qualityChangedReason,
-    );
-  }
-
-  RemoteAudioStats fromJson(Map<String, Object> json) {
-    return RemoteAudioStats.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $RemoteAudioStats = _$RemoteAudioStatsTearOff();
 
 /// @nodoc
 mixin _$RemoteAudioStats {
@@ -1847,11 +1623,11 @@ class _$RemoteAudioStatsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$RemoteAudioStatsCopyWith<$Res>
+abstract class _$$_RemoteAudioStatsCopyWith<$Res>
     implements $RemoteAudioStatsCopyWith<$Res> {
-  factory _$RemoteAudioStatsCopyWith(
-          _RemoteAudioStats value, $Res Function(_RemoteAudioStats) then) =
-      __$RemoteAudioStatsCopyWithImpl<$Res>;
+  factory _$$_RemoteAudioStatsCopyWith(
+          _$_RemoteAudioStats value, $Res Function(_$_RemoteAudioStats) then) =
+      __$$_RemoteAudioStatsCopyWithImpl<$Res>;
   @override
   $Res call(
       {int uid,
@@ -1871,15 +1647,15 @@ abstract class _$RemoteAudioStatsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$RemoteAudioStatsCopyWithImpl<$Res>
+class __$$_RemoteAudioStatsCopyWithImpl<$Res>
     extends _$RemoteAudioStatsCopyWithImpl<$Res>
-    implements _$RemoteAudioStatsCopyWith<$Res> {
-  __$RemoteAudioStatsCopyWithImpl(
-      _RemoteAudioStats _value, $Res Function(_RemoteAudioStats) _then)
-      : super(_value, (v) => _then(v as _RemoteAudioStats));
+    implements _$$_RemoteAudioStatsCopyWith<$Res> {
+  __$$_RemoteAudioStatsCopyWithImpl(
+      _$_RemoteAudioStats _value, $Res Function(_$_RemoteAudioStats) _then)
+      : super(_value, (v) => _then(v as _$_RemoteAudioStats));
 
   @override
-  _RemoteAudioStats get _value => super._value as _RemoteAudioStats;
+  _$_RemoteAudioStats get _value => super._value as _$_RemoteAudioStats;
 
   @override
   $Res call({
@@ -1898,7 +1674,7 @@ class __$RemoteAudioStatsCopyWithImpl<$Res>
     Object? qoeQuality = freezed,
     Object? qualityChangedReason = freezed,
   }) {
-    return _then(_RemoteAudioStats(
+    return _then(_$_RemoteAudioStats(
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -1959,9 +1735,8 @@ class __$RemoteAudioStatsCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_RemoteAudioStats implements _RemoteAudioStats {
   const _$_RemoteAudioStats(
       {required this.uid,
@@ -1980,7 +1755,7 @@ class _$_RemoteAudioStats implements _RemoteAudioStats {
       required this.qualityChangedReason});
 
   factory _$_RemoteAudioStats.fromJson(Map<String, dynamic> json) =>
-      _$_$_RemoteAudioStatsFromJson(json);
+      _$$_RemoteAudioStatsFromJson(json);
 
   @override
   final int uid;
@@ -2019,95 +1794,82 @@ class _$_RemoteAudioStats implements _RemoteAudioStats {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RemoteAudioStats &&
-            (identical(other.uid, uid) ||
-                const DeepCollectionEquality().equals(other.uid, uid)) &&
-            (identical(other.quality, quality) ||
-                const DeepCollectionEquality()
-                    .equals(other.quality, quality)) &&
-            (identical(other.networkTransportDelay, networkTransportDelay) ||
-                const DeepCollectionEquality().equals(
-                    other.networkTransportDelay, networkTransportDelay)) &&
-            (identical(other.jitterBufferDelay, jitterBufferDelay) ||
-                const DeepCollectionEquality()
-                    .equals(other.jitterBufferDelay, jitterBufferDelay)) &&
-            (identical(other.audioLossRate, audioLossRate) ||
-                const DeepCollectionEquality()
-                    .equals(other.audioLossRate, audioLossRate)) &&
-            (identical(other.numChannels, numChannels) ||
-                const DeepCollectionEquality()
-                    .equals(other.numChannels, numChannels)) &&
-            (identical(other.receivedSampleRate, receivedSampleRate) ||
-                const DeepCollectionEquality()
-                    .equals(other.receivedSampleRate, receivedSampleRate)) &&
-            (identical(other.receivedBitrate, receivedBitrate) ||
-                const DeepCollectionEquality()
-                    .equals(other.receivedBitrate, receivedBitrate)) &&
-            (identical(other.totalFrozenTime, totalFrozenTime) ||
-                const DeepCollectionEquality()
-                    .equals(other.totalFrozenTime, totalFrozenTime)) &&
-            (identical(other.frozenRate, frozenRate) ||
-                const DeepCollectionEquality()
-                    .equals(other.frozenRate, frozenRate)) &&
-            (identical(other.totalActiveTime, totalActiveTime) ||
-                const DeepCollectionEquality()
-                    .equals(other.totalActiveTime, totalActiveTime)) &&
-            (identical(other.publishDuration, publishDuration) ||
-                const DeepCollectionEquality()
-                    .equals(other.publishDuration, publishDuration)) &&
-            (identical(other.qoeQuality, qoeQuality) ||
-                const DeepCollectionEquality()
-                    .equals(other.qoeQuality, qoeQuality)) &&
-            (identical(other.qualityChangedReason, qualityChangedReason) ||
-                const DeepCollectionEquality()
-                    .equals(other.qualityChangedReason, qualityChangedReason)));
+        (other.runtimeType == runtimeType &&
+            other is _$_RemoteAudioStats &&
+            const DeepCollectionEquality().equals(other.uid, uid) &&
+            const DeepCollectionEquality().equals(other.quality, quality) &&
+            const DeepCollectionEquality()
+                .equals(other.networkTransportDelay, networkTransportDelay) &&
+            const DeepCollectionEquality()
+                .equals(other.jitterBufferDelay, jitterBufferDelay) &&
+            const DeepCollectionEquality()
+                .equals(other.audioLossRate, audioLossRate) &&
+            const DeepCollectionEquality()
+                .equals(other.numChannels, numChannels) &&
+            const DeepCollectionEquality()
+                .equals(other.receivedSampleRate, receivedSampleRate) &&
+            const DeepCollectionEquality()
+                .equals(other.receivedBitrate, receivedBitrate) &&
+            const DeepCollectionEquality()
+                .equals(other.totalFrozenTime, totalFrozenTime) &&
+            const DeepCollectionEquality()
+                .equals(other.frozenRate, frozenRate) &&
+            const DeepCollectionEquality()
+                .equals(other.totalActiveTime, totalActiveTime) &&
+            const DeepCollectionEquality()
+                .equals(other.publishDuration, publishDuration) &&
+            const DeepCollectionEquality()
+                .equals(other.qoeQuality, qoeQuality) &&
+            const DeepCollectionEquality()
+                .equals(other.qualityChangedReason, qualityChangedReason));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(uid) ^
-      const DeepCollectionEquality().hash(quality) ^
-      const DeepCollectionEquality().hash(networkTransportDelay) ^
-      const DeepCollectionEquality().hash(jitterBufferDelay) ^
-      const DeepCollectionEquality().hash(audioLossRate) ^
-      const DeepCollectionEquality().hash(numChannels) ^
-      const DeepCollectionEquality().hash(receivedSampleRate) ^
-      const DeepCollectionEquality().hash(receivedBitrate) ^
-      const DeepCollectionEquality().hash(totalFrozenTime) ^
-      const DeepCollectionEquality().hash(frozenRate) ^
-      const DeepCollectionEquality().hash(totalActiveTime) ^
-      const DeepCollectionEquality().hash(publishDuration) ^
-      const DeepCollectionEquality().hash(qoeQuality) ^
-      const DeepCollectionEquality().hash(qualityChangedReason);
 
   @JsonKey(ignore: true)
   @override
-  _$RemoteAudioStatsCopyWith<_RemoteAudioStats> get copyWith =>
-      __$RemoteAudioStatsCopyWithImpl<_RemoteAudioStats>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(uid),
+      const DeepCollectionEquality().hash(quality),
+      const DeepCollectionEquality().hash(networkTransportDelay),
+      const DeepCollectionEquality().hash(jitterBufferDelay),
+      const DeepCollectionEquality().hash(audioLossRate),
+      const DeepCollectionEquality().hash(numChannels),
+      const DeepCollectionEquality().hash(receivedSampleRate),
+      const DeepCollectionEquality().hash(receivedBitrate),
+      const DeepCollectionEquality().hash(totalFrozenTime),
+      const DeepCollectionEquality().hash(frozenRate),
+      const DeepCollectionEquality().hash(totalActiveTime),
+      const DeepCollectionEquality().hash(publishDuration),
+      const DeepCollectionEquality().hash(qoeQuality),
+      const DeepCollectionEquality().hash(qualityChangedReason));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_RemoteAudioStatsCopyWith<_$_RemoteAudioStats> get copyWith =>
+      __$$_RemoteAudioStatsCopyWithImpl<_$_RemoteAudioStats>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_RemoteAudioStatsToJson(this);
+    return _$$_RemoteAudioStatsToJson(this);
   }
 }
 
 abstract class _RemoteAudioStats implements RemoteAudioStats {
   const factory _RemoteAudioStats(
-      {required int uid,
-      required int quality,
-      required int networkTransportDelay,
-      required int jitterBufferDelay,
-      required int audioLossRate,
-      required int numChannels,
-      required int receivedSampleRate,
-      required int receivedBitrate,
-      required int totalFrozenTime,
-      required int frozenRate,
-      required int totalActiveTime,
-      required int publishDuration,
-      required int qoeQuality,
-      required int qualityChangedReason}) = _$_RemoteAudioStats;
+      {required final int uid,
+      required final int quality,
+      required final int networkTransportDelay,
+      required final int jitterBufferDelay,
+      required final int audioLossRate,
+      required final int numChannels,
+      required final int receivedSampleRate,
+      required final int receivedBitrate,
+      required final int totalFrozenTime,
+      required final int frozenRate,
+      required final int totalActiveTime,
+      required final int publishDuration,
+      required final int qoeQuality,
+      required final int qualityChangedReason}) = _$_RemoteAudioStats;
 
   factory _RemoteAudioStats.fromJson(Map<String, dynamic> json) =
       _$_RemoteAudioStats.fromJson;
@@ -2142,54 +1904,13 @@ abstract class _RemoteAudioStats implements RemoteAudioStats {
   int get qualityChangedReason => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$RemoteAudioStatsCopyWith<_RemoteAudioStats> get copyWith =>
+  _$$_RemoteAudioStatsCopyWith<_$_RemoteAudioStats> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 RemoteVideoStats _$RemoteVideoStatsFromJson(Map<String, dynamic> json) {
   return _RemoteVideoStats.fromJson(json);
 }
-
-/// @nodoc
-class _$RemoteVideoStatsTearOff {
-  const _$RemoteVideoStatsTearOff();
-
-  _RemoteVideoStats call(
-      {required int uid,
-      required int width,
-      required int height,
-      required int receivedBitrate,
-      required int decoderOutputFrameRate,
-      required int rendererOutputFrameRate,
-      required int packetLossRate,
-      required int rxStreamType,
-      required int totalFrozenTime,
-      required int frozenRate,
-      required int totalActiveTime,
-      required int publishDuration}) {
-    return _RemoteVideoStats(
-      uid: uid,
-      width: width,
-      height: height,
-      receivedBitrate: receivedBitrate,
-      decoderOutputFrameRate: decoderOutputFrameRate,
-      rendererOutputFrameRate: rendererOutputFrameRate,
-      packetLossRate: packetLossRate,
-      rxStreamType: rxStreamType,
-      totalFrozenTime: totalFrozenTime,
-      frozenRate: frozenRate,
-      totalActiveTime: totalActiveTime,
-      publishDuration: publishDuration,
-    );
-  }
-
-  RemoteVideoStats fromJson(Map<String, Object> json) {
-    return RemoteVideoStats.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $RemoteVideoStats = _$RemoteVideoStatsTearOff();
 
 /// @nodoc
 mixin _$RemoteVideoStats {
@@ -2310,11 +2031,11 @@ class _$RemoteVideoStatsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$RemoteVideoStatsCopyWith<$Res>
+abstract class _$$_RemoteVideoStatsCopyWith<$Res>
     implements $RemoteVideoStatsCopyWith<$Res> {
-  factory _$RemoteVideoStatsCopyWith(
-          _RemoteVideoStats value, $Res Function(_RemoteVideoStats) then) =
-      __$RemoteVideoStatsCopyWithImpl<$Res>;
+  factory _$$_RemoteVideoStatsCopyWith(
+          _$_RemoteVideoStats value, $Res Function(_$_RemoteVideoStats) then) =
+      __$$_RemoteVideoStatsCopyWithImpl<$Res>;
   @override
   $Res call(
       {int uid,
@@ -2332,15 +2053,15 @@ abstract class _$RemoteVideoStatsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$RemoteVideoStatsCopyWithImpl<$Res>
+class __$$_RemoteVideoStatsCopyWithImpl<$Res>
     extends _$RemoteVideoStatsCopyWithImpl<$Res>
-    implements _$RemoteVideoStatsCopyWith<$Res> {
-  __$RemoteVideoStatsCopyWithImpl(
-      _RemoteVideoStats _value, $Res Function(_RemoteVideoStats) _then)
-      : super(_value, (v) => _then(v as _RemoteVideoStats));
+    implements _$$_RemoteVideoStatsCopyWith<$Res> {
+  __$$_RemoteVideoStatsCopyWithImpl(
+      _$_RemoteVideoStats _value, $Res Function(_$_RemoteVideoStats) _then)
+      : super(_value, (v) => _then(v as _$_RemoteVideoStats));
 
   @override
-  _RemoteVideoStats get _value => super._value as _RemoteVideoStats;
+  _$_RemoteVideoStats get _value => super._value as _$_RemoteVideoStats;
 
   @override
   $Res call({
@@ -2357,7 +2078,7 @@ class __$RemoteVideoStatsCopyWithImpl<$Res>
     Object? totalActiveTime = freezed,
     Object? publishDuration = freezed,
   }) {
-    return _then(_RemoteVideoStats(
+    return _then(_$_RemoteVideoStats(
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -2410,9 +2131,8 @@ class __$RemoteVideoStatsCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_RemoteVideoStats implements _RemoteVideoStats {
   const _$_RemoteVideoStats(
       {required this.uid,
@@ -2429,7 +2149,7 @@ class _$_RemoteVideoStats implements _RemoteVideoStats {
       required this.publishDuration});
 
   factory _$_RemoteVideoStats.fromJson(Map<String, dynamic> json) =>
-      _$_$_RemoteVideoStatsFromJson(json);
+      _$$_RemoteVideoStatsFromJson(json);
 
   @override
   final int uid;
@@ -2464,84 +2184,73 @@ class _$_RemoteVideoStats implements _RemoteVideoStats {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RemoteVideoStats &&
-            (identical(other.uid, uid) ||
-                const DeepCollectionEquality().equals(other.uid, uid)) &&
-            (identical(other.width, width) ||
-                const DeepCollectionEquality().equals(other.width, width)) &&
-            (identical(other.height, height) ||
-                const DeepCollectionEquality().equals(other.height, height)) &&
-            (identical(other.receivedBitrate, receivedBitrate) ||
-                const DeepCollectionEquality()
-                    .equals(other.receivedBitrate, receivedBitrate)) &&
-            (identical(other.decoderOutputFrameRate, decoderOutputFrameRate) ||
-                const DeepCollectionEquality().equals(
-                    other.decoderOutputFrameRate, decoderOutputFrameRate)) &&
-            (identical(
-                    other.rendererOutputFrameRate, rendererOutputFrameRate) ||
-                const DeepCollectionEquality().equals(
-                    other.rendererOutputFrameRate, rendererOutputFrameRate)) &&
-            (identical(other.packetLossRate, packetLossRate) ||
-                const DeepCollectionEquality()
-                    .equals(other.packetLossRate, packetLossRate)) &&
-            (identical(other.rxStreamType, rxStreamType) ||
-                const DeepCollectionEquality()
-                    .equals(other.rxStreamType, rxStreamType)) &&
-            (identical(other.totalFrozenTime, totalFrozenTime) ||
-                const DeepCollectionEquality()
-                    .equals(other.totalFrozenTime, totalFrozenTime)) &&
-            (identical(other.frozenRate, frozenRate) ||
-                const DeepCollectionEquality()
-                    .equals(other.frozenRate, frozenRate)) &&
-            (identical(other.totalActiveTime, totalActiveTime) ||
-                const DeepCollectionEquality()
-                    .equals(other.totalActiveTime, totalActiveTime)) &&
-            (identical(other.publishDuration, publishDuration) ||
-                const DeepCollectionEquality()
-                    .equals(other.publishDuration, publishDuration)));
+        (other.runtimeType == runtimeType &&
+            other is _$_RemoteVideoStats &&
+            const DeepCollectionEquality().equals(other.uid, uid) &&
+            const DeepCollectionEquality().equals(other.width, width) &&
+            const DeepCollectionEquality().equals(other.height, height) &&
+            const DeepCollectionEquality()
+                .equals(other.receivedBitrate, receivedBitrate) &&
+            const DeepCollectionEquality()
+                .equals(other.decoderOutputFrameRate, decoderOutputFrameRate) &&
+            const DeepCollectionEquality().equals(
+                other.rendererOutputFrameRate, rendererOutputFrameRate) &&
+            const DeepCollectionEquality()
+                .equals(other.packetLossRate, packetLossRate) &&
+            const DeepCollectionEquality()
+                .equals(other.rxStreamType, rxStreamType) &&
+            const DeepCollectionEquality()
+                .equals(other.totalFrozenTime, totalFrozenTime) &&
+            const DeepCollectionEquality()
+                .equals(other.frozenRate, frozenRate) &&
+            const DeepCollectionEquality()
+                .equals(other.totalActiveTime, totalActiveTime) &&
+            const DeepCollectionEquality()
+                .equals(other.publishDuration, publishDuration));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(uid) ^
-      const DeepCollectionEquality().hash(width) ^
-      const DeepCollectionEquality().hash(height) ^
-      const DeepCollectionEquality().hash(receivedBitrate) ^
-      const DeepCollectionEquality().hash(decoderOutputFrameRate) ^
-      const DeepCollectionEquality().hash(rendererOutputFrameRate) ^
-      const DeepCollectionEquality().hash(packetLossRate) ^
-      const DeepCollectionEquality().hash(rxStreamType) ^
-      const DeepCollectionEquality().hash(totalFrozenTime) ^
-      const DeepCollectionEquality().hash(frozenRate) ^
-      const DeepCollectionEquality().hash(totalActiveTime) ^
-      const DeepCollectionEquality().hash(publishDuration);
 
   @JsonKey(ignore: true)
   @override
-  _$RemoteVideoStatsCopyWith<_RemoteVideoStats> get copyWith =>
-      __$RemoteVideoStatsCopyWithImpl<_RemoteVideoStats>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(uid),
+      const DeepCollectionEquality().hash(width),
+      const DeepCollectionEquality().hash(height),
+      const DeepCollectionEquality().hash(receivedBitrate),
+      const DeepCollectionEquality().hash(decoderOutputFrameRate),
+      const DeepCollectionEquality().hash(rendererOutputFrameRate),
+      const DeepCollectionEquality().hash(packetLossRate),
+      const DeepCollectionEquality().hash(rxStreamType),
+      const DeepCollectionEquality().hash(totalFrozenTime),
+      const DeepCollectionEquality().hash(frozenRate),
+      const DeepCollectionEquality().hash(totalActiveTime),
+      const DeepCollectionEquality().hash(publishDuration));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_RemoteVideoStatsCopyWith<_$_RemoteVideoStats> get copyWith =>
+      __$$_RemoteVideoStatsCopyWithImpl<_$_RemoteVideoStats>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_RemoteVideoStatsToJson(this);
+    return _$$_RemoteVideoStatsToJson(this);
   }
 }
 
 abstract class _RemoteVideoStats implements RemoteVideoStats {
   const factory _RemoteVideoStats(
-      {required int uid,
-      required int width,
-      required int height,
-      required int receivedBitrate,
-      required int decoderOutputFrameRate,
-      required int rendererOutputFrameRate,
-      required int packetLossRate,
-      required int rxStreamType,
-      required int totalFrozenTime,
-      required int frozenRate,
-      required int totalActiveTime,
-      required int publishDuration}) = _$_RemoteVideoStats;
+      {required final int uid,
+      required final int width,
+      required final int height,
+      required final int receivedBitrate,
+      required final int decoderOutputFrameRate,
+      required final int rendererOutputFrameRate,
+      required final int packetLossRate,
+      required final int rxStreamType,
+      required final int totalFrozenTime,
+      required final int frozenRate,
+      required final int totalActiveTime,
+      required final int publishDuration}) = _$_RemoteVideoStats;
 
   factory _RemoteVideoStats.fromJson(Map<String, dynamic> json) =
       _$_RemoteVideoStats.fromJson;
@@ -2572,38 +2281,13 @@ abstract class _RemoteVideoStats implements RemoteVideoStats {
   int get publishDuration => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$RemoteVideoStatsCopyWith<_RemoteVideoStats> get copyWith =>
+  _$$_RemoteVideoStatsCopyWith<_$_RemoteVideoStats> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 LocalAudioStats _$LocalAudioStatsFromJson(Map<String, dynamic> json) {
   return _LocalAudioStats.fromJson(json);
 }
-
-/// @nodoc
-class _$LocalAudioStatsTearOff {
-  const _$LocalAudioStatsTearOff();
-
-  _LocalAudioStats call(
-      {required int numChannels,
-      required int sentSampleRate,
-      required int sentBitrate,
-      required int txPacketLossRate}) {
-    return _LocalAudioStats(
-      numChannels: numChannels,
-      sentSampleRate: sentSampleRate,
-      sentBitrate: sentBitrate,
-      txPacketLossRate: txPacketLossRate,
-    );
-  }
-
-  LocalAudioStats fromJson(Map<String, Object> json) {
-    return LocalAudioStats.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $LocalAudioStats = _$LocalAudioStatsTearOff();
 
 /// @nodoc
 mixin _$LocalAudioStats {
@@ -2668,11 +2352,11 @@ class _$LocalAudioStatsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$LocalAudioStatsCopyWith<$Res>
+abstract class _$$_LocalAudioStatsCopyWith<$Res>
     implements $LocalAudioStatsCopyWith<$Res> {
-  factory _$LocalAudioStatsCopyWith(
-          _LocalAudioStats value, $Res Function(_LocalAudioStats) then) =
-      __$LocalAudioStatsCopyWithImpl<$Res>;
+  factory _$$_LocalAudioStatsCopyWith(
+          _$_LocalAudioStats value, $Res Function(_$_LocalAudioStats) then) =
+      __$$_LocalAudioStatsCopyWithImpl<$Res>;
   @override
   $Res call(
       {int numChannels,
@@ -2682,15 +2366,15 @@ abstract class _$LocalAudioStatsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$LocalAudioStatsCopyWithImpl<$Res>
+class __$$_LocalAudioStatsCopyWithImpl<$Res>
     extends _$LocalAudioStatsCopyWithImpl<$Res>
-    implements _$LocalAudioStatsCopyWith<$Res> {
-  __$LocalAudioStatsCopyWithImpl(
-      _LocalAudioStats _value, $Res Function(_LocalAudioStats) _then)
-      : super(_value, (v) => _then(v as _LocalAudioStats));
+    implements _$$_LocalAudioStatsCopyWith<$Res> {
+  __$$_LocalAudioStatsCopyWithImpl(
+      _$_LocalAudioStats _value, $Res Function(_$_LocalAudioStats) _then)
+      : super(_value, (v) => _then(v as _$_LocalAudioStats));
 
   @override
-  _LocalAudioStats get _value => super._value as _LocalAudioStats;
+  _$_LocalAudioStats get _value => super._value as _$_LocalAudioStats;
 
   @override
   $Res call({
@@ -2699,7 +2383,7 @@ class __$LocalAudioStatsCopyWithImpl<$Res>
     Object? sentBitrate = freezed,
     Object? txPacketLossRate = freezed,
   }) {
-    return _then(_LocalAudioStats(
+    return _then(_$_LocalAudioStats(
       numChannels: numChannels == freezed
           ? _value.numChannels
           : numChannels // ignore: cast_nullable_to_non_nullable
@@ -2720,9 +2404,8 @@ class __$LocalAudioStatsCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_LocalAudioStats implements _LocalAudioStats {
   const _$_LocalAudioStats(
       {required this.numChannels,
@@ -2731,7 +2414,7 @@ class _$_LocalAudioStats implements _LocalAudioStats {
       required this.txPacketLossRate});
 
   factory _$_LocalAudioStats.fromJson(Map<String, dynamic> json) =>
-      _$_$_LocalAudioStatsFromJson(json);
+      _$$_LocalAudioStatsFromJson(json);
 
   @override
   final int numChannels;
@@ -2750,46 +2433,44 @@ class _$_LocalAudioStats implements _LocalAudioStats {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LocalAudioStats &&
-            (identical(other.numChannels, numChannels) ||
-                const DeepCollectionEquality()
-                    .equals(other.numChannels, numChannels)) &&
-            (identical(other.sentSampleRate, sentSampleRate) ||
-                const DeepCollectionEquality()
-                    .equals(other.sentSampleRate, sentSampleRate)) &&
-            (identical(other.sentBitrate, sentBitrate) ||
-                const DeepCollectionEquality()
-                    .equals(other.sentBitrate, sentBitrate)) &&
-            (identical(other.txPacketLossRate, txPacketLossRate) ||
-                const DeepCollectionEquality()
-                    .equals(other.txPacketLossRate, txPacketLossRate)));
+        (other.runtimeType == runtimeType &&
+            other is _$_LocalAudioStats &&
+            const DeepCollectionEquality()
+                .equals(other.numChannels, numChannels) &&
+            const DeepCollectionEquality()
+                .equals(other.sentSampleRate, sentSampleRate) &&
+            const DeepCollectionEquality()
+                .equals(other.sentBitrate, sentBitrate) &&
+            const DeepCollectionEquality()
+                .equals(other.txPacketLossRate, txPacketLossRate));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(numChannels) ^
-      const DeepCollectionEquality().hash(sentSampleRate) ^
-      const DeepCollectionEquality().hash(sentBitrate) ^
-      const DeepCollectionEquality().hash(txPacketLossRate);
 
   @JsonKey(ignore: true)
   @override
-  _$LocalAudioStatsCopyWith<_LocalAudioStats> get copyWith =>
-      __$LocalAudioStatsCopyWithImpl<_LocalAudioStats>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(numChannels),
+      const DeepCollectionEquality().hash(sentSampleRate),
+      const DeepCollectionEquality().hash(sentBitrate),
+      const DeepCollectionEquality().hash(txPacketLossRate));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_LocalAudioStatsCopyWith<_$_LocalAudioStats> get copyWith =>
+      __$$_LocalAudioStatsCopyWithImpl<_$_LocalAudioStats>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_LocalAudioStatsToJson(this);
+    return _$$_LocalAudioStatsToJson(this);
   }
 }
 
 abstract class _LocalAudioStats implements LocalAudioStats {
   const factory _LocalAudioStats(
-      {required int numChannels,
-      required int sentSampleRate,
-      required int sentBitrate,
-      required int txPacketLossRate}) = _$_LocalAudioStats;
+      {required final int numChannels,
+      required final int sentSampleRate,
+      required final int sentBitrate,
+      required final int txPacketLossRate}) = _$_LocalAudioStats;
 
   factory _LocalAudioStats.fromJson(Map<String, dynamic> json) =
       _$_LocalAudioStats.fromJson;
@@ -2804,60 +2485,13 @@ abstract class _LocalAudioStats implements LocalAudioStats {
   int get txPacketLossRate => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$LocalAudioStatsCopyWith<_LocalAudioStats> get copyWith =>
+  _$$_LocalAudioStatsCopyWith<_$_LocalAudioStats> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 LocalVideoStats _$LocalVideoStatsFromJson(Map<String, dynamic> json) {
   return _LocalVideoStats.fromJson(json);
 }
-
-/// @nodoc
-class _$LocalVideoStatsTearOff {
-  const _$LocalVideoStatsTearOff();
-
-  _LocalVideoStats call(
-      {required int sentBitrate,
-      required int sentFrameRate,
-      required int encoderOutputFrameRate,
-      required int rendererOutputFrameRate,
-      required int targetBitrate,
-      required int targetFrameRate,
-      required int qualityAdaptIndication,
-      required int encodedBitrate,
-      required int encodedFrameWidth,
-      required int encodedFrameHeight,
-      required int encodedFrameCount,
-      required int codecType,
-      required int txPacketLossRate,
-      required int captureFrameRate,
-      required int captureBrightnessLevel}) {
-    return _LocalVideoStats(
-      sentBitrate: sentBitrate,
-      sentFrameRate: sentFrameRate,
-      encoderOutputFrameRate: encoderOutputFrameRate,
-      rendererOutputFrameRate: rendererOutputFrameRate,
-      targetBitrate: targetBitrate,
-      targetFrameRate: targetFrameRate,
-      qualityAdaptIndication: qualityAdaptIndication,
-      encodedBitrate: encodedBitrate,
-      encodedFrameWidth: encodedFrameWidth,
-      encodedFrameHeight: encodedFrameHeight,
-      encodedFrameCount: encodedFrameCount,
-      codecType: codecType,
-      txPacketLossRate: txPacketLossRate,
-      captureFrameRate: captureFrameRate,
-      captureBrightnessLevel: captureBrightnessLevel,
-    );
-  }
-
-  LocalVideoStats fromJson(Map<String, Object> json) {
-    return LocalVideoStats.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $LocalVideoStats = _$LocalVideoStatsTearOff();
 
 /// @nodoc
 mixin _$LocalVideoStats {
@@ -2999,11 +2633,11 @@ class _$LocalVideoStatsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$LocalVideoStatsCopyWith<$Res>
+abstract class _$$_LocalVideoStatsCopyWith<$Res>
     implements $LocalVideoStatsCopyWith<$Res> {
-  factory _$LocalVideoStatsCopyWith(
-          _LocalVideoStats value, $Res Function(_LocalVideoStats) then) =
-      __$LocalVideoStatsCopyWithImpl<$Res>;
+  factory _$$_LocalVideoStatsCopyWith(
+          _$_LocalVideoStats value, $Res Function(_$_LocalVideoStats) then) =
+      __$$_LocalVideoStatsCopyWithImpl<$Res>;
   @override
   $Res call(
       {int sentBitrate,
@@ -3024,15 +2658,15 @@ abstract class _$LocalVideoStatsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$LocalVideoStatsCopyWithImpl<$Res>
+class __$$_LocalVideoStatsCopyWithImpl<$Res>
     extends _$LocalVideoStatsCopyWithImpl<$Res>
-    implements _$LocalVideoStatsCopyWith<$Res> {
-  __$LocalVideoStatsCopyWithImpl(
-      _LocalVideoStats _value, $Res Function(_LocalVideoStats) _then)
-      : super(_value, (v) => _then(v as _LocalVideoStats));
+    implements _$$_LocalVideoStatsCopyWith<$Res> {
+  __$$_LocalVideoStatsCopyWithImpl(
+      _$_LocalVideoStats _value, $Res Function(_$_LocalVideoStats) _then)
+      : super(_value, (v) => _then(v as _$_LocalVideoStats));
 
   @override
-  _LocalVideoStats get _value => super._value as _LocalVideoStats;
+  _$_LocalVideoStats get _value => super._value as _$_LocalVideoStats;
 
   @override
   $Res call({
@@ -3052,7 +2686,7 @@ class __$LocalVideoStatsCopyWithImpl<$Res>
     Object? captureFrameRate = freezed,
     Object? captureBrightnessLevel = freezed,
   }) {
-    return _then(_LocalVideoStats(
+    return _then(_$_LocalVideoStats(
       sentBitrate: sentBitrate == freezed
           ? _value.sentBitrate
           : sentBitrate // ignore: cast_nullable_to_non_nullable
@@ -3117,9 +2751,8 @@ class __$LocalVideoStatsCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_LocalVideoStats implements _LocalVideoStats {
   const _$_LocalVideoStats(
       {required this.sentBitrate,
@@ -3139,7 +2772,7 @@ class _$_LocalVideoStats implements _LocalVideoStats {
       required this.captureBrightnessLevel});
 
   factory _$_LocalVideoStats.fromJson(Map<String, dynamic> json) =>
-      _$_$_LocalVideoStatsFromJson(json);
+      _$$_LocalVideoStatsFromJson(json);
 
   @override
   final int sentBitrate;
@@ -3180,102 +2813,87 @@ class _$_LocalVideoStats implements _LocalVideoStats {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LocalVideoStats &&
-            (identical(other.sentBitrate, sentBitrate) ||
-                const DeepCollectionEquality()
-                    .equals(other.sentBitrate, sentBitrate)) &&
-            (identical(other.sentFrameRate, sentFrameRate) ||
-                const DeepCollectionEquality()
-                    .equals(other.sentFrameRate, sentFrameRate)) &&
-            (identical(other.encoderOutputFrameRate, encoderOutputFrameRate) ||
-                const DeepCollectionEquality().equals(
-                    other.encoderOutputFrameRate, encoderOutputFrameRate)) &&
-            (identical(
-                    other.rendererOutputFrameRate, rendererOutputFrameRate) ||
-                const DeepCollectionEquality().equals(
-                    other.rendererOutputFrameRate, rendererOutputFrameRate)) &&
-            (identical(other.targetBitrate, targetBitrate) ||
-                const DeepCollectionEquality()
-                    .equals(other.targetBitrate, targetBitrate)) &&
-            (identical(other.targetFrameRate, targetFrameRate) ||
-                const DeepCollectionEquality()
-                    .equals(other.targetFrameRate, targetFrameRate)) &&
-            (identical(other.qualityAdaptIndication, qualityAdaptIndication) ||
-                const DeepCollectionEquality().equals(
-                    other.qualityAdaptIndication, qualityAdaptIndication)) &&
-            (identical(other.encodedBitrate, encodedBitrate) ||
-                const DeepCollectionEquality()
-                    .equals(other.encodedBitrate, encodedBitrate)) &&
-            (identical(other.encodedFrameWidth, encodedFrameWidth) ||
-                const DeepCollectionEquality()
-                    .equals(other.encodedFrameWidth, encodedFrameWidth)) &&
-            (identical(other.encodedFrameHeight, encodedFrameHeight) ||
-                const DeepCollectionEquality()
-                    .equals(other.encodedFrameHeight, encodedFrameHeight)) &&
-            (identical(other.encodedFrameCount, encodedFrameCount) ||
-                const DeepCollectionEquality()
-                    .equals(other.encodedFrameCount, encodedFrameCount)) &&
-            (identical(other.codecType, codecType) ||
-                const DeepCollectionEquality()
-                    .equals(other.codecType, codecType)) &&
-            (identical(other.txPacketLossRate, txPacketLossRate) ||
-                const DeepCollectionEquality()
-                    .equals(other.txPacketLossRate, txPacketLossRate)) &&
-            (identical(other.captureFrameRate, captureFrameRate) ||
-                const DeepCollectionEquality()
-                    .equals(other.captureFrameRate, captureFrameRate)) &&
-            (identical(other.captureBrightnessLevel, captureBrightnessLevel) ||
-                const DeepCollectionEquality().equals(
-                    other.captureBrightnessLevel, captureBrightnessLevel)));
+        (other.runtimeType == runtimeType &&
+            other is _$_LocalVideoStats &&
+            const DeepCollectionEquality()
+                .equals(other.sentBitrate, sentBitrate) &&
+            const DeepCollectionEquality()
+                .equals(other.sentFrameRate, sentFrameRate) &&
+            const DeepCollectionEquality()
+                .equals(other.encoderOutputFrameRate, encoderOutputFrameRate) &&
+            const DeepCollectionEquality().equals(
+                other.rendererOutputFrameRate, rendererOutputFrameRate) &&
+            const DeepCollectionEquality()
+                .equals(other.targetBitrate, targetBitrate) &&
+            const DeepCollectionEquality()
+                .equals(other.targetFrameRate, targetFrameRate) &&
+            const DeepCollectionEquality()
+                .equals(other.qualityAdaptIndication, qualityAdaptIndication) &&
+            const DeepCollectionEquality()
+                .equals(other.encodedBitrate, encodedBitrate) &&
+            const DeepCollectionEquality()
+                .equals(other.encodedFrameWidth, encodedFrameWidth) &&
+            const DeepCollectionEquality()
+                .equals(other.encodedFrameHeight, encodedFrameHeight) &&
+            const DeepCollectionEquality()
+                .equals(other.encodedFrameCount, encodedFrameCount) &&
+            const DeepCollectionEquality().equals(other.codecType, codecType) &&
+            const DeepCollectionEquality()
+                .equals(other.txPacketLossRate, txPacketLossRate) &&
+            const DeepCollectionEquality()
+                .equals(other.captureFrameRate, captureFrameRate) &&
+            const DeepCollectionEquality()
+                .equals(other.captureBrightnessLevel, captureBrightnessLevel));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(sentBitrate) ^
-      const DeepCollectionEquality().hash(sentFrameRate) ^
-      const DeepCollectionEquality().hash(encoderOutputFrameRate) ^
-      const DeepCollectionEquality().hash(rendererOutputFrameRate) ^
-      const DeepCollectionEquality().hash(targetBitrate) ^
-      const DeepCollectionEquality().hash(targetFrameRate) ^
-      const DeepCollectionEquality().hash(qualityAdaptIndication) ^
-      const DeepCollectionEquality().hash(encodedBitrate) ^
-      const DeepCollectionEquality().hash(encodedFrameWidth) ^
-      const DeepCollectionEquality().hash(encodedFrameHeight) ^
-      const DeepCollectionEquality().hash(encodedFrameCount) ^
-      const DeepCollectionEquality().hash(codecType) ^
-      const DeepCollectionEquality().hash(txPacketLossRate) ^
-      const DeepCollectionEquality().hash(captureFrameRate) ^
-      const DeepCollectionEquality().hash(captureBrightnessLevel);
 
   @JsonKey(ignore: true)
   @override
-  _$LocalVideoStatsCopyWith<_LocalVideoStats> get copyWith =>
-      __$LocalVideoStatsCopyWithImpl<_LocalVideoStats>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(sentBitrate),
+      const DeepCollectionEquality().hash(sentFrameRate),
+      const DeepCollectionEquality().hash(encoderOutputFrameRate),
+      const DeepCollectionEquality().hash(rendererOutputFrameRate),
+      const DeepCollectionEquality().hash(targetBitrate),
+      const DeepCollectionEquality().hash(targetFrameRate),
+      const DeepCollectionEquality().hash(qualityAdaptIndication),
+      const DeepCollectionEquality().hash(encodedBitrate),
+      const DeepCollectionEquality().hash(encodedFrameWidth),
+      const DeepCollectionEquality().hash(encodedFrameHeight),
+      const DeepCollectionEquality().hash(encodedFrameCount),
+      const DeepCollectionEquality().hash(codecType),
+      const DeepCollectionEquality().hash(txPacketLossRate),
+      const DeepCollectionEquality().hash(captureFrameRate),
+      const DeepCollectionEquality().hash(captureBrightnessLevel));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_LocalVideoStatsCopyWith<_$_LocalVideoStats> get copyWith =>
+      __$$_LocalVideoStatsCopyWithImpl<_$_LocalVideoStats>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_LocalVideoStatsToJson(this);
+    return _$$_LocalVideoStatsToJson(this);
   }
 }
 
 abstract class _LocalVideoStats implements LocalVideoStats {
   const factory _LocalVideoStats(
-      {required int sentBitrate,
-      required int sentFrameRate,
-      required int encoderOutputFrameRate,
-      required int rendererOutputFrameRate,
-      required int targetBitrate,
-      required int targetFrameRate,
-      required int qualityAdaptIndication,
-      required int encodedBitrate,
-      required int encodedFrameWidth,
-      required int encodedFrameHeight,
-      required int encodedFrameCount,
-      required int codecType,
-      required int txPacketLossRate,
-      required int captureFrameRate,
-      required int captureBrightnessLevel}) = _$_LocalVideoStats;
+      {required final int sentBitrate,
+      required final int sentFrameRate,
+      required final int encoderOutputFrameRate,
+      required final int rendererOutputFrameRate,
+      required final int targetBitrate,
+      required final int targetFrameRate,
+      required final int qualityAdaptIndication,
+      required final int encodedBitrate,
+      required final int encodedFrameWidth,
+      required final int encodedFrameHeight,
+      required final int encodedFrameCount,
+      required final int codecType,
+      required final int txPacketLossRate,
+      required final int captureFrameRate,
+      required final int captureBrightnessLevel}) = _$_LocalVideoStats;
 
   factory _LocalVideoStats.fromJson(Map<String, dynamic> json) =
       _$_LocalVideoStats.fromJson;
@@ -3312,38 +2930,13 @@ abstract class _LocalVideoStats implements LocalVideoStats {
   int get captureBrightnessLevel => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$LocalVideoStatsCopyWith<_LocalVideoStats> get copyWith =>
+  _$$_LocalVideoStatsCopyWith<_$_LocalVideoStats> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 AudioVolumeInfo _$AudioVolumeInfoFromJson(Map<String, dynamic> json) {
   return _AudioVolumeInfo.fromJson(json);
 }
-
-/// @nodoc
-class _$AudioVolumeInfoTearOff {
-  const _$AudioVolumeInfoTearOff();
-
-  _AudioVolumeInfo call(
-      {required int uid,
-      required int volume,
-      required int vad,
-      required String channelId}) {
-    return _AudioVolumeInfo(
-      uid: uid,
-      volume: volume,
-      vad: vad,
-      channelId: channelId,
-    );
-  }
-
-  AudioVolumeInfo fromJson(Map<String, Object> json) {
-    return AudioVolumeInfo.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $AudioVolumeInfo = _$AudioVolumeInfoTearOff();
 
 /// @nodoc
 mixin _$AudioVolumeInfo {
@@ -3404,25 +2997,25 @@ class _$AudioVolumeInfoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$AudioVolumeInfoCopyWith<$Res>
+abstract class _$$_AudioVolumeInfoCopyWith<$Res>
     implements $AudioVolumeInfoCopyWith<$Res> {
-  factory _$AudioVolumeInfoCopyWith(
-          _AudioVolumeInfo value, $Res Function(_AudioVolumeInfo) then) =
-      __$AudioVolumeInfoCopyWithImpl<$Res>;
+  factory _$$_AudioVolumeInfoCopyWith(
+          _$_AudioVolumeInfo value, $Res Function(_$_AudioVolumeInfo) then) =
+      __$$_AudioVolumeInfoCopyWithImpl<$Res>;
   @override
   $Res call({int uid, int volume, int vad, String channelId});
 }
 
 /// @nodoc
-class __$AudioVolumeInfoCopyWithImpl<$Res>
+class __$$_AudioVolumeInfoCopyWithImpl<$Res>
     extends _$AudioVolumeInfoCopyWithImpl<$Res>
-    implements _$AudioVolumeInfoCopyWith<$Res> {
-  __$AudioVolumeInfoCopyWithImpl(
-      _AudioVolumeInfo _value, $Res Function(_AudioVolumeInfo) _then)
-      : super(_value, (v) => _then(v as _AudioVolumeInfo));
+    implements _$$_AudioVolumeInfoCopyWith<$Res> {
+  __$$_AudioVolumeInfoCopyWithImpl(
+      _$_AudioVolumeInfo _value, $Res Function(_$_AudioVolumeInfo) _then)
+      : super(_value, (v) => _then(v as _$_AudioVolumeInfo));
 
   @override
-  _AudioVolumeInfo get _value => super._value as _AudioVolumeInfo;
+  _$_AudioVolumeInfo get _value => super._value as _$_AudioVolumeInfo;
 
   @override
   $Res call({
@@ -3431,7 +3024,7 @@ class __$AudioVolumeInfoCopyWithImpl<$Res>
     Object? vad = freezed,
     Object? channelId = freezed,
   }) {
-    return _then(_AudioVolumeInfo(
+    return _then(_$_AudioVolumeInfo(
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -3452,9 +3045,8 @@ class __$AudioVolumeInfoCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_AudioVolumeInfo implements _AudioVolumeInfo {
   const _$_AudioVolumeInfo(
       {required this.uid,
@@ -3463,7 +3055,7 @@ class _$_AudioVolumeInfo implements _AudioVolumeInfo {
       required this.channelId});
 
   factory _$_AudioVolumeInfo.fromJson(Map<String, dynamic> json) =>
-      _$_$_AudioVolumeInfoFromJson(json);
+      _$$_AudioVolumeInfoFromJson(json);
 
   @override
   final int uid;
@@ -3482,43 +3074,40 @@ class _$_AudioVolumeInfo implements _AudioVolumeInfo {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AudioVolumeInfo &&
-            (identical(other.uid, uid) ||
-                const DeepCollectionEquality().equals(other.uid, uid)) &&
-            (identical(other.volume, volume) ||
-                const DeepCollectionEquality().equals(other.volume, volume)) &&
-            (identical(other.vad, vad) ||
-                const DeepCollectionEquality().equals(other.vad, vad)) &&
-            (identical(other.channelId, channelId) ||
-                const DeepCollectionEquality()
-                    .equals(other.channelId, channelId)));
+        (other.runtimeType == runtimeType &&
+            other is _$_AudioVolumeInfo &&
+            const DeepCollectionEquality().equals(other.uid, uid) &&
+            const DeepCollectionEquality().equals(other.volume, volume) &&
+            const DeepCollectionEquality().equals(other.vad, vad) &&
+            const DeepCollectionEquality().equals(other.channelId, channelId));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(uid) ^
-      const DeepCollectionEquality().hash(volume) ^
-      const DeepCollectionEquality().hash(vad) ^
-      const DeepCollectionEquality().hash(channelId);
 
   @JsonKey(ignore: true)
   @override
-  _$AudioVolumeInfoCopyWith<_AudioVolumeInfo> get copyWith =>
-      __$AudioVolumeInfoCopyWithImpl<_AudioVolumeInfo>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(uid),
+      const DeepCollectionEquality().hash(volume),
+      const DeepCollectionEquality().hash(vad),
+      const DeepCollectionEquality().hash(channelId));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_AudioVolumeInfoCopyWith<_$_AudioVolumeInfo> get copyWith =>
+      __$$_AudioVolumeInfoCopyWithImpl<_$_AudioVolumeInfo>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_AudioVolumeInfoToJson(this);
+    return _$$_AudioVolumeInfoToJson(this);
   }
 }
 
 abstract class _AudioVolumeInfo implements AudioVolumeInfo {
   const factory _AudioVolumeInfo(
-      {required int uid,
-      required int volume,
-      required int vad,
-      required String channelId}) = _$_AudioVolumeInfo;
+      {required final int uid,
+      required final int volume,
+      required final int vad,
+      required final String channelId}) = _$_AudioVolumeInfo;
 
   factory _AudioVolumeInfo.fromJson(Map<String, dynamic> json) =
       _$_AudioVolumeInfo.fromJson;
@@ -3533,44 +3122,13 @@ abstract class _AudioVolumeInfo implements AudioVolumeInfo {
   String get channelId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AudioVolumeInfoCopyWith<_AudioVolumeInfo> get copyWith =>
+  _$$_AudioVolumeInfoCopyWith<_$_AudioVolumeInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 Participant _$ParticipantFromJson(Map<String, dynamic> json) {
   return _Participant.fromJson(json);
 }
-
-/// @nodoc
-class _$ParticipantTearOff {
-  const _$ParticipantTearOff();
-
-  _Participant call(
-      {required int uid,
-      AudioRemoteState audioState = AudioRemoteState.stopped,
-      VideoRemoteState videoState = VideoRemoteState.stopped,
-      RemoteAudioStats? audioStats,
-      RemoteVideoStats? videoStats,
-      AudioVolumeInfo? volumeInfo,
-      bool hasFrames = false}) {
-    return _Participant(
-      uid: uid,
-      audioState: audioState,
-      videoState: videoState,
-      audioStats: audioStats,
-      videoStats: videoStats,
-      volumeInfo: volumeInfo,
-      hasFrames: hasFrames,
-    );
-  }
-
-  Participant fromJson(Map<String, Object> json) {
-    return Participant.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Participant = _$ParticipantTearOff();
 
 /// @nodoc
 mixin _$Participant {
@@ -3692,11 +3250,11 @@ class _$ParticipantCopyWithImpl<$Res> implements $ParticipantCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ParticipantCopyWith<$Res>
+abstract class _$$_ParticipantCopyWith<$Res>
     implements $ParticipantCopyWith<$Res> {
-  factory _$ParticipantCopyWith(
-          _Participant value, $Res Function(_Participant) then) =
-      __$ParticipantCopyWithImpl<$Res>;
+  factory _$$_ParticipantCopyWith(
+          _$_Participant value, $Res Function(_$_Participant) then) =
+      __$$_ParticipantCopyWithImpl<$Res>;
   @override
   $Res call(
       {int uid,
@@ -3716,14 +3274,14 @@ abstract class _$ParticipantCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ParticipantCopyWithImpl<$Res> extends _$ParticipantCopyWithImpl<$Res>
-    implements _$ParticipantCopyWith<$Res> {
-  __$ParticipantCopyWithImpl(
-      _Participant _value, $Res Function(_Participant) _then)
-      : super(_value, (v) => _then(v as _Participant));
+class __$$_ParticipantCopyWithImpl<$Res> extends _$ParticipantCopyWithImpl<$Res>
+    implements _$$_ParticipantCopyWith<$Res> {
+  __$$_ParticipantCopyWithImpl(
+      _$_Participant _value, $Res Function(_$_Participant) _then)
+      : super(_value, (v) => _then(v as _$_Participant));
 
   @override
-  _Participant get _value => super._value as _Participant;
+  _$_Participant get _value => super._value as _$_Participant;
 
   @override
   $Res call({
@@ -3735,7 +3293,7 @@ class __$ParticipantCopyWithImpl<$Res> extends _$ParticipantCopyWithImpl<$Res>
     Object? volumeInfo = freezed,
     Object? hasFrames = freezed,
   }) {
-    return _then(_Participant(
+    return _then(_$_Participant(
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -3768,9 +3326,8 @@ class __$ParticipantCopyWithImpl<$Res> extends _$ParticipantCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_Participant implements _Participant {
   const _$_Participant(
       {required this.uid,
@@ -3782,15 +3339,15 @@ class _$_Participant implements _Participant {
       this.hasFrames = false});
 
   factory _$_Participant.fromJson(Map<String, dynamic> json) =>
-      _$_$_ParticipantFromJson(json);
+      _$$_ParticipantFromJson(json);
 
   @override
   final int uid;
-  @JsonKey(defaultValue: AudioRemoteState.stopped)
   @override
+  @JsonKey()
   final AudioRemoteState audioState;
-  @JsonKey(defaultValue: VideoRemoteState.stopped)
   @override
+  @JsonKey()
   final VideoRemoteState videoState;
   @override
   final RemoteAudioStats? audioStats;
@@ -3798,8 +3355,8 @@ class _$_Participant implements _Participant {
   final RemoteVideoStats? videoStats;
   @override
   final AudioVolumeInfo? volumeInfo;
-  @JsonKey(defaultValue: false)
   @override
+  @JsonKey()
   final bool hasFrames;
 
   @override
@@ -3810,60 +3367,54 @@ class _$_Participant implements _Participant {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Participant &&
-            (identical(other.uid, uid) ||
-                const DeepCollectionEquality().equals(other.uid, uid)) &&
-            (identical(other.audioState, audioState) ||
-                const DeepCollectionEquality()
-                    .equals(other.audioState, audioState)) &&
-            (identical(other.videoState, videoState) ||
-                const DeepCollectionEquality()
-                    .equals(other.videoState, videoState)) &&
-            (identical(other.audioStats, audioStats) ||
-                const DeepCollectionEquality()
-                    .equals(other.audioStats, audioStats)) &&
-            (identical(other.videoStats, videoStats) ||
-                const DeepCollectionEquality()
-                    .equals(other.videoStats, videoStats)) &&
-            (identical(other.volumeInfo, volumeInfo) ||
-                const DeepCollectionEquality()
-                    .equals(other.volumeInfo, volumeInfo)) &&
-            (identical(other.hasFrames, hasFrames) ||
-                const DeepCollectionEquality()
-                    .equals(other.hasFrames, hasFrames)));
+        (other.runtimeType == runtimeType &&
+            other is _$_Participant &&
+            const DeepCollectionEquality().equals(other.uid, uid) &&
+            const DeepCollectionEquality()
+                .equals(other.audioState, audioState) &&
+            const DeepCollectionEquality()
+                .equals(other.videoState, videoState) &&
+            const DeepCollectionEquality()
+                .equals(other.audioStats, audioStats) &&
+            const DeepCollectionEquality()
+                .equals(other.videoStats, videoStats) &&
+            const DeepCollectionEquality()
+                .equals(other.volumeInfo, volumeInfo) &&
+            const DeepCollectionEquality().equals(other.hasFrames, hasFrames));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(uid) ^
-      const DeepCollectionEquality().hash(audioState) ^
-      const DeepCollectionEquality().hash(videoState) ^
-      const DeepCollectionEquality().hash(audioStats) ^
-      const DeepCollectionEquality().hash(videoStats) ^
-      const DeepCollectionEquality().hash(volumeInfo) ^
-      const DeepCollectionEquality().hash(hasFrames);
 
   @JsonKey(ignore: true)
   @override
-  _$ParticipantCopyWith<_Participant> get copyWith =>
-      __$ParticipantCopyWithImpl<_Participant>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(uid),
+      const DeepCollectionEquality().hash(audioState),
+      const DeepCollectionEquality().hash(videoState),
+      const DeepCollectionEquality().hash(audioStats),
+      const DeepCollectionEquality().hash(videoStats),
+      const DeepCollectionEquality().hash(volumeInfo),
+      const DeepCollectionEquality().hash(hasFrames));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_ParticipantCopyWith<_$_Participant> get copyWith =>
+      __$$_ParticipantCopyWithImpl<_$_Participant>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_ParticipantToJson(this);
+    return _$$_ParticipantToJson(this);
   }
 }
 
 abstract class _Participant implements Participant {
   const factory _Participant(
-      {required int uid,
-      AudioRemoteState audioState,
-      VideoRemoteState videoState,
-      RemoteAudioStats? audioStats,
-      RemoteVideoStats? videoStats,
-      AudioVolumeInfo? volumeInfo,
-      bool hasFrames}) = _$_Participant;
+      {required final int uid,
+      final AudioRemoteState audioState,
+      final VideoRemoteState videoState,
+      final RemoteAudioStats? audioStats,
+      final RemoteVideoStats? videoStats,
+      final AudioVolumeInfo? volumeInfo,
+      final bool hasFrames}) = _$_Participant;
 
   factory _Participant.fromJson(Map<String, dynamic> json) =
       _$_Participant.fromJson;
@@ -3884,44 +3435,13 @@ abstract class _Participant implements Participant {
   bool get hasFrames => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ParticipantCopyWith<_Participant> get copyWith =>
+  _$$_ParticipantCopyWith<_$_Participant> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 LocalParticipant _$LocalParticipantFromJson(Map<String, dynamic> json) {
   return _LocalParticipant.fromJson(json);
 }
-
-/// @nodoc
-class _$LocalParticipantTearOff {
-  const _$LocalParticipantTearOff();
-
-  _LocalParticipant call(
-      {int? uid,
-      AudioLocalState audioState = AudioLocalState.stopped,
-      VideoLocalState videoState = VideoLocalState.stopped,
-      LocalAudioStats? audioStats,
-      LocalVideoStats? videoStats,
-      AudioVolumeInfo? volumeInfo,
-      bool hasFrames = false}) {
-    return _LocalParticipant(
-      uid: uid,
-      audioState: audioState,
-      videoState: videoState,
-      audioStats: audioStats,
-      videoStats: videoStats,
-      volumeInfo: volumeInfo,
-      hasFrames: hasFrames,
-    );
-  }
-
-  LocalParticipant fromJson(Map<String, Object> json) {
-    return LocalParticipant.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $LocalParticipant = _$LocalParticipantTearOff();
 
 /// @nodoc
 mixin _$LocalParticipant {
@@ -4044,11 +3564,11 @@ class _$LocalParticipantCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$LocalParticipantCopyWith<$Res>
+abstract class _$$_LocalParticipantCopyWith<$Res>
     implements $LocalParticipantCopyWith<$Res> {
-  factory _$LocalParticipantCopyWith(
-          _LocalParticipant value, $Res Function(_LocalParticipant) then) =
-      __$LocalParticipantCopyWithImpl<$Res>;
+  factory _$$_LocalParticipantCopyWith(
+          _$_LocalParticipant value, $Res Function(_$_LocalParticipant) then) =
+      __$$_LocalParticipantCopyWithImpl<$Res>;
   @override
   $Res call(
       {int? uid,
@@ -4068,15 +3588,15 @@ abstract class _$LocalParticipantCopyWith<$Res>
 }
 
 /// @nodoc
-class __$LocalParticipantCopyWithImpl<$Res>
+class __$$_LocalParticipantCopyWithImpl<$Res>
     extends _$LocalParticipantCopyWithImpl<$Res>
-    implements _$LocalParticipantCopyWith<$Res> {
-  __$LocalParticipantCopyWithImpl(
-      _LocalParticipant _value, $Res Function(_LocalParticipant) _then)
-      : super(_value, (v) => _then(v as _LocalParticipant));
+    implements _$$_LocalParticipantCopyWith<$Res> {
+  __$$_LocalParticipantCopyWithImpl(
+      _$_LocalParticipant _value, $Res Function(_$_LocalParticipant) _then)
+      : super(_value, (v) => _then(v as _$_LocalParticipant));
 
   @override
-  _LocalParticipant get _value => super._value as _LocalParticipant;
+  _$_LocalParticipant get _value => super._value as _$_LocalParticipant;
 
   @override
   $Res call({
@@ -4088,7 +3608,7 @@ class __$LocalParticipantCopyWithImpl<$Res>
     Object? volumeInfo = freezed,
     Object? hasFrames = freezed,
   }) {
-    return _then(_LocalParticipant(
+    return _then(_$_LocalParticipant(
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -4121,9 +3641,8 @@ class __$LocalParticipantCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_LocalParticipant implements _LocalParticipant {
   const _$_LocalParticipant(
       {this.uid,
@@ -4135,15 +3654,15 @@ class _$_LocalParticipant implements _LocalParticipant {
       this.hasFrames = false});
 
   factory _$_LocalParticipant.fromJson(Map<String, dynamic> json) =>
-      _$_$_LocalParticipantFromJson(json);
+      _$$_LocalParticipantFromJson(json);
 
   @override
   final int? uid;
-  @JsonKey(defaultValue: AudioLocalState.stopped)
   @override
+  @JsonKey()
   final AudioLocalState audioState;
-  @JsonKey(defaultValue: VideoLocalState.stopped)
   @override
+  @JsonKey()
   final VideoLocalState videoState;
   @override
   final LocalAudioStats? audioStats;
@@ -4151,8 +3670,8 @@ class _$_LocalParticipant implements _LocalParticipant {
   final LocalVideoStats? videoStats;
   @override
   final AudioVolumeInfo? volumeInfo;
-  @JsonKey(defaultValue: false)
   @override
+  @JsonKey()
   final bool hasFrames;
 
   @override
@@ -4163,60 +3682,54 @@ class _$_LocalParticipant implements _LocalParticipant {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LocalParticipant &&
-            (identical(other.uid, uid) ||
-                const DeepCollectionEquality().equals(other.uid, uid)) &&
-            (identical(other.audioState, audioState) ||
-                const DeepCollectionEquality()
-                    .equals(other.audioState, audioState)) &&
-            (identical(other.videoState, videoState) ||
-                const DeepCollectionEquality()
-                    .equals(other.videoState, videoState)) &&
-            (identical(other.audioStats, audioStats) ||
-                const DeepCollectionEquality()
-                    .equals(other.audioStats, audioStats)) &&
-            (identical(other.videoStats, videoStats) ||
-                const DeepCollectionEquality()
-                    .equals(other.videoStats, videoStats)) &&
-            (identical(other.volumeInfo, volumeInfo) ||
-                const DeepCollectionEquality()
-                    .equals(other.volumeInfo, volumeInfo)) &&
-            (identical(other.hasFrames, hasFrames) ||
-                const DeepCollectionEquality()
-                    .equals(other.hasFrames, hasFrames)));
+        (other.runtimeType == runtimeType &&
+            other is _$_LocalParticipant &&
+            const DeepCollectionEquality().equals(other.uid, uid) &&
+            const DeepCollectionEquality()
+                .equals(other.audioState, audioState) &&
+            const DeepCollectionEquality()
+                .equals(other.videoState, videoState) &&
+            const DeepCollectionEquality()
+                .equals(other.audioStats, audioStats) &&
+            const DeepCollectionEquality()
+                .equals(other.videoStats, videoStats) &&
+            const DeepCollectionEquality()
+                .equals(other.volumeInfo, volumeInfo) &&
+            const DeepCollectionEquality().equals(other.hasFrames, hasFrames));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(uid) ^
-      const DeepCollectionEquality().hash(audioState) ^
-      const DeepCollectionEquality().hash(videoState) ^
-      const DeepCollectionEquality().hash(audioStats) ^
-      const DeepCollectionEquality().hash(videoStats) ^
-      const DeepCollectionEquality().hash(volumeInfo) ^
-      const DeepCollectionEquality().hash(hasFrames);
 
   @JsonKey(ignore: true)
   @override
-  _$LocalParticipantCopyWith<_LocalParticipant> get copyWith =>
-      __$LocalParticipantCopyWithImpl<_LocalParticipant>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(uid),
+      const DeepCollectionEquality().hash(audioState),
+      const DeepCollectionEquality().hash(videoState),
+      const DeepCollectionEquality().hash(audioStats),
+      const DeepCollectionEquality().hash(videoStats),
+      const DeepCollectionEquality().hash(volumeInfo),
+      const DeepCollectionEquality().hash(hasFrames));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_LocalParticipantCopyWith<_$_LocalParticipant> get copyWith =>
+      __$$_LocalParticipantCopyWithImpl<_$_LocalParticipant>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_LocalParticipantToJson(this);
+    return _$$_LocalParticipantToJson(this);
   }
 }
 
 abstract class _LocalParticipant implements LocalParticipant {
   const factory _LocalParticipant(
-      {int? uid,
-      AudioLocalState audioState,
-      VideoLocalState videoState,
-      LocalAudioStats? audioStats,
-      LocalVideoStats? videoStats,
-      AudioVolumeInfo? volumeInfo,
-      bool hasFrames}) = _$_LocalParticipant;
+      {final int? uid,
+      final AudioLocalState audioState,
+      final VideoLocalState videoState,
+      final LocalAudioStats? audioStats,
+      final LocalVideoStats? videoStats,
+      final AudioVolumeInfo? volumeInfo,
+      final bool hasFrames}) = _$_LocalParticipant;
 
   factory _LocalParticipant.fromJson(Map<String, dynamic> json) =
       _$_LocalParticipant.fromJson;
@@ -4237,6 +3750,6 @@ abstract class _LocalParticipant implements LocalParticipant {
   bool get hasFrames => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$LocalParticipantCopyWith<_LocalParticipant> get copyWith =>
+  _$$_LocalParticipantCopyWith<_$_LocalParticipant> get copyWith =>
       throw _privateConstructorUsedError;
 }
